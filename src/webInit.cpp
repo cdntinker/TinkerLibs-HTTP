@@ -2,7 +2,7 @@
 // #include "Tinker_WiFi.h"
 // #include "OTA_async_AP.h"
 #include <OTA_Externs.h>
-int darkState           = true;        // prefered darkmode state
+
 #if defined(ESP8266)
     // #include "ESP8266WiFi.h"
     // #include "ESPAsyncTCP.h"
