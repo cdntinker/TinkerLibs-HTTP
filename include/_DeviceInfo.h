@@ -36,3 +36,6 @@ String info_memsmeter();
 String return_reset_reason(uint8_t reason);
 
 extern int TemplateCount;
+
+String DeviceID();
+String DeviceTP();
