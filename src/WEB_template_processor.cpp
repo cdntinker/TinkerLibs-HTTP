@@ -15,9 +15,9 @@
 
 #include "HTML_Loadup.h"
 
-#include "OTA_Externs.h"
+// #include "OTA_Externs.h"
 
-#include "Template_Maps.h"
+// #include "Template_Maps.h"
 
 /* Convert a #defined value to a string */
 #define ST(A) #A
