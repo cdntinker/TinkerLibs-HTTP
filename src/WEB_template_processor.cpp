@@ -1,15 +1,15 @@
 // #include "NOTARDUINO.h"
 #include "Tinker_DEBUG.h"
-#include "OTA_async_AP.h"
+// #include "OTA_async_AP.h"
 #include "Tinker_WiFi.h"
 
 /////////////////////////////////////////////////////////
-#if defined(ESP8266)
-#include "NOTARDUINO.h"
-#elif defined(ESP32)
-#include <rom/rtc.h>
-String return_reset_reason(uint8_t reason);
-#endif
+// #if defined(ESP8266)
+// #include "NOTARDUINO.h"
+// #elif defined(ESP32)
+// #include <rom/rtc.h>
+// String return_reset_reason(uint8_t reason);
+// #endif
 /////////////////////////////////////////////////////////
 // #include "info_placement.h"
 
