@@ -396,3 +396,19 @@ Serial.print(" --- ");
 Serial.println(TemplateMaps[9].p_Content);
 
 }
+
+String DeviceID()
+{
+#if defined(DeviceName)
+    String id = STR(DeviceName);
+#else
+    String id = host;
+#endif
+    return id;
+}
+
+String ip3string(IPAddress ip)
+{
+    String ret = String(ip[0]) + "." + String(ip[1]) + "." + String(ip[2]) + "." + String(ip[3]);
+    return ret;
+}
