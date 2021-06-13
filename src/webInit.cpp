@@ -1,6 +1,17 @@
 #include "Tinker_DEBUG.h"
 // #include "Tinker_WiFi.h"
 // #include "OTA_async_AP.h"
+#if defined(ESP8266)
+    // #include "ESP8266WiFi.h"
+    // #include "ESPAsyncTCP.h"
+    #include "flash_hal.h"
+#elif defined(ESP32)
+    // #include "WiFi.h"
+    // #include "AsyncTCP.h"
+    // #include "Update.h"
+    // #include "esp_int_wdt.h"
+    // #include "esp_task_wdt.h"
+#endif
 /////////////////////////////////////////////////////
 #include "ESPAsyncWebServer.h"
 
