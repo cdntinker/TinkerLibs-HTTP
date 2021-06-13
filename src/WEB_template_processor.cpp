@@ -59,7 +59,7 @@ Serial.println(TemplateMaps[9].p_Content);
 
 #else
 
-// #include "_DeviceInfo.h"
+#include "_DeviceInfo.h"
 String processor(const String &var) // Change placeholders on webpage
 {
     if (var == "SDASCLplaceholder")
