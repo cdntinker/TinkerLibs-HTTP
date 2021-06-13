@@ -1,7 +1,12 @@
 #include "Tinker_DEBUG.h"
 // #include "Tinker_WiFi.h"
 // #include "OTA_async_AP.h"
+/////////////////////////////////////////////////////
 #include "ESPAsyncWebServer.h"
+
+#include "FS.h" // SPIFFS is declared
+// #include "LittleFS.h" // LittleFS is declared
+////////////////////////////////////////////////////
 String processor(const String &var);
 // #if defined(ESP8266)
 // #include "NOTARDUINO.h"
