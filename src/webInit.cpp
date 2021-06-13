@@ -1,13 +1,13 @@
 #include "Tinker_DEBUG.h"
-#include "Tinker_WiFi.h"
-#include "OTA_async_AP.h"
+// #include "Tinker_WiFi.h"
+// #include "OTA_async_AP.h"
 
-#if defined(ESP8266)
-#include "NOTARDUINO.h"
-#elif defined(ESP32)
-#include <rom/rtc.h>
-String return_reset_reason(uint8_t reason);
-#endif
+// #if defined(ESP8266)
+// #include "NOTARDUINO.h"
+// #elif defined(ESP32)
+// #include <rom/rtc.h>
+// String return_reset_reason(uint8_t reason);
+// #endif
 
 AsyncWebServer server(80);
 
