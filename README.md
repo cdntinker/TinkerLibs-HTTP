@@ -22,9 +22,6 @@ This library uses [my DEBUG library](https://github.com/cdntinker/TinkerLibs-DEB
 
 ### ESP8266
 
-* foo
-    * https://github.com/foo/bar
-
 ### ESP32
 
 * Update
