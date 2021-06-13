@@ -1,4 +1,5 @@
 #include "NOTARDUINO.h"
+#include <Arduino.h>
 
 const char *Page_Header PROGMEM =
 #include "HTML/Parts/Page_Header.htm"
