@@ -80,7 +80,7 @@ extern char DEBUGtxt[48];
 
 int PageNumber;
 
-boolean webInit()
+boolean setup_HTTP()
 {
     DEBUG_Init("WebServer");
 

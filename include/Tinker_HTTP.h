@@ -1,2 +1,2 @@
 //
-boolean webInit();
+boolean setup_HTTP();
