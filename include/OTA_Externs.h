@@ -1,5 +1,5 @@
 // #include "NOTARDUINO.h"
-#include <Arduino.h>
+// #include <Arduino.h>
 
     extern const char* TestPagePart;
     extern const char* HomePagePart;

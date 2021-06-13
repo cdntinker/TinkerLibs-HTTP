@@ -1,6 +1,8 @@
 #include <Tinker_DEBUG.h>
 // #include "Tinker_WiFi.h"
 // #include "OTA_async_AP.h"
+#include <OTA_Externs.h>
+
 #if defined(ESP8266)
     // #include "ESP8266WiFi.h"
     // #include "ESPAsyncTCP.h"
