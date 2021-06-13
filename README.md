@@ -27,6 +27,8 @@ This library uses [my DEBUG library](https://github.com/cdntinker/TinkerLibs-DEB
 
 ### ESP32
 
+* Update
+    * https://github.com/espressif/arduino-esp32/tree/master/libraries
 * FS
     * https://github.com/espressif/arduino-esp32/tree/master/libraries
 
