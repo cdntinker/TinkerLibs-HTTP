@@ -1,4 +1,4 @@
-# LibTesting-HTTP
+# TinkerLibs-HTTP
 
 - [Overview](#overview)
 - [Required Libraries](#required-libraries)
@@ -15,7 +15,7 @@ Primarily, it's for building an AP & OTA interface.  But it should come in handy
 
 ## Required Libraries:
 
-This library uses [my DEBUG library](https://github.com/cdntinker/TinkerLibs-DEBUGhttps://github.com/cdntinker/TinkerLibs-DEBUG).
+This library uses [my DEBUG library](https://github.com/cdntinker/TinkerLibs-DEBUG).
 
 * ESP Async WebServer
     * https://github.com/me-no-dev/ESPAsyncWebServer
