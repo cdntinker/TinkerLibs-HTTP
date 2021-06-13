@@ -1,0 +1,14 @@
+R"rawliteral(
+    <style>
+     %dark%
+    </style>
+    
+    <script>
+      function darkFunction() {
+       var xhr = new XMLHttpRequest();
+       xhr.open("GET", "/darkmode?state=1", true);
+       xhr.send();
+       setTimeout(function () {window.location.href = "/test";}, 100);
+      }
+   </script>
+)rawliteral";
