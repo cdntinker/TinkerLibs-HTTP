@@ -2,6 +2,7 @@
 // #include "Tinker_WiFi.h"
 // #include "OTA_async_AP.h"
 #include "ESPAsyncWebServer.h"
+String processor(const String &var);
 // #if defined(ESP8266)
 // #include "NOTARDUINO.h"
 // #elif defined(ESP32)
