@@ -1,5 +1,7 @@
 #include <Tinker_DEBUG.h>
 
+#include <Tinker_HTTP.h>
+
 #include <OTA_Externs.h>
 
 #if defined(ESP8266)
