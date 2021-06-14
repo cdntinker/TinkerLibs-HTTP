@@ -1,3 +1,7 @@
+/* ****************************************************
+ * Fill in the web page variables & structures
+ * ***************************************************/
+
 #include <Arduino.h>
 
 /* include the webpages (done in HTML) */
