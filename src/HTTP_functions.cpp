@@ -61,13 +61,16 @@ boolean setup_HTTP()
     sprintf(DEBUGtxt, "Page: [%d] %s set up", PageNumber, PageContent[PageNumber].Address);   \
     DEBUG_LineOut(DEBUGtxt);
 
-    InitializePage(0);
-    InitializePage(1);
-    InitializePage(2);
-    InitializePage(3);
-    InitializePage(4);
-    InitializePage(5);
-    // InitializePage(6);
+for(int PageCount = 0; PageCount <= 5; PageCount++)
+    InitializePage(PageCount);
+
+    // InitializePage(0);
+    // InitializePage(1);
+    // InitializePage(2);
+    // InitializePage(3);
+    // InitializePage(4);
+    // InitializePage(5);
+    // // InitializePage(6);
 
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
               {
