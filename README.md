@@ -1,6 +1,7 @@
 # TinkerLibs-HTTP
 
 - [Overview](#overview)
+- - [Oddities](#oddities-to-be-sorted)
 - [Required Libraries](#required-libraries)
 - Usage:
   - [With PlatformIO](#platformio)
@@ -12,6 +13,11 @@
 This is (well... will be...) a collection of wrappers & stuff for creating a consistant web server on an ESP.
 
 Primarily, it's for building an AP & OTA interface.  But it should come in handy for a lot more.
+
+## Oddities to be sorted
+On ESP8266, calling `DEBUG_Ready()` without first calling `setup_WiFi()` is fine.  You just can't reach it. ([sometimes](https://github.com/cdntinker/TinkerLibs-WiFi/blob/main/README.md#oddities-to-be-sorted))
+
+On ESP32, this causes a crash.
 
 ## Required Libraries:
 
