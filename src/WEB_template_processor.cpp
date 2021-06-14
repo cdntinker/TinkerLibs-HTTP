@@ -1,6 +1,5 @@
 // #include "NOTARDUINO.h"
 #include "Tinker_DEBUG.h"
-// #include "OTA_async_AP.h"
 #include "Tinker_WiFi.h"
 
 /////////////////////////////////////////////////////////
