@@ -5,9 +5,9 @@
 #include <OTA_Externs.h>
 
 #if defined(ESP8266)
-    #include <flash_hal.h>
+#include <flash_hal.h>
 #elif defined(ESP32)
-    #include "Update.h"
+#include "Update.h"
 #endif
 
 /////////////////////////////////////////////////////
@@ -61,8 +61,8 @@ boolean setup_HTTP()
     sprintf(DEBUGtxt, "Page: [%d] %s set up", PageNumber, PageContent[PageNumber].Address);   \
     DEBUG_LineOut(DEBUGtxt);
 
-// for(int PageCount = 0; PageCount <= 5; PageCount++)
-//     InitializePage(PageCount);
+    // for(int PageCount = 0; PageCount <= 5; PageCount++)
+    //     InitializePage(PageCount);
 
     InitializePage(0);
     InitializePage(1);
@@ -72,17 +72,28 @@ boolean setup_HTTP()
     InitializePage(5);
     // InitializePage(6);
 
+    /* ********************************************************
+     * root page
+     * *******************************************************/
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   request->redirect("/home");
                   sprintf(DEBUGtxt, "Page: %s", "/");
                   DEBUG_LineOut(DEBUGtxt);
               });
+
+    /* ********************************************************
+     * reboot page
+     * *******************************************************/
     server.on("/reboot", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   request->send_P(200, "text/html", reboot_html, processor);
                   restartRequired = true;
               });
+
+    /* ********************************************************
+     * darkmode page
+     * *******************************************************/
     server.on("/darkmode", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   String inputMessage1;
@@ -100,6 +111,9 @@ boolean setup_HTTP()
                   DEBUG_LineOut(DEBUGtxt);
               });
 
+    /* ********************************************************
+     * management (2) page
+     * *******************************************************/
     server.on(
         "/management", HTTP_POST, [&](AsyncWebServerRequest *request)
         {
@@ -122,7 +136,7 @@ boolean setup_HTTP()
             {
 
 #if defined(ESP8266)
-    DEBUG_LineOut("UPDATING: ESP8266");
+                DEBUG_LineOut("UPDATING: ESP8266");
                 int cmd = (filename == "filesystem") ? U_FS : U_FLASH;
                 Update.runAsync(true);
                 size_t fsSize = ((size_t)&_FS_end - (size_t)&_FS_start);
@@ -130,44 +144,44 @@ boolean setup_HTTP()
                 if (!Update.begin((cmd == U_FS) ? fsSize : maxSketchSpace, cmd))
                 { // Start with max available size
 #elif defined(ESP32)
-    DEBUG_LineOut("UPDATING: ESP32");
+                DEBUG_LineOut("UPDATING: ESP32");
                 int cmd = (filename == "filesystem") ? U_SPIFFS : U_FLASH;
                 if (!Update.begin(UPDATE_SIZE_UNKNOWN, cmd))
                 { // Start with max available size
 #endif
-    DEBUG_LineOut("UPDATING:  errored?");
+                    DEBUG_LineOut("UPDATING:  errored?");
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
-    DEBUG_LineOut("UPDATING:  uploading");
+                DEBUG_LineOut("UPDATING:  uploading");
             }
 
             // Write chunked data to the free sketch space
             if (len)
             {
-    // DEBUG_LineOut("BOTH good");
-    Serial.print("~");
+                // DEBUG_LineOut("BOTH good");
+                Serial.print("~");
                 if (Update.write(data, len) != len)
                 {
-    DEBUG_LineOut("UPDATING:  bad");
+                    DEBUG_LineOut("UPDATING:  bad");
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
             }
 
             if (final)
             { // if the final flag is set then this is the last frame of data
-    Serial.println();
-    DEBUG_LineOut("UPDATING:  complete!");
+                Serial.println();
+                DEBUG_LineOut("UPDATING:  complete!");
                 if (!Update.end(true))
                 { //true to set the size to the current progress
-    DEBUG_LineOut("UPDATING:  Poop!");
+                    DEBUG_LineOut("UPDATING:  Poop!");
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "Could not end OTA");
                 }
             }
             else
             {
-    // DEBUG_LineOut("BOTH complete!");
+                // DEBUG_LineOut("BOTH complete!");
                 return;
             }
         });
