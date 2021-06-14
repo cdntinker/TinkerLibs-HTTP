@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 /* include the webpages (done in HTML) */
 const char home_html[] PROGMEM = 
 #include "HTML/homepage.htm"   // Homepage HTML
