@@ -61,20 +61,17 @@ Serial.println(TemplateMaps[9].p_Content);
 #include "_DeviceInfo.h"
 String processor(const String &var) // Change placeholders on webpage
 {
-    if (var == "SDASCLplaceholder")
-    {
-        return getSDASCL();
-    }
-    if (var == "I2Cplaceholder")
-    {
-        return getI2Cscan();
-    }
 
     /////////////////////////////////////////////////////////////
     // How to add a block to a web page...
     //  Based on a #define conditional (look up a few lines...)
     //  TestPage was defined as a number in platformio.ini
     /////////////////////////////////////////////////////////////
+
+    if (var == "SCRIPTS")
+    {
+        return Scripts_html;
+    }
 
     if (var == "tPageContent") // The placeholder
     {
@@ -110,16 +107,20 @@ String processor(const String &var) // Change placeholders on webpage
         return Fugga;
     }
 
-    if (var == "SCRIPTS")
+    /* I2C pin numbers */
+    if (var == "SDASCLplaceholder")
     {
-        return Scripts_html;
+        return getSDASCL();
+    }
+    if (var == "I2Cplaceholder")
+    {
+        return getI2Cscan();
     }
 
     if (var == "IPMAC")
     {
         return IP_MAC;
     }
-
     if (var == "title")
     {
         return getDeviceName();
@@ -244,6 +245,7 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return info_memsmeter();
     }
+
     return String();
 }
 
