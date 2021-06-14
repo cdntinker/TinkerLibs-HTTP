@@ -32,9 +32,9 @@ extern int darkState;
 
 extern bool restartRequired;
 
-/* ****************************************************
+/* ********************************************************
  * Fill in the web page variables & structures
- * ***************************************************/
+ * *******************************************************/
 #include "_Pages.h"
 
 extern char DEBUGtxt[48];
@@ -45,6 +45,13 @@ boolean setup_HTTP()
 {
     DEBUG_Init("WebServer");
 
+/* ********************************************************
+ * This #define builds the page request handlers for
+ * pages defined in the PageContent[] array of structures.
+ * 
+ * This exists because the process is inlined.
+ * This kinda borks the whole call by reference thing.
+ * *******************************************************/
 #define InitializePage(PageNumber)                                                            \
     server.on(PageContent[PageNumber].Address, HTTP_GET, [](AsyncWebServerRequest *request) { \
         request->send_P(200, "text/html", PageContent[PageNumber].p_Content, processor);      \
