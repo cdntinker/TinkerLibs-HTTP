@@ -143,16 +143,24 @@ boolean setup_HTTP()
                 uint32_t maxSketchSpace = (ESP.getFreeSketchSpace() - 0x1000) & 0xFFFFF000;
                 if (!Update.begin((cmd == U_FS) ? fsSize : maxSketchSpace, cmd))
                 { // Start with max available size
+                    DEBUG_LineOut("UPDATING:  errored?");
+                    Update.printError(Serial);
+                    return request->send(400, "text/plain", "OTA could not begin");
+                }
 #elif defined(ESP32)
                 DEBUG_LineOut("UPDATING: ESP32");
                 int cmd = (filename == "filesystem") ? U_SPIFFS : U_FLASH;
                 if (!Update.begin(UPDATE_SIZE_UNKNOWN, cmd))
                 { // Start with max available size
-#endif  // ESP32
                     DEBUG_LineOut("UPDATING:  errored?");
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
+#endif  // ESP32
+                //     DEBUG_LineOut("UPDATING:  errored?");
+                //     Update.printError(Serial);
+                //     return request->send(400, "text/plain", "OTA could not begin");
+                // }
 // #endif  // ESP32
                 DEBUG_LineOut("UPDATING:  uploading");
             }
