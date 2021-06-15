@@ -27,6 +27,14 @@ const char TheCSS[] PROGMEM =
 #include "HTML/css.css"
 ;
 
+extern const char TheCSS[];
+extern const char home_html[];
+extern const char management_html[];
+extern const char failOTA_html[];
+extern const char reboot_html[];
+extern const char done_html[];
+extern const char *test_html;
+
 struct PageMapping
 {
     char Address[16];
