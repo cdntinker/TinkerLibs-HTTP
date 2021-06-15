@@ -7,7 +7,7 @@ String getDeviceType();
 String getProcTag();
 
 extern int deviceREBOOTED;
-String getRebootMessage();
+// String getRebootMessage();
 String getRebootMessage0();
 String getRebootMessage1();
 
