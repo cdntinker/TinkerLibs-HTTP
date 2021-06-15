@@ -136,11 +136,15 @@ String getRebootMessage()
 /////////////////////////////////////////////////////////////////////////////////////////
 String getRebootMessage0()
 {
-    Serial.println("Mudda");
+    Serial.print("Mudda ");
     if (deviceREBOOTED == false)
+    {
+        Serial.println("NOPE");
         return "foo";
+    }
     else
     {
+        Serial.println("YUP");
         return "Device Rebooted";
         deviceREBOOTED = false;
     }
