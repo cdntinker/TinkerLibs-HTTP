@@ -44,7 +44,7 @@ int PageNumber;
 boolean setup_HTTP()
 {
     DEBUG_Init("WebServer");
-
+    {
 /* ********************************************************
  * This #define builds the page request handlers for
  * pages defined in the PageContent[] array of structures.
@@ -61,17 +61,17 @@ boolean setup_HTTP()
     sprintf(DEBUGtxt, "Page: [%d] %s set up", PageNumber, PageContent[PageNumber].Address);   \
     DEBUG_LineOut(DEBUGtxt);
 
-    // for(int PageCount = 0; PageCount <= 5; PageCount++)
-    //     InitializePage(PageCount);
+        // for(int PageCount = 0; PageCount <= 5; PageCount++)
+        //     InitializePage(PageCount);
 
-    InitializePage(0);
-    InitializePage(1);
-    InitializePage(2);
-    InitializePage(3);
-    InitializePage(4);
-    InitializePage(5);
-    // InitializePage(6);
-
+        InitializePage(0);
+        InitializePage(1);
+        InitializePage(2);
+        InitializePage(3);
+        InitializePage(4);
+        InitializePage(5);
+        // InitializePage(6);
+    }
     /* ********************************************************
      * root page
      * *******************************************************/
@@ -146,9 +146,10 @@ boolean setup_HTTP()
 #elif defined(ESP32)
                 DEBUG_LineOut("UPDATING: ESP32");
                 int cmd = (filename == "filesystem") ? U_SPIFFS : U_FLASH;
+#endif  // ESP32
                 if (!Update.begin(UPDATE_SIZE_UNKNOWN, cmd))
                 { // Start with max available size
-#endif
+// #endif  // ESP32
                     DEBUG_LineOut("UPDATING:  errored?");
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "OTA could not begin");
