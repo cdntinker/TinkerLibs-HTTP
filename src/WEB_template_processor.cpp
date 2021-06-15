@@ -169,6 +169,7 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return getRebootMessage1();
     }
+    
     if (var == "uptime")
     {
         return info_uptime();
