@@ -173,7 +173,6 @@ String getRebootMessage1()
         erroring += ")";
     }
     return erroring;
-    // return "ReBootReason";
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 
