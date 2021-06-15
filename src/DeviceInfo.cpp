@@ -115,7 +115,6 @@ extern int deviceREBOOTED;
 //     {
 //         erroring += "Device Rebooted";
 //         deviceREBOOTED = false;
-
 //         erroring += " (";
 // #if defined(ESP8266)
 //         String RebootReason =
@@ -147,10 +146,11 @@ String getRebootMessage0()
     else
     {
         Serial.println("YUP");
-        return "Device Rebooted";
         deviceREBOOTED = false;
+        return "Device Rebooted";
     }
 }
+
 String getRebootMessage1()
 {
     Serial.println("Fugga");
