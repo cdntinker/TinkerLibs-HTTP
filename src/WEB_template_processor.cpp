@@ -163,10 +163,12 @@ String processor(const String &var) // Change placeholders on webpage
     }
     if (var == "ReBootMessage")
     {
+        return "RebootMessage";
         return getRebootMessage();
     }
     if (var == "ReBootReason")
     {
+        return "ReBootReason";
         return getRebootMessage();
     }
     if (var == "uptime")
