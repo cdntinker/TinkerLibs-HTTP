@@ -137,7 +137,7 @@ String getRebootMessage()
 String getRebootMessage0()
 {
     if (deviceREBOOTED == false)
-        return "";
+        return "foo";
     else
     {
         return "Device Rebooted";
