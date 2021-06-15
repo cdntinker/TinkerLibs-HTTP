@@ -5,8 +5,12 @@ extern int darkState;
 String getDarkMode();
 String getDeviceType();
 String getProcTag();
+
 extern int deviceREBOOTED;
 String getRebootMessage();
+String getRebootMessage0();
+String getRebootMessage1();
+
 String getDeviceID();
 String info_uptime();
 String info_chipid();

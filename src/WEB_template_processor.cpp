@@ -161,15 +161,13 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return getRebootMessage();
     }
-    if (var == "ReBootMessage")
+    if (var == "WT_ReBootMessage")
     {
-        return "RebootMessage";
-        return getRebootMessage();
+        return getRebootMessage0();
     }
-    if (var == "ReBootReason")
+    if (var == "WT_ReBootReason")
     {
-        return "ReBootReason";
-        return getRebootMessage();
+        return getRebootMessage1();
     }
     if (var == "uptime")
     {

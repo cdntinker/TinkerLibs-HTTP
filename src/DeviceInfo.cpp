@@ -103,6 +103,7 @@ String getProcTag()
 
 extern int deviceREBOOTED;
 
+/////////////////////////////////////////////////////////////////////////////////////////
 String getRebootMessage()
 {
     String erroring = "";
@@ -132,6 +133,16 @@ String getRebootMessage()
     }
     return erroring;
 }
+/////////////////////////////////////////////////////////////////////////////////////////
+String getRebootMessage0()
+{
+    return "Device Rebooted";
+}
+String getRebootMessage1()
+{
+    return "ReBootReason";
+}
+/////////////////////////////////////////////////////////////////////////////////////////
 
 String getDeviceID()
 {
@@ -358,11 +369,11 @@ void DeviceInfo()
             {"TemplateCount", "", "Device_TemplateCount()"},
         };
 
-// TemplateMap TemplateMaps[9] = {"Mudda", "Fugga", "SHIT!"};
+    // TemplateMap TemplateMaps[9] = {"Mudda", "Fugga", "SHIT!"};
 
-// strcpy (TemplateMaps[9].PlaceHolder, "Mudda");
-// strcpy (TemplateMaps[9].DebugMSG , "Fugga");
-//  TemplateMaps[9].p_Content = "SHIT!";
+    // strcpy (TemplateMaps[9].PlaceHolder, "Mudda");
+    // strcpy (TemplateMaps[9].DebugMSG , "Fugga");
+    //  TemplateMaps[9].p_Content = "SHIT!";
 
     TemplateCount = sizeof(TemplateMaps) / sizeof(TemplateMaps[0]);
 
@@ -384,17 +395,16 @@ void DeviceInfo()
 
 void poop()
 {
-// strcpy (TemplateMaps[9].PlaceHolder, "This");
-// strcpy (TemplateMaps[9].DebugMSG , "Blows");
-//  TemplateMaps[9].p_Content = "Chunks!";
+    // strcpy (TemplateMaps[9].PlaceHolder, "This");
+    // strcpy (TemplateMaps[9].DebugMSG , "Blows");
+    //  TemplateMaps[9].p_Content = "Chunks!";
 
-Serial.printf("poop - TemplateMap #9/%i: ", sizeof(TemplateMaps) / sizeof(TemplateMaps[0]));
-Serial.print(TemplateMaps[9].PlaceHolder);
-Serial.print(" --- ");
-Serial.print(TemplateMaps[9].DebugMSG);
-Serial.print(" --- ");
-Serial.println(TemplateMaps[9].p_Content);
-
+    Serial.printf("poop - TemplateMap #9/%i: ", sizeof(TemplateMaps) / sizeof(TemplateMaps[0]));
+    Serial.print(TemplateMaps[9].PlaceHolder);
+    Serial.print(" --- ");
+    Serial.print(TemplateMaps[9].DebugMSG);
+    Serial.print(" --- ");
+    Serial.println(TemplateMaps[9].p_Content);
 }
 
 String DeviceID()
