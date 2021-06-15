@@ -13,8 +13,8 @@
 // #include "info_placement.h"
 
 #include "HTML_Loadup.h"
-
 #include "OTA_Externs.h"
+#include "_DeviceInfo.h"
 
 // #include "Template_Maps.h"
 
@@ -58,7 +58,6 @@ Serial.println(TemplateMaps[9].p_Content);
 
 #else
 
-#include "_DeviceInfo.h"
 String processor(const String &var) // Change placeholders on webpage
 {
 
