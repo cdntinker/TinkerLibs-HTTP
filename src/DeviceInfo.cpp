@@ -106,18 +106,12 @@ extern int deviceREBOOTED;
 /////////////////////////////////////////////////////////////////////////////////////////
 String getRebootMessage0()
 {
-    Serial.print("Mudda ");
-    Serial.print(deviceREBOOTED);
-
     if (deviceREBOOTED == false)
     {
-        Serial.println("NOPE");
-        return "foo";
+        return "";
     }
     else
     {
-        Serial.println("YUP");
-        // deviceREBOOTED = false;
         return "Device Rebooted";
     }
 }
