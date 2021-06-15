@@ -7,7 +7,7 @@
                 "/home/tinker/Documents/PlatformIO/ESP-general-Dev/TinkerLibs-DEBUG/include"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/g++",
+            "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
             "cppStandard": "c++14",
             "intelliSenseMode": "linux-clang-x64"
