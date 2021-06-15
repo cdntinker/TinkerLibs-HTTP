@@ -72,9 +72,7 @@ boolean setup_HTTP()
         InitializePage(5);
         // InitializePage(6);
     }
-    /* ********************************************************
-     * root page
-     * *******************************************************/
+    /* root page */
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   request->redirect("/home");
@@ -82,18 +80,14 @@ boolean setup_HTTP()
                   DEBUG_LineOut(DEBUGtxt);
               });
 
-    /* ********************************************************
-     * reboot page
-     * *******************************************************/
+    /* reboot page */
     server.on("/reboot", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   request->send_P(200, "text/html", reboot_html, processor);
                   restartRequired = true;
               });
 
-    /* ********************************************************
-     * darkmode page
-     * *******************************************************/
+    /* darkmode page */
     server.on("/darkmode", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   String inputMessage1;
@@ -111,9 +105,7 @@ boolean setup_HTTP()
                   DEBUG_LineOut(DEBUGtxt);
               });
 
-    /* ********************************************************
-     * management (2) page
-     * *******************************************************/
+    /* management (2) page */
     server.on(
         "/management", HTTP_POST, [&](AsyncWebServerRequest *request)
         {
@@ -156,12 +148,8 @@ boolean setup_HTTP()
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
-#endif  // ESP32
-                //     DEBUG_LineOut("UPDATING:  errored?");
-                //     Update.printError(Serial);
-                //     return request->send(400, "text/plain", "OTA could not begin");
-                // }
-// #endif  // ESP32
+#endif // ESP32
+
                 DEBUG_LineOut("UPDATING:  uploading");
             }
 
@@ -197,10 +185,13 @@ boolean setup_HTTP()
     sprintf(DEBUGtxt, "Page: %s", "/management 2");
     DEBUG_LineOut(DEBUGtxt);
 
+    /* error 404 */
     server.onNotFound([](AsyncWebServerRequest *request)
-                      { request->send(404); });
-    sprintf(DEBUGtxt, "Page: %s", "404");
-    DEBUG_LineOut(DEBUGtxt);
+                      {
+                          request->send(404);
+                          sprintf(DEBUGtxt, "Page: %s", "404");
+                          DEBUG_LineOut(DEBUGtxt);
+                      });
 
     server.begin();
     ////////////////////////////////////////////////////////////
