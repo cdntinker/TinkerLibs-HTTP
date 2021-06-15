@@ -2,7 +2,7 @@
 #include <Tinker_DEBUG.h>
 #include <Tinker_WiFi.h>
 
-/////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
 // #if defined(ESP8266)
 // #include "NOTARDUINO.h"
 // #elif defined(ESP32)
@@ -39,12 +39,12 @@ extern int TemplateCount;
 
 String processor(const String &var) // Change placeholders on webpage
 {
-Serial.printf("dang - TemplateMap #9/%i: ", TemplateCount);
-Serial.print(TemplateMaps[9].PlaceHolder);
-Serial.print(" --- ");
-Serial.print(TemplateMaps[9].DebugMSG);
-Serial.print(" --- ");
-Serial.println(TemplateMaps[9].p_Content);
+    Serial.printf("dang - TemplateMap #9/%i: ", TemplateCount);
+    Serial.print(TemplateMaps[9].PlaceHolder);
+    Serial.print(" --- ");
+    Serial.print(TemplateMaps[9].DebugMSG);
+    Serial.print(" --- ");
+    Serial.println(TemplateMaps[9].p_Content);
 
     for (int ctr = 0; ctr < TemplateCount; ctr++)
         if (var == TemplateMaps[ctr].PlaceHolder)
@@ -156,7 +156,16 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return getProcTag();
     }
+
     if (var == "errorplaceholder")
+    {
+        return getRebootMessage();
+    }
+    if (var == "ReBootMessage")
+    {
+        return getRebootMessage();
+    }
+    if (var == "ReBootReason")
     {
         return getRebootMessage();
     }
@@ -249,4 +258,3 @@ String processor(const String &var) // Change placeholders on webpage
 }
 
 #endif
-

@@ -10,7 +10,7 @@
 #include "Update.h"
 #endif
 
-/////////////////////////////////////////////////////
+////////////////////////////////////////////////////
 #include <ESPAsyncWebServer.h>
 
 #include <FS.h> // SPIFFS is declared
@@ -44,6 +44,7 @@ int PageNumber;
 boolean setup_HTTP()
 {
     DEBUG_Init("WebServer");
+    
     {
 /* ********************************************************
  * This #define builds the page request handlers for
