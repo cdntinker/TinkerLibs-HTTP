@@ -104,41 +104,41 @@ String getProcTag()
 extern int deviceREBOOTED;
 
 /////////////////////////////////////////////////////////////////////////////////////////
-String getRebootMessage()
-{
-    String erroring = "";
-    if (deviceREBOOTED == false)
-    {
-        erroring += "";
-    }
-    else
-    {
-        erroring += "Device Rebooted";
-        deviceREBOOTED = false;
+// String getRebootMessage()
+// {
+//     String erroring = "";
+//     if (deviceREBOOTED == false)
+//     {
+//         erroring += "";
+//     }
+//     else
+//     {
+//         erroring += "Device Rebooted";
+//         deviceREBOOTED = false;
 
-        erroring += " (";
-#if defined(ESP8266)
-        String RebootReason =
-            ESP.getResetReason().c_str();
-#elif defined(ESP32)
-        String RebootReason =
-            return_reset_reason(rtc_get_reset_reason(0));
-        erroring += RebootReason;
-        erroring += "/";
-        RebootReason =
-            return_reset_reason(rtc_get_reset_reason(1));
-#endif
-        erroring += RebootReason;
-        erroring += ")";
-    }
-    return erroring;
-}
+//         erroring += " (";
+// #if defined(ESP8266)
+//         String RebootReason =
+//             ESP.getResetReason().c_str();
+// #elif defined(ESP32)
+//         String RebootReason =
+//             return_reset_reason(rtc_get_reset_reason(0));
+//         erroring += RebootReason;
+//         erroring += "/";
+//         RebootReason =
+//             return_reset_reason(rtc_get_reset_reason(1));
+// #endif
+//         erroring += RebootReason;
+//         erroring += ")";
+//     }
+//     return erroring;
+// }
 /////////////////////////////////////////////////////////////////////////////////////////
 String getRebootMessage0()
 {
     Serial.print("Mudda ");
     Serial.print(deviceREBOOTED);
-    
+
     if (deviceREBOOTED == false)
     {
         Serial.println("NOPE");
