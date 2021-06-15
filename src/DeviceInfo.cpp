@@ -154,7 +154,26 @@ String getRebootMessage0()
 String getRebootMessage1()
 {
     Serial.println("Fugga");
-    return "ReBootReason";
+    String erroring = "";
+    if (deviceREBOOTED)
+    {
+        erroring += "(";
+#if defined(ESP8266)
+        String RebootReason =
+            ESP.getResetReason().c_str();
+#elif defined(ESP32)
+        String RebootReason =
+            return_reset_reason(rtc_get_reset_reason(0));
+        erroring += RebootReason;
+        erroring += "/";
+        RebootReason =
+            return_reset_reason(rtc_get_reset_reason(1));
+#endif
+        erroring += RebootReason;
+        erroring += ")";
+    }
+    return erroring;
+    // return "ReBootReason";
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 
