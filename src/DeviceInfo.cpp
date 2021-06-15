@@ -137,6 +137,8 @@ String getRebootMessage()
 String getRebootMessage0()
 {
     Serial.print("Mudda ");
+    Serial.print(deviceREBOOTED);
+    
     if (deviceREBOOTED == false)
     {
         Serial.println("NOPE");
