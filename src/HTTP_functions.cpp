@@ -146,14 +146,14 @@ boolean setup_HTTP()
 #elif defined(ESP32)
                 DEBUG_LineOut("UPDATING: ESP32");
                 int cmd = (filename == "filesystem") ? U_SPIFFS : U_FLASH;
-#endif  // ESP32
                 if (!Update.begin(UPDATE_SIZE_UNKNOWN, cmd))
                 { // Start with max available size
-// #endif  // ESP32
+#endif  // ESP32
                     DEBUG_LineOut("UPDATING:  errored?");
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
+// #endif  // ESP32
                 DEBUG_LineOut("UPDATING:  uploading");
             }
 
