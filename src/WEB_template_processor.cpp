@@ -157,10 +157,10 @@ String processor(const String &var) // Change placeholders on webpage
         return getProcTag();
     }
 
-    if (var == "errorplaceholder")
-    {
-        return getRebootMessage();
-    }
+    // if (var == "errorplaceholder")
+    // {
+    //     return getRebootMessage();
+    // }
     if (var == "WT_ReBootMessage")
     {
         return getRebootMessage0();
