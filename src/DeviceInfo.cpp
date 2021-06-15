@@ -113,9 +113,8 @@ String getRebootMessage1()
     }
     else
     {
-        erroring += "Device Rebooted";
         deviceREBOOTED = false;
-        erroring += " (";
+        erroring += "(";
 #if defined(ESP8266)
         String RebootReason =
             ESP.getResetReason().c_str();
@@ -146,7 +145,7 @@ String getRebootMessage0()
     else
     {
         Serial.println("YUP");
-        deviceREBOOTED = false;
+        // deviceREBOOTED = false;
         return "Device Rebooted";
     }
 }
