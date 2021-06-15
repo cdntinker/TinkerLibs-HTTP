@@ -172,6 +172,7 @@ String getRebootMessage1()
         erroring += RebootReason;
         erroring += ")";
     }
+    Serial.println(erroring);
     return erroring;
 }
 /////////////////////////////////////////////////////////////////////////////////////////
