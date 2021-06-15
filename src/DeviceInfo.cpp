@@ -161,13 +161,16 @@ String getRebootMessage1()
 #if defined(ESP8266)
         String RebootReason =
             ESP.getResetReason().c_str();
+    Serial.println(RebootReason);
 #elif defined(ESP32)
         String RebootReason =
             return_reset_reason(rtc_get_reset_reason(0));
+    Serial.println(RebootReason);
         erroring += RebootReason;
         erroring += "/";
         RebootReason =
             return_reset_reason(rtc_get_reset_reason(1));
+    Serial.println(RebootReason);
 #endif
         erroring += RebootReason;
         erroring += ")";
