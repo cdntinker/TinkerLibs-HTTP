@@ -104,34 +104,34 @@ String getProcTag()
 extern int deviceREBOOTED;
 
 /////////////////////////////////////////////////////////////////////////////////////////
-// String getRebootMessage()
-// {
-//     String erroring = "";
-//     if (deviceREBOOTED == false)
-//     {
-//         erroring += "";
-//     }
-//     else
-//     {
-//         erroring += "Device Rebooted";
-//         deviceREBOOTED = false;
-//         erroring += " (";
-// #if defined(ESP8266)
-//         String RebootReason =
-//             ESP.getResetReason().c_str();
-// #elif defined(ESP32)
-//         String RebootReason =
-//             return_reset_reason(rtc_get_reset_reason(0));
-//         erroring += RebootReason;
-//         erroring += "/";
-//         RebootReason =
-//             return_reset_reason(rtc_get_reset_reason(1));
-// #endif
-//         erroring += RebootReason;
-//         erroring += ")";
-//     }
-//     return erroring;
-// }
+String getRebootMessage1()
+{
+    String erroring = "";
+    if (deviceREBOOTED == false)
+    {
+        erroring += "";
+    }
+    else
+    {
+        erroring += "Device Rebooted";
+        deviceREBOOTED = false;
+        erroring += " (";
+#if defined(ESP8266)
+        String RebootReason =
+            ESP.getResetReason().c_str();
+#elif defined(ESP32)
+        String RebootReason =
+            return_reset_reason(rtc_get_reset_reason(0));
+        erroring += RebootReason;
+        erroring += "/";
+        RebootReason =
+            return_reset_reason(rtc_get_reset_reason(1));
+#endif
+        erroring += RebootReason;
+        erroring += ")";
+    }
+    return erroring;
+}
 /////////////////////////////////////////////////////////////////////////////////////////
 String getRebootMessage0()
 {
@@ -151,33 +151,33 @@ String getRebootMessage0()
     }
 }
 
-String getRebootMessage1()
-{
-    Serial.println("Fugga");
-    String erroring = "";
-    if (deviceREBOOTED)
-    {
-        erroring += "(";
-#if defined(ESP8266)
-        String RebootReason =
-            ESP.getResetReason().c_str();
-    Serial.println(RebootReason);
-#elif defined(ESP32)
-        String RebootReason =
-            return_reset_reason(rtc_get_reset_reason(0));
-    Serial.println(RebootReason);
-        erroring += RebootReason;
-        erroring += "/";
-        RebootReason =
-            return_reset_reason(rtc_get_reset_reason(1));
-    Serial.println(RebootReason);
-#endif
-        erroring += RebootReason;
-        erroring += ")";
-    }
-    Serial.println(erroring);
-    return erroring;
-}
+// String getRebootMessage1()
+// {
+//     Serial.println("Fugga");
+//     String erroring = "";
+//     if (deviceREBOOTED)
+//     {
+//         erroring += "(";
+// #if defined(ESP8266)
+//         String RebootReason =
+//             ESP.getResetReason().c_str();
+//     Serial.println(RebootReason);
+// #elif defined(ESP32)
+//         String RebootReason =
+//             return_reset_reason(rtc_get_reset_reason(0));
+//     Serial.println(RebootReason);
+//         erroring += RebootReason;
+//         erroring += "/";
+//         RebootReason =
+//             return_reset_reason(rtc_get_reset_reason(1));
+//     Serial.println(RebootReason);
+// #endif
+//         erroring += RebootReason;
+//         erroring += ")";
+//     }
+//     Serial.println(erroring);
+//     return erroring;
+// }
 /////////////////////////////////////////////////////////////////////////////////////////
 
 String getDeviceID()
