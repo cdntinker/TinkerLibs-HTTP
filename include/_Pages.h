@@ -4,6 +4,9 @@
 
 #include <Arduino.h>
 
+const char TheCSS[] PROGMEM = 
+#include "HTML/css.css"
+;
 /* include the webpages (done in HTML) */
 const char home_html[] PROGMEM = 
 #include "HTML/homepage.htm"   // Homepage HTML
@@ -23,9 +26,6 @@ const char done_html[] PROGMEM =
 // const char *test_html PROGMEM = 
 // #include "HTML/testpage.htm"   //  HTML
 // ;
-const char TheCSS[] PROGMEM = 
-#include "HTML/css.css"
-;
 
 extern const char TheCSS[];
 extern const char home_html[];
