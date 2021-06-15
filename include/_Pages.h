@@ -20,9 +20,9 @@ const char reboot_html[] PROGMEM =
 const char done_html[] PROGMEM = 
 #include "HTML/Finished.htm"   //  HTML
 ;
-const char *test_html PROGMEM = 
-#include "HTML/testpage.htm"   //  HTML
-;
+// const char *test_html PROGMEM = 
+// #include "HTML/testpage.htm"   //  HTML
+// ;
 const char TheCSS[] PROGMEM = 
 #include "HTML/css.css"
 ;
