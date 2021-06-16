@@ -86,7 +86,6 @@ boolean setup_HTTP()
               {
                   request->send_P(200, "text/html", reboot_html, processor);
                   restartRequired = true;
-Serial.println("Re-Bloody-Boot!");
               });
 
     /* darkmode page */
