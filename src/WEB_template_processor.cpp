@@ -52,8 +52,8 @@ String processor(const String &var) // Change placeholders on webpage
 struct ButtonMap
 {
 
-    char WT_Button_0_Address[32];
-    char WT_Button_0_Label[32];
+    char ButtonAddress[32];
+    char ButtonLabel[32];
     String p_Content;
 };
 
