@@ -58,12 +58,12 @@ struct ButtonMap
 };
 
 ButtonMap Button[] =
-  {
-    { "/test", "TestPage" },
-    { "/home", "TestPage" },
-    { "/Management", "TestPage" },
-  };
-  int NumberofButtons = 3;
+    {
+        {"/test", "TestPage"},
+        {"/home", "TestPage"},
+        {"/Management", "TestPage"},
+};
+int NumberofButtons = 3;
 /**********************************************************************/
 
 String processor(const String &var) // Change placeholders on webpage
@@ -127,32 +127,36 @@ String processor(const String &var) // Change placeholders on webpage
         }
     }
 
-/**********************************************************************/
-if (var == "Buttons")
-  {
-      Serial.println("The Fucking Buttons!");
-String TheHTML = "";
-char TheButton[1024];
-String ButtonClass;
-
-  for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
+    /**********************************************************************/
+    if (var == "Buttons")
     {
-    // if (Button[ButtonCTR].ButtonAddress == CurrentAddress)
-    if (Button[ButtonCTR].ButtonAddress == "/test")
-      ButtonClass = "ButtonHere";
-    else
-      ButtonClass = "ButtonClickable";
+Serial.println("The Fucking Buttons!");
+        String TheHTML = "";
+        char TheButton[1024];
+        String ButtonClass;
 
-    sprintf(TheButton, 
-      "<div class = \"button %s\"> <button0 onclick=\"location.href='%s'\">%s</button> </div>",
-      ButtonClass,
-      Button[ButtonCTR].ButtonAddress,
-      Button[ButtonCTR].ButtonLabel
-      );
-TheHTML += TheButton;
+        for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
+        {
+            // if (Button[ButtonCTR].ButtonAddress == CurrentAddress)
+            if (Button[ButtonCTR].ButtonAddress == "/test")
+            {
+                ButtonClass = "ButtonHere";
+            }
+            else
+            {
+                ButtonClass = "ButtonClickable";
+            }
+
+            sprintf(TheButton,
+                    "<div class = \"button %s\"> <button0 onclick=\"location.href='%s'\">%s</button> </div>",
+                    ButtonClass,
+                    Button[ButtonCTR].ButtonAddress,
+                    Button[ButtonCTR].ButtonLabel);
+Serial.println(TheButton);
+            TheHTML += TheButton;
+        }
     }
-  }
-/**********************************************************************/
+    /**********************************************************************/
 
     if (var == "PageBody") // The placeholder
     {
