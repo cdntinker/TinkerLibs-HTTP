@@ -2,21 +2,9 @@
 #include <Tinker_DEBUG.h>
 #include <Tinker_WiFi.h>
 
-////////////////////////////////////////////////////////
-// #if defined(ESP8266)
-// #include "NOTARDUINO.h"
-// #elif defined(ESP32)
-// #include <rom/rtc.h>
-// String return_reset_reason(uint8_t reason);
-// #endif
-/////////////////////////////////////////////////////////
-// #include "info_placement.h"
-
 #include "HTML_Loadup.h"
 #include "OTA_Externs.h"
 #include "_DeviceInfo.h"
-
-// #include "Template_Maps.h"
 
 /* Convert a #defined value to a string */
 #define ST(A) #A
@@ -61,12 +49,6 @@ String processor(const String &var) // Change placeholders on webpage
 String processor(const String &var) // Change placeholders on webpage
 {
 
-    /////////////////////////////////////////////////////////////
-    // How to add a block to a web page...
-    //  Based on a #define conditional (look up a few lines...)
-    //  TestPage was defined as a number in platformio.ini
-    /////////////////////////////////////////////////////////////
-
     if (var == "SCRIPTS")
     {
         return Scripts_html;
@@ -76,11 +58,12 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return TestPagePart;
     }
-    /////////////////////////////////////////////////////////////
+
     if (var == "hPageContent") // The placeholder
     {
         return HomePagePart;
     }
+
     /////////////////////////////////////////////////////////////
     if (var == "PageHeader") // The placeholder
     {
@@ -98,6 +81,7 @@ String processor(const String &var) // Change placeholders on webpage
         return Page_Footer;
     }
     /////////////////////////////////////////////////////////////
+
     if (var == "TemplateCount") // The placeholder
     {
         String Fugga = "TemplateCount = " + String(TemplateCount);
@@ -157,10 +141,6 @@ String processor(const String &var) // Change placeholders on webpage
         return getProcTag();
     }
 
-    // if (var == "errorplaceholder")
-    // {
-    //     return getRebootMessage();
-    // }
     if (var == "WT_ReBootMessage")
     {
         return getRebootMessage0();
@@ -169,7 +149,7 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return getRebootMessage1();
     }
-    
+
     if (var == "uptime")
     {
         return info_uptime();
