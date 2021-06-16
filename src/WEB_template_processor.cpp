@@ -133,18 +133,18 @@ String processor(const String &var) // Change placeholders on webpage
 Serial.println("The Fucking Buttons!");
         String TheHTML = "";
         char TheButton[1024];
-        char ButtonClass[32];
+        // char ButtonClass[32];
 
         for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
         {
             // if (Button[ButtonCTR].ButtonAddress == CurrentAddress)
             if (Button[ButtonCTR].ButtonAddress == "/test")
             {
-                ButtonClass = "ButtonHere";
+                char* ButtonClass = "ButtonHere";
             }
             else
             {
-                ButtonClass = "ButtonClickable";
+                char* ButtonClass = "ButtonClickable";
             }
 
             sprintf(TheButton,
