@@ -128,7 +128,7 @@ String processor(const String &var) // Change placeholders on webpage
     }
 
 /**********************************************************************/
-if (var = "Buttons")
+if (var == "Buttons")
   {
 String TheHTML = "";
 String TheButton;
