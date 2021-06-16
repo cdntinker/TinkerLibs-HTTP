@@ -148,13 +148,16 @@ Serial.println("The Fucking Buttons!");
             }
 
             sprintf(TheButton,
-                    "<div class = \"button %s\"> <button0 onclick=\"location.href='%s'\">%s</button> </div>",
+                    "<div class = \"button %s\"> <button%d onclick=\"location.href='%s'\">%s</button> </div>",
                     ButtonClass.c_str(),
+                    ButtonCTR,
                     Button[ButtonCTR].ButtonAddress,
                     Button[ButtonCTR].ButtonLabel);
 Serial.println(TheButton);
             TheHTML += TheButton;
         }
+Serial.println(TheHTML);
+return TheHTML;
     }
     /**********************************************************************/
 
