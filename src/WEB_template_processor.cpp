@@ -60,8 +60,8 @@ struct ButtonMap
 ButtonMap Button[] =
     {
         {"/test", "TestPage"},
-        {"/home", "TestPage"},
-        {"/Management", "TestPage"},
+        {"/home", "Home"},
+        {"/Management", "Management"},
 };
 int NumberofButtons = 3;
 /**********************************************************************/
@@ -133,7 +133,7 @@ String processor(const String &var) // Change placeholders on webpage
 Serial.println("The Fucking Buttons!");
         String TheHTML = "";
         char TheButton[1024];
-        String ButtonClass;
+        char ButtonClass[32];
 
         for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
         {
