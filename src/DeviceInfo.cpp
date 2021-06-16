@@ -119,14 +119,14 @@ String getRebootMessage0()
 String getRebootMessage1()
 {
     String erroring = "";
-    if (deviceREBOOTED == false)
-    {
-        erroring += "";
-    }
-    else
+    // if (deviceREBOOTED == false)
+    // {
+    //     erroring += "";
+    // }
+    // else
+    if (deviceREBOOTED)
     {
         deviceREBOOTED = false;
-        erroring += "(";
 #if defined(ESP8266)
         String RebootReason =
             ESP.getResetReason().c_str();
@@ -139,7 +139,6 @@ String getRebootMessage1()
             return_reset_reason(rtc_get_reset_reason(1));
 #endif
         erroring += RebootReason;
-        erroring += ")";
     }
     return erroring;
 }
