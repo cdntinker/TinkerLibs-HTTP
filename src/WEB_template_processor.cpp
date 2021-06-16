@@ -61,7 +61,7 @@ ButtonMap Button[] =
     {
         {"/test", "TestPage"},
         {"/home", "Home"},
-        {"/Management", "Management"},
+        {"/management", "Management"},
 };
 int NumberofButtons = 3;
 /**********************************************************************/
@@ -130,7 +130,6 @@ String processor(const String &var) // Change placeholders on webpage
     /**********************************************************************/
     if (var == "Buttons")
     {
-Serial.println("The Fucking Buttons!");
         String TheHTML = "";
         char TheButton[1024];
         String ButtonClass;
@@ -153,10 +152,8 @@ Serial.println("The Fucking Buttons!");
                     ButtonCTR,
                     Button[ButtonCTR].ButtonAddress,
                     Button[ButtonCTR].ButtonLabel);
-Serial.println(TheButton);
             TheHTML += TheButton;
         }
-Serial.println(TheHTML);
 return TheHTML;
     }
     /**********************************************************************/
