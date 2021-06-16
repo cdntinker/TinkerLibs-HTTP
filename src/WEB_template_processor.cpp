@@ -136,7 +136,8 @@ String ButtonClass;
 
   for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
     {
-    if (Button[ButtonCTR].ButtonAddress == CurrentAddress)
+    // if (Button[ButtonCTR].ButtonAddress == CurrentAddress)
+    if (Button[ButtonCTR].ButtonAddress == "/test")
       ButtonClass = "ButtonHere";
     else
       ButtonClass = "ButtonClickable";
