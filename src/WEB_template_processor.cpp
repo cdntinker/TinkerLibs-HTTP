@@ -1,4 +1,6 @@
 // #include "NOTARDUINO.h"
+#include <Arduino.h>
+
 #include <Tinker_DEBUG.h>
 #include <Tinker_WiFi.h>
 
@@ -46,6 +48,24 @@ String processor(const String &var) // Change placeholders on webpage
 
 #else
 
+/**********************************************************************/
+struct ButtonMap
+{
+
+    char WT_Button_0_Address[32];
+    char WT_Button_0_Label[32];
+    String p_Content;
+};
+
+ButtonMap Button[] =
+  {
+    { "/test", "TestPage" },
+    { "/home", "TestPage" },
+    { "/Management", "TestPage" },
+  };
+  int NumberofButtons = 3;
+/**********************************************************************/
+
 String processor(const String &var) // Change placeholders on webpage
 {
 
@@ -62,10 +82,10 @@ String processor(const String &var) // Change placeholders on webpage
     }
     // The NEW Header Section
     {
-            if (var == "WT_PageTitle")
-    {
-        return "Testing";
-    }
+        if (var == "WT_PageTitle")
+        {
+            return "Testing";
+        }
 
         if (var == "WT_Button_0_Type")
         {
@@ -106,6 +126,31 @@ String processor(const String &var) // Change placeholders on webpage
             return "Button_2_Label";
         }
     }
+
+/**********************************************************************/
+if (var = Buttons)
+  {
+String TheHTML = "";
+String TheButton;
+String ButtonClass;
+
+  for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
+    {
+    if (Button[ButtonCTR].ButtonAddress == CurrentAddress)
+      ButtonClass = "ButtonHere";
+    else
+      ButtonClass = "ButtonClickable";
+
+    sprintf(TheButton, 
+      "<div class = \"button %s\"> <button0 onclick=\"location.href='%s'\">%s</button> </div>",
+      ButtonClass,
+      Button[ButtonCTR].ButtonAddress,
+      Button[ButtonCTR].ButtonLabel
+      );
+TheHTML += TheButton;
+    }
+  }
+/**********************************************************************/
 
     if (var == "PageBody") // The placeholder
     {
