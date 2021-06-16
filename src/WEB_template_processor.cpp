@@ -112,10 +112,6 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return getDarkMode();
     }
-    if (var == "type")
-    {
-        return getDeviceType();
-    }
     if (var == "color")
     {
         return htmlcolor;
@@ -132,6 +128,13 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return WiFi.macAddress();
     }
+
+// The Footer Section
+{
+    if (var == "WT_ReBootMessage")
+    {
+        return getRebootMessage0();
+    }
     if (var == "IDplaceholder")
     {
         return DeviceID();
@@ -140,15 +143,15 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return getProcTag();
     }
-
-    if (var == "WT_ReBootMessage")
+    if (var == "type")
     {
-        return getRebootMessage0();
+        return getDeviceType();
     }
     if (var == "WT_ReBootReason")
     {
         return getRebootMessage1();
     }
+}
 
     if (var == "uptime")
     {
@@ -236,43 +239,45 @@ String processor(const String &var) // Change placeholders on webpage
     }
 
     // The NEW Header Section
-    if (var == "WT_Button_0_Type")
     {
-        return "Button_0_Type";
-    }
-    if (var == "WT_Button_0_Address")
-    {
-        return "Button_0_Address";
-    }
-    if (var == "WT_Button_0_Label")
-    {
-        return "Button_0_Label";
-    }
+        if (var == "WT_Button_0_Type")
+        {
+            return "Button_0_Type";
+        }
+        if (var == "WT_Button_0_Address")
+        {
+            return "Button_0_Address";
+        }
+        if (var == "WT_Button_0_Label")
+        {
+            return "Button_0_Label";
+        }
 
-    if (var == "WT_Button_1_Type")
-    {
-        return "Button_1_Type";
-    }
-    if (var == "WT_Button_1_Address")
-    {
-        return "Button_1_Address";
-    }
-    if (var == "WT_Button_1_Label")
-    {
-        return "Button_1_Label";
-    }
+        if (var == "WT_Button_1_Type")
+        {
+            return "Button_1_Type";
+        }
+        if (var == "WT_Button_1_Address")
+        {
+            return "Button_1_Address";
+        }
+        if (var == "WT_Button_1_Label")
+        {
+            return "Button_1_Label";
+        }
 
-    if (var == "WT_Button_2_Type")
-    {
-        return "Button_2_Type";
-    }
-    if (var == "WT_Button_2_Address")
-    {
-        return "Button_2_Address";
-    }
-    if (var == "WT_Button_2_Label")
-    {
-        return "Button_2_Label";
+        if (var == "WT_Button_2_Type")
+        {
+            return "Button_2_Type";
+        }
+        if (var == "WT_Button_2_Address")
+        {
+            return "Button_2_Address";
+        }
+        if (var == "WT_Button_2_Label")
+        {
+            return "Button_2_Label";
+        }
     }
 
     return String();
