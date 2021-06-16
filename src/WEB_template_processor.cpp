@@ -131,7 +131,7 @@ String processor(const String &var) // Change placeholders on webpage
 if (var == "Buttons")
   {
 String TheHTML = "";
-String TheButton;
+char TheButton[1024];
 String ButtonClass;
 
   for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
