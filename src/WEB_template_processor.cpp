@@ -130,6 +130,7 @@ String processor(const String &var) // Change placeholders on webpage
 /**********************************************************************/
 if (var == "Buttons")
   {
+      Serial.println("The Fucking Buttons!");
 String TheHTML = "";
 char TheButton[1024];
 String ButtonClass;
