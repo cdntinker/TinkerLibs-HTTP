@@ -75,7 +75,8 @@ String processor(const String &var) // Change placeholders on webpage
 {
 
         Serial.print("Well... ");
-        Serial.println(PageContent[PageNumber].Address);
+        // Serial.println(PageContent[PageNumber].Address);
+        Serial.println(CurrentPage);
 
     if (var == "SCRIPTS")
     {
