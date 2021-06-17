@@ -93,7 +93,7 @@ String processor(const String &var) // Change placeholders on webpage
             {
                 if (!strcmp(Button[ButtonCTR].ButtonAddress, CurrentPage))
                 {
-                    return Button[ButtonCTR].ButtonLabel
+                    return Button[ButtonCTR].ButtonLabel;
                 }
                 else
 
