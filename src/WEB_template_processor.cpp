@@ -146,7 +146,8 @@ String processor(const String &var) // Change placeholders on webpage
         for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
         {
             // if (Button[ButtonCTR].ButtonAddress == CurrentAddress)
-            if (!strcmp(Button[ButtonCTR].ButtonAddress, "/test"))
+            // if (!strcmp(Button[ButtonCTR].ButtonAddress, "/test"))
+            if (!strcmp(Button[ButtonCTR].ButtonAddress, CurrentPage))
             {
                 ButtonClass = "ButtonHere";
             }
