@@ -12,7 +12,23 @@ R"rawliteral(
   <body>
     <div id="container">
 
-%PageHeader%
+      <div id="header">
+        <h2>%IDplaceholder% - <em>Management</em></h2>
+        <div class = "menu-buttons">
+          <div class = "button ButtonClickable">
+           <button0 onclick="location.href='/test'">Test</button>
+          </div>
+          <div class = "button ButtonClickable">
+           <button1 onclick="location.href='/home'">Home</button>
+          </div>
+          <div class = "button ButtonHere">
+           <button2 onclick="location.href='/management'">Management</button>
+          </div>
+          <div class = "button ButtonClickable">
+           <button3 onclick="darkFunction()">Dark Mode</button3>
+          </div>
+        </div>
+      </div>  <!-- HEADER -->
 
      <div id="body">
        <div class="col-12 mt-3 p-centered">

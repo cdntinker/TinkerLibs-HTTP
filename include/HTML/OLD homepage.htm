@@ -1,0 +1,47 @@
+R"rawliteral(
+<!DOCTYPE html5>
+<html>
+  <head>
+    <title>%IDplaceholder% Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+    <meta http-equiv="expires" content="0">
+
+    <link rel="stylesheet" href="TheCSS.css">
+%SCRIPTS%
+  </head>
+  <body>
+  
+    <div id="container">
+
+      <div id="header">
+        <h2>%IDplaceholder% - <em>Home</em></h2>
+        <div class = "menu-buttons">
+          <div class = "button ButtonClickable">
+            <button0 onclick="location.href='/test'">Test</button>
+          </div>
+          <div class = "button ButtonHere">
+            <Button1 onclick="location.href='/home'">Home</button>
+          </div>
+          <div class = "button ButtonClickable">
+            <Button2 onclick="location.href='/management'">Management</button>
+          </div>
+          <div class = "button ButtonClickable">
+           <button3 onclick="darkFunction()">Dark Mode</button3>
+          </div>
+        </div>
+      </div>  <!-- HEADER -->
+
+      <div id="body">
+        %IPMAC%
+<br> 
+        %hPageContent%
+        %TemplateCount%
+      </div>  <!-- BODY -->
+
+%PageFooter%
+    </div>
+
+  </body>
+</html>
+)rawliteral";
