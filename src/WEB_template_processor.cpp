@@ -87,9 +87,9 @@ String processor(const String &var) // Change placeholders on webpage
     }
     // The NEW Header Section
     {
-        Serial.print("Header... [");
-        Serial.print(CurrentPage);
-        Serial.println("]");
+        // Serial.print("Header... [");
+        // Serial.print(CurrentPage);
+        // Serial.println("]");
 
         if (var == "WT_PageTitle")
         {
