@@ -99,6 +99,7 @@ String processor(const String &var) // Change placeholders on webpage
 
                     return "WTF?";
             }
+        }
 
             // if (var == "WT_Button_0_Type")
             // {
