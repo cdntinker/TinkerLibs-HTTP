@@ -39,6 +39,8 @@ extern bool restartRequired;
 
 extern char DEBUGtxt[48];
 
+char* CurrentPage[32];
+
 int PageNumber;
 
 boolean setup_HTTP()
@@ -56,6 +58,7 @@ boolean setup_HTTP()
 #define InitializePage(PageNumber)                                                            \
     server.on(PageContent[PageNumber].Address, HTTP_GET, [](AsyncWebServerRequest *request) { \
         request->send_P(200, "text/html", PageContent[PageNumber].p_Content, processor);      \
+        CurrentPage = PageContent[PageNumber].Address;                                        \
         sprintf(DEBUGtxt, "Page: %s accessed", PageContent[PageNumber].Address);              \
         DEBUG_LineOut(DEBUGtxt);                                                              \
     });                                                                                       \
