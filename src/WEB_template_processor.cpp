@@ -64,12 +64,7 @@ ButtonMap Button[] =
         {"/management", "Management"},
 };
 int NumberofButtons = 3;
-
-/**********************************************************************/
 extern char CurrentPage[32];
-/**********************************************************************/
-
-/**********************************************************************/
 
 String processor(const String &var) // Change placeholders on webpage
 {
@@ -79,38 +74,24 @@ String processor(const String &var) // Change placeholders on webpage
         return Scripts_html;
     }
 
-    /////////////////////////////////////////////////////////////
     if (var == "PageHeader") // The placeholder
     {
         DEBUG_LineOut("Page Header");
         return Page_Header;
     }
-    // The NEW Header Section
+    
+    if (var == "WT_PageTitle")
     {
-        if (var == "WT_PageTitle")
+        for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
         {
-            Serial.print("Head... [");
-            Serial.print(CurrentPage);
-            Serial.println("]");
-
-            for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
-            {
-                if (!strcmp(Button[ButtonCTR].ButtonAddress, CurrentPage))
-                {
-                    return Button[ButtonCTR].ButtonLabel;
-                }
-            }
-            return "WTF?";
+            if (!strcmp(Button[ButtonCTR].ButtonAddress, CurrentPage))
+                return Button[ButtonCTR].ButtonLabel;
         }
+        return "WTF?";
     }
 
-    /**********************************************************************/
     if (var == "Buttons")
     {
-        Serial.print("Buttons... [");
-        Serial.print(CurrentPage);
-        Serial.println("]");
-
         String TheHTML = "";
         char TheButton[1024];
         String ButtonClass;
@@ -128,10 +109,7 @@ String processor(const String &var) // Change placeholders on webpage
 
             sprintf(TheButton,
                     "<div class = \"button %s\"> <button%d onclick=\"location.href='%s'\">%s</button> </div>",
-                    ButtonClass.c_str(),
-                    ButtonCTR,
-                    Button[ButtonCTR].ButtonAddress,
-                    Button[ButtonCTR].ButtonLabel);
+                    ButtonClass.c_str(), ButtonCTR, Button[ButtonCTR].ButtonAddress, Button[ButtonCTR].ButtonLabel);
             TheHTML += TheButton;
         }
         return TheHTML;
