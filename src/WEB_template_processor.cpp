@@ -89,6 +89,10 @@ String processor(const String &var) // Change placeholders on webpage
     {
         if (var == "WT_PageTitle")
         {
+            Serial.print("Head... [");
+            Serial.print(CurrentPage);
+            Serial.println("]");
+
             for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
             {
                 if (!strcmp(Button[ButtonCTR].ButtonAddress, CurrentPage))
@@ -100,254 +104,215 @@ String processor(const String &var) // Change placeholders on webpage
                     return "WTF?";
             }
         }
-
-            // if (var == "WT_Button_0_Type")
-            // {
-            //     return "Button_0_Type";
-            // }
-            // if (var == "WT_Button_0_Address")
-            // {
-            //     return "Button_0_Address";
-            // }
-            // if (var == "WT_Button_0_Label")
-            // {
-            //     return "Button_0_Label";
-            // }
-
-            // if (var == "WT_Button_1_Type")
-            // {
-            //     return "Button_1_Type";
-            // }
-            // if (var == "WT_Button_1_Address")
-            // {
-            //     return "Button_1_Address";
-            // }
-            // if (var == "WT_Button_1_Label")
-            // {
-            //     return "Button_1_Label";
-            // }
-
-            // if (var == "WT_Button_2_Type")
-            // {
-            //     return "Button_2_Type";
-            // }
-            // if (var == "WT_Button_2_Address")
-            // {
-            //     return "Button_2_Address";
-            // }
-            // if (var == "WT_Button_2_Label")
-            // {
-            //     return "Button_2_Label";
-            // }
-        }
-
-        /**********************************************************************/
-        if (var == "Buttons")
-        {
-            Serial.print("Buttons... [");
-            Serial.print(CurrentPage);
-            Serial.println("]");
-
-            String TheHTML = "";
-            char TheButton[1024];
-            String ButtonClass;
-
-            for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
-            {
-                if (!strcmp(Button[ButtonCTR].ButtonAddress, CurrentPage))
-                {
-                    ButtonClass = "ButtonHere";
-                }
-                else
-                {
-                    ButtonClass = "ButtonClickable";
-                }
-
-                sprintf(TheButton,
-                        "<div class = \"button %s\"> <button%d onclick=\"location.href='%s'\">%s</button> </div>",
-                        ButtonClass.c_str(),
-                        ButtonCTR,
-                        Button[ButtonCTR].ButtonAddress,
-                        Button[ButtonCTR].ButtonLabel);
-                TheHTML += TheButton;
-            }
-            return TheHTML;
-        }
-        /**********************************************************************/
-
-        if (var == "PageBody") // The placeholder
-        {
-            DEBUG_LineOut("Page Body");
-            return Page_Body;
-        }
-        if (var == "tPageContent") // The placeholder
-        {
-            return TestPagePart;
-        }
-        if (var == "hPageContent") // The placeholder
-        {
-            return HomePagePart;
-        }
-
-        if (var == "PageFooter") // The placeholder
-        {
-            DEBUG_LineOut("Page Footer");
-            return Page_Footer;
-        }
-        // The Footer Section
-        {
-            if (var == "WT_ReBootMessage")
-            {
-                return getRebootMessage0();
-            }
-            if (var == "IDplaceholder")
-            {
-                return DeviceID();
-            }
-            if (var == "processorplaceholder")
-            {
-                return getProcTag();
-            }
-            if (var == "type")
-            {
-                return getDeviceType();
-            }
-            if (var == "WT_ReBootReason")
-            {
-                return getRebootMessage1();
-            }
-        }
-        /////////////////////////////////////////////////////////////
-
-        if (var == "TemplateCount") // The placeholder
-        {
-            String Fugga = "TemplateCount = " + String(TemplateCount);
-
-            // DEBUG_LineOut(Fugga);
-            return Fugga;
-        }
-
-        /* I2C pin numbers */
-        if (var == "SDASCLplaceholder")
-        {
-            return getSDASCL();
-        }
-        if (var == "I2Cplaceholder")
-        {
-            return getI2Cscan();
-        }
-
-        if (var == "IPMAC")
-        {
-            return IP_MAC;
-        }
-        if (var == "dark")
-        {
-            return getDarkMode();
-        }
-        if (var == "color")
-        {
-            return htmlcolor;
-        }
-        if (var == "hover")
-        {
-            return htmlhover;
-        }
-        if (var == "ipplaceholder")
-        {
-            return ip3string(WiFi.localIP());
-        }
-        if (var == "macplaceholder")
-        {
-            return WiFi.macAddress();
-        }
-
-        if (var == "uptime")
-        {
-            return info_uptime();
-        }
-        if (var == "chipid")
-        {
-            return info_chipid();
-        }
-        if (var == "idesize")
-        {
-            return info_idesize();
-        }
-        if (var == "flashsize")
-        {
-            return info_flashsize();
-        }
-        if (var == "sdkver")
-        {
-            return info_sdkver();
-        }
-        if (var == "cpufreq")
-        {
-            return info_cpufreq();
-        }
-        if (var == "freeheap")
-        {
-            return info_freeheap();
-        }
-        if (var == "memsketch")
-        {
-            return info_memsketch();
-        }
-        if (var == "lastreset")
-        {
-            return info_lastreset();
-        }
-        if (var == "conx")
-        {
-            return info_conx();
-        }
-        if (var == "stassid")
-        {
-            return info_stassid();
-        }
-        if (var == "staip")
-        {
-            return info_staip();
-        }
-        if (var == "stamac")
-        {
-            return info_stamac();
-        }
-        if (var == "stagw")
-        {
-            return info_stagw();
-        }
-        if (var == "stasub")
-        {
-            return info_stasub();
-        }
-        if (var == "dnss")
-        {
-            return info_dnss();
-        }
-        if (var == "hostnom")
-        {
-            return info_hostnom();
-        }
-        if (var == "apssid")
-        {
-            return info_apssid();
-        }
-        if (var == "apip")
-        {
-            return info_apip();
-        }
-        if (var == "apmac")
-        {
-            return info_apmac();
-        }
-        if (var == "memsmeter")
-        {
-            return info_memsmeter();
-        }
-
-        return String();
     }
+
+    /**********************************************************************/
+    if (var == "Buttons")
+    {
+        Serial.print("Buttons... [");
+        Serial.print(CurrentPage);
+        Serial.println("]");
+
+        String TheHTML = "";
+        char TheButton[1024];
+        String ButtonClass;
+
+        for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
+        {
+            if (!strcmp(Button[ButtonCTR].ButtonAddress, CurrentPage))
+            {
+                ButtonClass = "ButtonHere";
+            }
+            else
+            {
+                ButtonClass = "ButtonClickable";
+            }
+
+            sprintf(TheButton,
+                    "<div class = \"button %s\"> <button%d onclick=\"location.href='%s'\">%s</button> </div>",
+                    ButtonClass.c_str(),
+                    ButtonCTR,
+                    Button[ButtonCTR].ButtonAddress,
+                    Button[ButtonCTR].ButtonLabel);
+            TheHTML += TheButton;
+        }
+        return TheHTML;
+    }
+    /**********************************************************************/
+
+    if (var == "PageBody") // The placeholder
+    {
+        DEBUG_LineOut("Page Body");
+        return Page_Body;
+    }
+    if (var == "tPageContent") // The placeholder
+    {
+        return TestPagePart;
+    }
+    if (var == "hPageContent") // The placeholder
+    {
+        return HomePagePart;
+    }
+
+    if (var == "PageFooter") // The placeholder
+    {
+        DEBUG_LineOut("Page Footer");
+        return Page_Footer;
+    }
+    // The Footer Section
+    {
+        if (var == "WT_ReBootMessage")
+        {
+            return getRebootMessage0();
+        }
+        if (var == "IDplaceholder")
+        {
+            return DeviceID();
+        }
+        if (var == "processorplaceholder")
+        {
+            return getProcTag();
+        }
+        if (var == "type")
+        {
+            return getDeviceType();
+        }
+        if (var == "WT_ReBootReason")
+        {
+            return getRebootMessage1();
+        }
+    }
+    /////////////////////////////////////////////////////////////
+
+    if (var == "TemplateCount") // The placeholder
+    {
+        String Fugga = "TemplateCount = " + String(TemplateCount);
+
+        // DEBUG_LineOut(Fugga);
+        return Fugga;
+    }
+
+    /* I2C pin numbers */
+    if (var == "SDASCLplaceholder")
+    {
+        return getSDASCL();
+    }
+    if (var == "I2Cplaceholder")
+    {
+        return getI2Cscan();
+    }
+
+    if (var == "IPMAC")
+    {
+        return IP_MAC;
+    }
+    if (var == "dark")
+    {
+        return getDarkMode();
+    }
+    if (var == "color")
+    {
+        return htmlcolor;
+    }
+    if (var == "hover")
+    {
+        return htmlhover;
+    }
+    if (var == "ipplaceholder")
+    {
+        return ip3string(WiFi.localIP());
+    }
+    if (var == "macplaceholder")
+    {
+        return WiFi.macAddress();
+    }
+
+    if (var == "uptime")
+    {
+        return info_uptime();
+    }
+    if (var == "chipid")
+    {
+        return info_chipid();
+    }
+    if (var == "idesize")
+    {
+        return info_idesize();
+    }
+    if (var == "flashsize")
+    {
+        return info_flashsize();
+    }
+    if (var == "sdkver")
+    {
+        return info_sdkver();
+    }
+    if (var == "cpufreq")
+    {
+        return info_cpufreq();
+    }
+    if (var == "freeheap")
+    {
+        return info_freeheap();
+    }
+    if (var == "memsketch")
+    {
+        return info_memsketch();
+    }
+    if (var == "lastreset")
+    {
+        return info_lastreset();
+    }
+    if (var == "conx")
+    {
+        return info_conx();
+    }
+    if (var == "stassid")
+    {
+        return info_stassid();
+    }
+    if (var == "staip")
+    {
+        return info_staip();
+    }
+    if (var == "stamac")
+    {
+        return info_stamac();
+    }
+    if (var == "stagw")
+    {
+        return info_stagw();
+    }
+    if (var == "stasub")
+    {
+        return info_stasub();
+    }
+    if (var == "dnss")
+    {
+        return info_dnss();
+    }
+    if (var == "hostnom")
+    {
+        return info_hostnom();
+    }
+    if (var == "apssid")
+    {
+        return info_apssid();
+    }
+    if (var == "apip")
+    {
+        return info_apip();
+    }
+    if (var == "apmac")
+    {
+        return info_apmac();
+    }
+    if (var == "memsmeter")
+    {
+        return info_memsmeter();
+    }
+
+    return String();
+}
 
 #endif
