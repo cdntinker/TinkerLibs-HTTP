@@ -64,7 +64,7 @@ ButtonMap Button[] =
         {"/management", "Management"},
 };
 int NumberofButtons = 3;
-extern char* CurrentPage;
+extern char CurrentPage[32];
 /**********************************************************************/
 
 String processor(const String &var) // Change placeholders on webpage
