@@ -89,7 +89,9 @@ String processor(const String &var) // Change placeholders on webpage
     {
         Serial.print("Header... [");
         Serial.print(CurrentPage);
-        Serial.println("]");
+        Serial.print("]{");
+        Serial.print(request->url());
+        Serial.println("}");
 
         if (var == "WT_PageTitle")
         {
@@ -141,7 +143,9 @@ String processor(const String &var) // Change placeholders on webpage
     {
         Serial.print("Buttons... [");
         Serial.print(CurrentPage);
-        Serial.println("]");
+        Serial.print("]{");
+        Serial.print(request->url());
+        Serial.println("}");
 
         String TheHTML = "";
         char TheButton[1024];
