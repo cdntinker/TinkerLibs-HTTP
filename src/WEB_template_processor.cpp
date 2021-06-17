@@ -87,50 +87,46 @@ String processor(const String &var) // Change placeholders on webpage
     }
     // The NEW Header Section
     {
-        // Serial.print("Header... [");
-        // Serial.print(CurrentPage);
-        // Serial.println("]");
-
         if (var == "WT_PageTitle")
         {
             return "Testing";
         }
 
-        if (var == "WT_Button_0_Type")
-        {
-            return "Button_0_Type";
-        }
-        if (var == "WT_Button_0_Address")
-        {
-            return "Button_0_Address";
-        }
-        if (var == "WT_Button_0_Label")
-        {
-            return "Button_0_Label";
-        }
+        // if (var == "WT_Button_0_Type")
+        // {
+        //     return "Button_0_Type";
+        // }
+        // if (var == "WT_Button_0_Address")
+        // {
+        //     return "Button_0_Address";
+        // }
+        // if (var == "WT_Button_0_Label")
+        // {
+        //     return "Button_0_Label";
+        // }
 
-        if (var == "WT_Button_1_Type")
-        {
-            return "Button_1_Type";
-        }
-        if (var == "WT_Button_1_Address")
-        {
-            return "Button_1_Address";
-        }
-        if (var == "WT_Button_1_Label")
-        {
-            return "Button_1_Label";
-        }
+        // if (var == "WT_Button_1_Type")
+        // {
+        //     return "Button_1_Type";
+        // }
+        // if (var == "WT_Button_1_Address")
+        // {
+        //     return "Button_1_Address";
+        // }
+        // if (var == "WT_Button_1_Label")
+        // {
+        //     return "Button_1_Label";
+        // }
 
-        if (var == "WT_Button_2_Type")
-        {
-            return "Button_2_Type";
-        }
-        if (var == "WT_Button_2_Address")
-        {
-            return "Button_2_Address";
-        }
-        if (var == "WT_Button_2_Label")
+        // if (var == "WT_Button_2_Type")
+        // {
+        //     return "Button_2_Type";
+        // }
+        // if (var == "WT_Button_2_Address")
+        // {
+        //     return "Button_2_Address";
+        // }
+        // if (var == "WT_Button_2_Label")
         {
             return "Button_2_Label";
         }
@@ -149,8 +145,6 @@ String processor(const String &var) // Change placeholders on webpage
 
         for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
         {
-            // if (Button[ButtonCTR].ButtonAddress == CurrentAddress)
-            // if (!strcmp(Button[ButtonCTR].ButtonAddress, "/test"))
             if (!strcmp(Button[ButtonCTR].ButtonAddress, CurrentPage))
             {
                 ButtonClass = "ButtonHere";
