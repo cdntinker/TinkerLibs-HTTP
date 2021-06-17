@@ -74,10 +74,6 @@ extern char CurrentPage[32];
 String processor(const String &var) // Change placeholders on webpage
 {
 
-        Serial.print("Well... ");
-        // Serial.println(PageContent[PageNumber].Address);
-        Serial.println(CurrentPage);
-
     if (var == "SCRIPTS")
     {
         return Scripts_html;
@@ -139,6 +135,10 @@ String processor(const String &var) // Change placeholders on webpage
     /**********************************************************************/
     if (var == "Buttons")
     {
+        Serial.print("Well... [");
+        Serial.print(CurrentPage);
+        Serial.println("]");
+
         String TheHTML = "";
         char TheButton[1024];
         String ButtonClass;
