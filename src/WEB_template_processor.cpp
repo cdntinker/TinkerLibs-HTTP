@@ -87,6 +87,10 @@ String processor(const String &var) // Change placeholders on webpage
     }
     // The NEW Header Section
     {
+        Serial.print("Header... [");
+        Serial.print(CurrentPage);
+        Serial.println("]");
+
         if (var == "WT_PageTitle")
         {
             return "Testing";
@@ -135,7 +139,7 @@ String processor(const String &var) // Change placeholders on webpage
     /**********************************************************************/
     if (var == "Buttons")
     {
-        Serial.print("Well... [");
+        Serial.print("Buttons... [");
         Serial.print(CurrentPage);
         Serial.println("]");
 
