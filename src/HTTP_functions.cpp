@@ -39,14 +39,16 @@ extern bool restartRequired;
 
 extern char DEBUGtxt[48];
 
+/**********************************************************************/
 char CurrentPage[32];
+/**********************************************************************/
 
 int PageNumber;
 
 boolean setup_HTTP()
 {
     DEBUG_Init("WebServer");
-    
+
     {
 /* ********************************************************
  * This #define builds the page request handlers for

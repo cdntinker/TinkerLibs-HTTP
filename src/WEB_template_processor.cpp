@@ -64,7 +64,11 @@ ButtonMap Button[] =
         {"/management", "Management"},
 };
 int NumberofButtons = 3;
+
+/**********************************************************************/
 extern char CurrentPage[32];
+/**********************************************************************/
+
 /**********************************************************************/
 
 String processor(const String &var) // Change placeholders on webpage
@@ -135,19 +139,19 @@ String processor(const String &var) // Change placeholders on webpage
         char TheButton[1024];
         String ButtonClass;
 
-Serial.print("Well... ");
-Serial.println(PageContent[PageNumber].Address);
+        Serial.print("Well... ");
+        // Serial.println(PageContent[PageNumber].Address);
 
         for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
         {
             // if (Button[ButtonCTR].ButtonAddress == CurrentAddress)
             if (!strcmp(Button[ButtonCTR].ButtonAddress, "/test"))
             {
-                 ButtonClass = "ButtonHere";
+                ButtonClass = "ButtonHere";
             }
             else
             {
-                 ButtonClass = "ButtonClickable";
+                ButtonClass = "ButtonClickable";
             }
 
             sprintf(TheButton,
@@ -158,7 +162,7 @@ Serial.println(PageContent[PageNumber].Address);
                     Button[ButtonCTR].ButtonLabel);
             TheHTML += TheButton;
         }
-return TheHTML;
+        return TheHTML;
     }
     /**********************************************************************/
 
