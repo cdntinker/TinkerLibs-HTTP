@@ -39,7 +39,7 @@ extern bool restartRequired;
 
 extern char DEBUGtxt[48];
 
-char* CurrentPage[32];
+char* CurrentPage;
 
 int PageNumber;
 
