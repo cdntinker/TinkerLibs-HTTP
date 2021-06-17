@@ -99,10 +99,8 @@ String processor(const String &var) // Change placeholders on webpage
                 {
                     return Button[ButtonCTR].ButtonLabel;
                 }
-                else
-
-                    return "WTF?";
             }
+            return "WTF?";
         }
     }
 
