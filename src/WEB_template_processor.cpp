@@ -136,7 +136,7 @@ String processor(const String &var) // Change placeholders on webpage
         String ButtonClass;
 
 Serial.print("Well... ");
-Serial.println(CurrentPage);
+Serial.println(PageContent[PageNumber].Address);
 
         for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
         {
