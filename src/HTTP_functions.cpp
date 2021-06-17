@@ -58,7 +58,7 @@ boolean setup_HTTP()
 #define InitializePage(PageNumber)                                                            \
     server.on(PageContent[PageNumber].Address, HTTP_GET, [](AsyncWebServerRequest *request) { \
         request->send_P(200, "text/html", PageContent[PageNumber].p_Content, processor);      \
-        CurrentPage = PageContent[PageNumber].Address;                                        \
+        strcpy(CurrentPage, PageContent[PageNumber].Address);                                 \
         sprintf(DEBUGtxt, "Page: %s accessed", PageContent[PageNumber].Address);              \
         DEBUG_LineOut(DEBUGtxt);                                                              \
     });                                                                                       \
