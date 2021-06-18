@@ -62,9 +62,14 @@ ButtonMap Button[] =
         {"/test", "TestPage"},
         {"/home", "Home"},
         {"/management", "Management"},
+        {"/this", "This"},
+        {"/is", "is"},
+        {"/a", "a"},
+        {"/test", "test"},
 };
-int NumberofButtons = sizeof(Button)/sizeof(Button[0]);
+int NumberofButtons = sizeof(Button) / sizeof(Button[0]);
 extern char CurrentPage[32];
+/**********************************************************************/
 
 String processor(const String &var) // Change placeholders on webpage
 {
@@ -79,7 +84,7 @@ String processor(const String &var) // Change placeholders on webpage
         DEBUG_LineOut("Page Header");
         return Page_Header;
     }
-    
+
     if (var == "WT_PageTitle")
     {
         for (int ButtonCTR = 0; ButtonCTR < NumberofButtons; ButtonCTR++)
@@ -90,6 +95,7 @@ String processor(const String &var) // Change placeholders on webpage
         return "WTF?";
     }
 
+    /**********************************************************************/
     if (var == "Buttons")
     {
 
