@@ -64,7 +64,7 @@ ButtonMap Button[] =
         {"/management", "Management"},
         {"/mudda", "Fugga"},
 };
-int NumberofButtons = 5;
+int NumberofButtons = sizeof(Button)/sizeof(Button[0]);
 extern char CurrentPage[32];
 
 String processor(const String &var) // Change placeholders on webpage
