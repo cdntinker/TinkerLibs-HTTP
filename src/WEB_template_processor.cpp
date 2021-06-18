@@ -128,6 +128,7 @@ String processor(const String &var) // Change placeholders on webpage
         if (!strcmp(CurrentPage, "/test"))
         {
             DEBUG_Success("The Test Page");
+            // return BODY_Test;
         }
         if (!strcmp(CurrentPage, "/home"))
         {
@@ -139,7 +140,7 @@ String processor(const String &var) // Change placeholders on webpage
             DEBUG_Success("The Management Page");
             return BODY_Management;
         }
-
+char* Page_Body = "<H1>WTF?</H1>";
         return Page_Body;
     }
     if (var == "tPageContent") // The placeholder
