@@ -65,6 +65,9 @@ ButtonMap Button[] =
         {"/this", "This"},
         {"/is", "is"},
         {"/a", "a"},
+        {"/very", "very"},
+        {"/silly", "silly"},
+        {"/little", "little"},
         {"/test", "test"},
 };
 int NumberofButtons = sizeof(Button) / sizeof(Button[0]);
