@@ -111,7 +111,7 @@ boolean setup_HTTP()
                   DEBUG_LineOut(DEBUGtxt);
               });
 
-    /* management (2) page */
+    /* management (POST) page */
     server.on(
         "/management", HTTP_POST, [&](AsyncWebServerRequest *request)
         {
@@ -188,7 +188,7 @@ boolean setup_HTTP()
                 return;
             }
         });
-    sprintf(DEBUGtxt, "Page: %s", "/management 2");
+    sprintf(DEBUGtxt, "Page: %s", "/management (POST)");
     DEBUG_LineOut(DEBUGtxt);
 
     /* error 404 */
