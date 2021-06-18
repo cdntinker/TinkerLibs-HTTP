@@ -123,11 +123,17 @@ String processor(const String &var) // Change placeholders on webpage
     {
         DEBUG_LineOut("Page Body");
         if (!strcmp(CurrentPage, "/test"))
+        {
             DEBUG_Success("The Test Page");
+        }
         if (!strcmp(CurrentPage, "/home"))
+        {
             DEBUG_Success("The Home Page");
+        }
         if (!strcmp(CurrentPage, "/management"))
+        {
             DEBUG_Success("The Management Page");
+        }
 
         return Page_Body;
     }
