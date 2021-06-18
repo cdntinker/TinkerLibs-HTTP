@@ -7,81 +7,61 @@
 const char *Page_Header PROGMEM =
 #include "HTML/Parts/Page_Header.htm"
 
-    const char *Page_Body PROGMEM =
+const char *Page_Body PROGMEM =
 #include "HTML/Parts/Page_Body.htm"
 
-        const char *Page_Footer PROGMEM =
+const char *Page_Footer PROGMEM =
 #include "HTML/Parts/Page_Footer.htm"
 
-            const char *Scripts_html PROGMEM =
+const char *Scripts_html PROGMEM =
 #include "HTML/Scripts.htm"
 
-                const char *IP_MAC PROGMEM =
+const char *IP_MAC PROGMEM =
 #include "HTML/Parts/Content_IP_MAC.htm"
 
-                    const char *TestPagePart PROGMEM =
+const char *TestPagePart PROGMEM =
 #if defined(TestPage)
-                        switch (TestPage)
-{
-case 0:
+#if TestPage == 0
 #include "HTML/Parts/Content_Verkz.htm"
-    break;
-case 1:
+#elif TestPage == 1
 #include "HTML/Parts/Content_Poem.htm"
-    break;
-case 2:
+#elif TestPage == 2
 #include "HTML/Parts/Content_SiniLink.htm"
-    break;
-case 3:
+#elif TestPage == 3
 #include "HTML/Parts/Content_DeviceInfo.htm"
-    break;
-case 4:
+#elif TestPage == 4
 #include "HTML/Parts/Content_I2C.htm"
-    break;
-case 5:
+#elif TestPage == 5
 #include "HTML/Parts/Content_Sonoff.htm"
-    break;
-
-default:
+#else
 #include "HTML/Parts/Content_WTF.htm"
-    break;
-}
+#endif
 #else
 #include "HTML/Parts/Content_Oops.htm"
 #endif
 
 const char *HomePagePart PROGMEM =
 #if defined(HomePage)
-    switch (TestPage)
-{
-case 0:
+#if HomePage == 0
 #include "HTML/Parts/Content_Verkz.htm"
-    break;
-case 1:
+#elif HomePage == 1
 #include "HTML/Parts/Content_Poem.htm"
-    break;
-case 2:
+#elif HomePage == 2
 #include "HTML/Parts/Content_SiniLink.htm"
-    break;
-case 3:
+#elif HomePage == 3
 #include "HTML/Parts/Content_DeviceInfo.htm"
-    break;
-case 4:
+#elif HomePage == 4
 #include "HTML/Parts/Content_I2C.htm"
-    break;
-case 5:
+#elif HomePage == 5
 #include "HTML/Parts/Content_Sonoff.htm"
-    break;
-
-default:
+#else
 #include "HTML/Parts/Content_WTF.htm"
-    break;
-}
+#endif
 #else
 #if defined(I2Cenable)
 #include "HTML/Parts/Content_I2C.htm"
 #else
-                            "";
+    "";
 #endif
-    ;
+;
 #endif
