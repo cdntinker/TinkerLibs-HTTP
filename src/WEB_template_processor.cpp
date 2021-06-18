@@ -62,10 +62,6 @@ ButtonMap Button[] =
         {"/test", "TestPage"},
         {"/home", "Home"},
         {"/management", "Management"},
-        {"/this", "This"},
-        {"/is", "is"},
-        {"/another", "another"},
-        {"/test", "test"},
 };
 int NumberofButtons = sizeof(Button) / sizeof(Button[0]);
 extern char CurrentPage[32];
