@@ -58,6 +58,7 @@ const char *HomePagePart PROGMEM =
 #include "HTML/Parts/Content_WTF.htm"
 #endif
 #else
+
 #if defined(I2Cenable)
 #include "HTML/Parts/Content_I2C.htm"
 #else
