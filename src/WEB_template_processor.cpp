@@ -62,6 +62,7 @@ ButtonMap Button[] =
         {"/test", "TestPage"},
         {"/home", "Home"},
         {"/management", "Management"},
+        {"/mudda", "Fugga"},
 };
 int NumberofButtons = 5;
 extern char CurrentPage[32];
