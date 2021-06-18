@@ -19,7 +19,8 @@
 #define STR2b(B) ST2b(B)
 ////////////////////
 
-#include "HTML/Parts/Content_Management.htm"
+#include "HTML/Parts/Body_Management.htm"
+#include "HTML/Parts/Body_HomePage.htm"
 
 extern int deviceREBOOTED;
 
@@ -131,11 +132,12 @@ String processor(const String &var) // Change placeholders on webpage
         if (!strcmp(CurrentPage, "/home"))
         {
             DEBUG_Success("The Home Page");
+            return BODY_HomePage;
         }
         if (!strcmp(CurrentPage, "/management"))
         {
             DEBUG_Success("The Management Page");
-            return Content_Management;
+            return BODY_Management;
         }
 
         return Page_Body;
