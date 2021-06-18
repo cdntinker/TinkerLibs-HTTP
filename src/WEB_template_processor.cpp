@@ -19,6 +19,8 @@
 #define STR2b(B) ST2b(B)
 ////////////////////
 
+#include "Content_Management.htm"
+
 extern int deviceREBOOTED;
 
 #if defined(NEWprocessor)
@@ -133,6 +135,7 @@ String processor(const String &var) // Change placeholders on webpage
         if (!strcmp(CurrentPage, "/management"))
         {
             DEBUG_Success("The Management Page");
+            return Content_Management;
         }
 
         return Page_Body;
