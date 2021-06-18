@@ -62,7 +62,6 @@ ButtonMap Button[] =
         {"/test", "TestPage"},
         {"/home", "Home"},
         {"/management", "Management"},
-        {"/mudda", "Fugga"},
 };
 int NumberofButtons = sizeof(Button)/sizeof(Button[0]);
 extern char CurrentPage[32];
@@ -93,14 +92,6 @@ String processor(const String &var) // Change placeholders on webpage
 
     if (var == "Buttons")
     {
-
-Serial.print("ButtonStuff: ");
-Serial.print(sizeof(Button));
-Serial.print(" | ");
-Serial.println(sizeof(Button[0]));
-Serial.print(" | ");
-Serial.println(sizeof(Button)/sizeof(Button[0]));
-
 
         String TheHTML = "";
         char TheButton[1024];
