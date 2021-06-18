@@ -19,7 +19,7 @@
 #define STR2b(B) ST2b(B)
 ////////////////////
 
-#include "Content_Management.htm"
+#include "HTML/Content_Management.htm"
 
 extern int deviceREBOOTED;
 
