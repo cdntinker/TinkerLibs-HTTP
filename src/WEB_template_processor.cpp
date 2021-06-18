@@ -94,7 +94,12 @@ String processor(const String &var) // Change placeholders on webpage
     {
 
 Serial.print("ButtonStuff: ");
-Serial.println(sizeof(Button));
+Serial.print(sizeof(Button));
+Serial.print(" | ");
+Serial.println(sizeof(Button[0]));
+Serial.print(" | ");
+Serial.println(sizeof(Button[/sizeof(Button[0]));
+
 
         String TheHTML = "";
         char TheButton[1024];
