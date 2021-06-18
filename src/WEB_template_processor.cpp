@@ -98,7 +98,7 @@ Serial.print(sizeof(Button));
 Serial.print(" | ");
 Serial.println(sizeof(Button[0]));
 Serial.print(" | ");
-Serial.println(sizeof(Button[/sizeof(Button[0]));
+Serial.println(sizeof(Button)/sizeof(Button[0]));
 
 
         String TheHTML = "";
