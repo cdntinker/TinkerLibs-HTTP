@@ -92,6 +92,7 @@ String processor(const String &var) // Change placeholders on webpage
 
     if (var == "Buttons")
     {
+
 Serial.print("ButtonStuff: ");
 Serial.println(sizeof(Button));
 
