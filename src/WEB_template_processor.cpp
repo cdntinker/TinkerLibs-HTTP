@@ -75,7 +75,7 @@ String processor(const String &var) // Change placeholders on webpage
         return Scripts_html;
     }
 
-    if (var == "PageHeader") // The placeholder
+    if (var == "PageHeader")
     {
         DEBUG_LineOut("Page Header");
         return Page_Header;
@@ -122,6 +122,7 @@ String processor(const String &var) // Change placeholders on webpage
     if (var == "PageBody") // The placeholder
     {
         DEBUG_LineOut("Page Body");
+        DEBUG_LineOut(CurrentPage);
         return Page_Body;
     }
     if (var == "tPageContent") // The placeholder
