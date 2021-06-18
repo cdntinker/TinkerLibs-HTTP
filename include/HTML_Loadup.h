@@ -44,11 +44,11 @@ const char *HomePagePart PROGMEM =
 #if defined(HomePage)
 #if HomePage == 0
 #include "HTML/Parts/Content_Verkz.htm"
-#elif TestPage == 1
+#elif HomePage == 1
 #include "HTML/Parts/Content_Poem.htm"
 #elif HomePage == 2
 #include "HTML/Parts/Content_SiniLink.htm"
-#elif TestPage == 3
+#elif HomePage == 3
 #include "HTML/Parts/Content_DeviceInfo.htm"
 #elif HomePage == 4
 #include "HTML/Parts/Content_I2C.htm"
