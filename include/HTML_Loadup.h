@@ -9,6 +9,7 @@
 
 #include "HTML/Parts/Content_IP_MAC.htm"
 
+/* These are defined in the parent project */
 extern char* Content_I2C;
 extern char* Content_Poem;
 extern char* Content_SiniLink;

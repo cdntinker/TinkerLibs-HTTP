@@ -4,9 +4,10 @@
 
 #include <Arduino.h>
 
+/* include the CSS (done in HTML with a RAW Literal wrapper) */
 #include "HTML/css.css"
 
-/* include the webpages (done in HTML) */
+/* include the webpages (done in HTML with a RAW Literal wrapper) */
 #include "HTML/homepage.htm"   // Homepage HTML
 
 #include "HTML/Management.htm" // UPDATEpage HTML
