@@ -4,17 +4,11 @@
 // const char *Page_Header PROGMEM =
 // #include "HTML/Parts/Page_Header.htm"
 
-const char *Page_Header PROGMEM =
-#include "HTML/Parts/Page_Header.htm"
-
-const char *Page_Body PROGMEM =
-#include "HTML/Parts/Page_Body.htm"
-
-const char *Page_Footer PROGMEM =
-#include "HTML/Parts/Page_Footer.htm"
-
-const char *Scripts_html PROGMEM =
 #include "HTML/Scripts.htm"
+
+#include "HTML/Parts/Page_Header.htm"
+#include "HTML/Parts/Page_Body.htm"
+#include "HTML/Parts/Page_Footer.htm"
 
 const char *IP_MAC PROGMEM =
 #include "HTML/Parts/Content_IP_MAC.htm"
