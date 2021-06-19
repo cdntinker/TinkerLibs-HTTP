@@ -7,7 +7,7 @@
 
 #include "Template_Maps.h"
 
-#include "_DeviceInfo.h"
+#include "DeviceInfo.h"
 
 #if defined(ESP8266)
 #elif defined(ESP32)
