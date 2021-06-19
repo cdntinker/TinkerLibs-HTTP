@@ -9,13 +9,9 @@
 
 /* include the webpages (done in HTML with a RAW Literal wrapper) */
 #include "HTML/homepage.htm"   // Homepage HTML
-
 #include "HTML/Management.htm" // UPDATEpage HTML
-
 #include "HTML/failedOTA.htm"  // HTML
-
 #include "HTML/reboot.htm"     // HTML
-
 #include "HTML/Finished.htm"   //  HTML
 
 
