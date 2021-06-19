@@ -140,8 +140,10 @@ String processor(const String &var) // Change placeholders on webpage
             DEBUG_Success("The Management Page");
             return BODY_Management;
         }
-char* Page_Body = "<H1>WTF?</H1>";
-        return Page_Body;
+        // char *Page_Body = "<H1>WTF?</H1>";
+        // return Page_Body;
+
+        return "<H1>WTF?</H1>";
     }
     if (var == "tPageContent") // The placeholder
     {
