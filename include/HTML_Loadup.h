@@ -29,22 +29,22 @@ extern const char* Content_Sonoff;
 #if defined(TestPage)
 const char *TestPagePart =
 #if TestPage == 0
-&Content_Verkz;
+Content_Verkz;
 #elif TestPage == 1
-&Content_Poem;
+Content_Poem;
 #elif TestPage == 2
-&Content_SiniLink;
+Content_SiniLink;
 #elif TestPage == 3
-&Content_DeviceInfo;
+Content_DeviceInfo;
 #elif TestPage == 4
-&Content_I2C;
+Content_I2C;
 #elif TestPage == 5
-&Content_Sonoff;
+Content_Sonoff;
 #else
-&Content_WTF;
+Content_WTF;
 #endif
 #else
-&Content_Oops;
+Content_Oops;
 #endif
 
 #if defined(HomePage)
