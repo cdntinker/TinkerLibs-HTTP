@@ -93,5 +93,5 @@ ButtonMap Button[] =
 int NumberofButtons = sizeof(Button) / sizeof(Button[0]);
 extern char CurrentPage[32];
 
-extern char* BODY_Test;
+// extern char* BODY_Test;
 /**********************************************************************/
