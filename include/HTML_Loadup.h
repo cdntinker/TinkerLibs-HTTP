@@ -1,16 +1,12 @@
 // #include "NOTARDUINO.h"
 #include <Arduino.h>
 
-// const char *Page_Header PROGMEM =
-// #include "HTML/Parts/Page_Header.htm"
-
 #include "HTML/Scripts.htm"
 
 #include "HTML/Parts/Page_Header.htm"
 #include "HTML/Parts/Page_Body.htm"
 #include "HTML/Parts/Page_Footer.htm"
 
-const char *IP_MAC PROGMEM =
 #include "HTML/Parts/Content_IP_MAC.htm"
 
 extern char* Content_I2C;
