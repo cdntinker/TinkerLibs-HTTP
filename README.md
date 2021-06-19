@@ -7,6 +7,34 @@
   - [With PlatformIO](#platformio)
   - [With Arduino IDE](#arduino-ide)
 - [The Functions](#the-functions)
+- [The HUGE Bunch of headers](#the-huge-bunch-of-headers)
+  - Tinker_HTTP.h
+  - Deviceinfo.h
+  - HTML_Loadup.h
+  - OTA_Externs.h
+  - Template_Maps.h
+  - The_Pages.h
+  - HTML Content:
+    - css.css
+    - failedOTA.htm
+    - Finished.htm
+    - homepage.htm
+    - Management.htm
+    - reboot.htm
+    - Scripts.htm
+    - testpage.htm
+    - Parts/
+      - Body_HomePage.htm
+      - Body_Management.htm
+      - Content_DeviceInfo.htm
+      - Content_IP_MAC.htm
+      - Content_Oops.htm
+      - Content_Verkz.htm
+      - Content_WTF.htm
+      - NEW HTML_SKELETON.htm
+      - Page_Body.htm
+      - Page_Footer.htm
+      - Page_Header.htm
 - [An Example](#an-example)
 
 ## Overview
@@ -63,6 +91,11 @@ These are all declared in **Tinker_HTTP.h**
 
 ### `void setup_HTTP()`
 Fill me in
+
+### `String processor(const String &var)`
+Fill me in
+
+## The HUGE Bunch of headers
 
 ## An Example
 Sorry...  Not yet.
