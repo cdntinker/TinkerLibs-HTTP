@@ -130,8 +130,7 @@ String processor(const String &var) // Change placeholders on webpage
         if (!strcmp(CurrentPage, "/test"))
         {
             DEBUG_Success("The Test Page");
-Serial.println(BODY_Test);
-            return BODY_Test;
+            return TestPagePart;
         }
         if (!strcmp(CurrentPage, "/home"))
         {
