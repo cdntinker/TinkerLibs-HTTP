@@ -129,21 +129,16 @@ String processor(const String &var) // Change placeholders on webpage
         DEBUG_LineOut("Page Body");
         if (!strcmp(CurrentPage, "/test"))
         {
-            DEBUG_Success("The Test Page");
             return TestPagePart;
         }
         if (!strcmp(CurrentPage, "/home"))
         {
-            DEBUG_Success("The Home Page");
             return BODY_HomePage;
         }
         if (!strcmp(CurrentPage, "/management"))
         {
-            DEBUG_Success("The Management Page");
             return BODY_Management;
         }
-        // char *Page_Body = "<H1>WTF?</H1>";
-        // return Page_Body;
 
         return "<H1>WTF?</H1>";
     }
