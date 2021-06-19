@@ -19,11 +19,6 @@
 #define STR2b(B) ST2b(B)
 ////////////////////
 
-// #include "HTML/Parts/Body_Management.htm"
-// #include "HTML/Parts/Body_HomePage.htm"
-
-// extern int deviceREBOOTED;
-
 #if defined(NEWprocessor)
 // extern TemplateMap TemplateMaps[];
 extern int TemplateCount;
@@ -50,27 +45,6 @@ String processor(const String &var) // Change placeholders on webpage
 }
 
 #else
-
-// /**********************************************************************/
-// struct ButtonMap
-// {
-
-//     char ButtonAddress[32];
-//     char ButtonLabel[32];
-//     String p_Content;
-// };
-
-// ButtonMap Button[] =
-//     {
-//         {"/test", "TestPage"},
-//         {"/home", "Home"},
-//         {"/management", "Management"},
-// };
-// int NumberofButtons = sizeof(Button) / sizeof(Button[0]);
-// extern char CurrentPage[32];
-
-// extern char* BODY_Test;
-// /**********************************************************************/
 
 String processor(const String &var) // Change placeholders on webpage
 {
