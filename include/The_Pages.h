@@ -26,7 +26,7 @@
 // extern const char reboot_html[];
 // extern const char done_html[];
 
-extern const char test_html[];
+extern const char* test_html;
 
 struct PageMapping
 {
