@@ -75,7 +75,7 @@ Content_Oops;
 #include "HTML/Parts/Body_Management.htm"
 #include "HTML/Parts/Body_HomePage.htm"
 
-extern int deviceREBOOTED;
+// extern int deviceREBOOTED;
 
 /**********************************************************************/
 struct ButtonMap
