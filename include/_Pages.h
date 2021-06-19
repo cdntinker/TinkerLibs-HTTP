@@ -12,9 +12,9 @@
 
 #include "HTML/Management.htm" // UPDATEpage HTML
 
-#include "HTML/failedOTA.htm"  // HTML to be created
+#include "HTML/failedOTA.htm"  // HTML
 
-#include "HTML/reboot.htm"     // HTML to be created
+#include "HTML/reboot.htm"     // HTML
 
 #include "HTML/Finished.htm"   //  HTML
 

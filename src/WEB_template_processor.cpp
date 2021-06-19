@@ -19,10 +19,10 @@
 #define STR2b(B) ST2b(B)
 ////////////////////
 
-#include "HTML/Parts/Body_Management.htm"
-#include "HTML/Parts/Body_HomePage.htm"
+// #include "HTML/Parts/Body_Management.htm"
+// #include "HTML/Parts/Body_HomePage.htm"
 
-extern int deviceREBOOTED;
+// extern int deviceREBOOTED;
 
 #if defined(NEWprocessor)
 // extern TemplateMap TemplateMaps[];
@@ -51,26 +51,26 @@ String processor(const String &var) // Change placeholders on webpage
 
 #else
 
-/**********************************************************************/
-struct ButtonMap
-{
+// /**********************************************************************/
+// struct ButtonMap
+// {
 
-    char ButtonAddress[32];
-    char ButtonLabel[32];
-    String p_Content;
-};
+//     char ButtonAddress[32];
+//     char ButtonLabel[32];
+//     String p_Content;
+// };
 
-ButtonMap Button[] =
-    {
-        {"/test", "TestPage"},
-        {"/home", "Home"},
-        {"/management", "Management"},
-};
-int NumberofButtons = sizeof(Button) / sizeof(Button[0]);
-extern char CurrentPage[32];
+// ButtonMap Button[] =
+//     {
+//         {"/test", "TestPage"},
+//         {"/home", "Home"},
+//         {"/management", "Management"},
+// };
+// int NumberofButtons = sizeof(Button) / sizeof(Button[0]);
+// extern char CurrentPage[32];
 
-extern char* BODY_Test;
-/**********************************************************************/
+// extern char* BODY_Test;
+// /**********************************************************************/
 
 String processor(const String &var) // Change placeholders on webpage
 {

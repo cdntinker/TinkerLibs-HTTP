@@ -26,6 +26,8 @@ extern const char* Content_Sonoff;
 #include "HTML/Parts/Content_WTF.htm"
 #include "HTML/Parts/Content_Oops.htm"
 
+/* This kinda sucks...  It's sooooo limiting... */
+
 #if defined(TestPage)
 const char *TestPagePart =
 #if TestPage == 0
@@ -68,3 +70,30 @@ Content_WTF;
 Content_Oops;
 #endif
 
+/**********************************************************************/
+
+#include "HTML/Parts/Body_Management.htm"
+#include "HTML/Parts/Body_HomePage.htm"
+
+extern int deviceREBOOTED;
+
+/**********************************************************************/
+struct ButtonMap
+{
+
+    char ButtonAddress[32];
+    char ButtonLabel[32];
+    String p_Content;
+};
+
+ButtonMap Button[] =
+    {
+        {"/test", "TestPage"},
+        {"/home", "Home"},
+        {"/management", "Management"},
+};
+int NumberofButtons = sizeof(Button) / sizeof(Button[0]);
+extern char CurrentPage[32];
+
+extern char* BODY_Test;
+/**********************************************************************/
