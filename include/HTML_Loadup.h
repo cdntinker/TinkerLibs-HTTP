@@ -10,10 +10,10 @@
 #include "HTML/Parts/Content_IP_MAC.htm"
 
 /* These are defined in the parent project */
-extern char* Content_I2C;
-extern char* Content_Poem;
-extern char* Content_SiniLink;
-extern char* Content_Sonoff;
+extern const char* Content_I2C;
+extern const char* Content_Poem;
+extern const char* Content_SiniLink;
+extern const char* Content_Sonoff;
 
 #if defined(TestPage)
 #if (TestPage == 0) || (HomePage == 0)
