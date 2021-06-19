@@ -107,7 +107,7 @@ String processor(const String &var) // Change placeholders on webpage
         }
         if (!strcmp(CurrentPage, "/home"))
         {
-            return BODY_HomePage;
+            return Content_HomePage;
         }
         if (!strcmp(CurrentPage, "/management"))
         {
