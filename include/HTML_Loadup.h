@@ -23,9 +23,9 @@ const char *TestPagePart PROGMEM =
 #if TestPage == 0
 #include "HTML/Parts/Content_Verkz.htm"
 #elif TestPage == 1
-Content_Poem
+Content_Poem;
 #elif TestPage == 2
-Content_SiniLink
+Content_SiniLink;
 #elif TestPage == 3
 #include "HTML/Parts/Content_DeviceInfo.htm"
 #elif TestPage == 4
