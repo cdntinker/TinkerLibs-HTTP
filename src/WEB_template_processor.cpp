@@ -111,7 +111,7 @@ String processor(const String &var) // Change placeholders on webpage
         }
         if (!strcmp(CurrentPage, "/management"))
         {
-            return BODY_Management;
+            return Content_Management;
         }
 
         return "<H1>WTF?</H1>";
