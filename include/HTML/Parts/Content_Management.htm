@@ -1,29 +1,31 @@
-const char *Content_Management PROGMEM =
+const char *BODY_Management PROGMEM =
 R"rawliteral(
-  <div class="col-12 mt-3 p-centered"> <!-- Update -->
-    <div class="col-3 col-sm-9 col-md-6 p-centered">
-      <label class="label label2 mr-2">Upload Firmware Here</label>
-      <div class="form-group pt-2 mt-3">
-        <form method="POST" action="#" enctype="multipart/form-data" id="upload_form">
-          <input type="file" name="update" id="file" accept=".bin" class="form-input file-input">
-          <input type="submit" value="FLASH">
-          <div class="upload-bar">
-            <div class="w3-background">
-              <div class="w3-progress" id="prg1" style="width: 0rem">
-                <span class="percent" id="prg">-</span>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div> <!-- Update -->
+     <div id="body">
+       <div class="col-12 mt-3 p-centered">
+         <div class="col-3 col-sm-9 col-md-6 p-centered">
+           <label class="label label2 mr-2">Upload Firmware Here</label>
+           <div class="form-group pt-2 mt-3">
+             <form method="POST" action="#" enctype="multipart/form-data" id="upload_form">
+               <input type="file" name="update" id="file" accept=".bin" class="form-input file-input">
+               <input type="submit" value="FLASH">
+               <div class="upload-bar">
+                 <div class="w3-background">
+                   <div class="w3-progress" id="prg1" style="width: 0rem">
+                     <span class="percent" id="prg">-</span>
+                   </div>
+                 </div>
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
 
-  <div class = "menu-buttons"> <!-- Reboot -->
-    <div class = "menu-reboot">
-      <div class = "button ButtonClickable">
-        <button4 onclick="location.href='/reboot'">%processorplaceholder% Reboot</button4>
-      </div>
-    </div>
-  </div> <!-- Reboot -->
-)rawliteral";
+       <div class = "menu-buttons">
+         <div class = "menu-reboot">
+           <div class = "button ButtonClickable">
+             <button4 onclick="location.href='/reboot'">%processorplaceholder% Reboot</button4>
+           </div>
+         </div>
+       </div>
+     </div>  <!-- BODY -->
+     )rawliteral";

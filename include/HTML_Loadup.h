@@ -72,7 +72,7 @@ Content_Oops;
 
 /**********************************************************************/
 
-#include "HTML/Parts/Content_Management.htm"
+#include "HTML/Parts/Body_Management.htm"
 #include "HTML/Parts/Body_HomePage.htm"
 
 /**********************************************************************/
