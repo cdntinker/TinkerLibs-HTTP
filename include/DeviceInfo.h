@@ -1,3 +1,5 @@
+#include <WString.h>
+
 String getSDASCL();
 String getI2Cscan();
 String getDeviceName();
