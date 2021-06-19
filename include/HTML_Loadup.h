@@ -13,26 +13,52 @@
 const char *IP_MAC PROGMEM =
 #include "HTML/Parts/Content_IP_MAC.htm"
 
+extern char* Content_I2C;
+extern char* Content_Poem;
+extern char* Content_SiniLink;
+extern char* Content_Sonoff;
+
 const char *TestPagePart PROGMEM =
 #if defined(TestPage)
 #if TestPage == 0
 #include "HTML/Parts/Content_Verkz.htm"
 #elif TestPage == 1
-#include "HTML/Parts/Content_Poem.htm"
+Content_Poem
 #elif TestPage == 2
-#include "HTML/Parts/Content_SiniLink.htm"
+Content_SiniLink
 #elif TestPage == 3
 #include "HTML/Parts/Content_DeviceInfo.htm"
 #elif TestPage == 4
-#include "HTML/Parts/Content_I2C.htm"
+Content_I2C;
 #elif TestPage == 5
-#include "HTML/Parts/Content_Sonoff.htm"
+Content_Sonoff
 #else
 #include "HTML/Parts/Content_WTF.htm"
 #endif
 #else
 #include "HTML/Parts/Content_Oops.htm"
 #endif
+
+// const char *TestPagePart PROGMEM =
+// #if defined(TestPage)
+// #if TestPage == 0
+// #include "HTML/Parts/Content_Verkz.htm"
+// #elif TestPage == 1
+// #include "HTML/Parts/Content_Poem.htm"
+// #elif TestPage == 2
+// #include "HTML/Parts/Content_SiniLink.htm"
+// #elif TestPage == 3
+// #include "HTML/Parts/Content_DeviceInfo.htm"
+// #elif TestPage == 4
+// #include "HTML/Parts/Content_I2C.htm"
+// #elif TestPage == 5
+// #include "HTML/Parts/Content_Sonoff.htm"
+// #else
+// #include "HTML/Parts/Content_WTF.htm"
+// #endif
+// #else
+// #include "HTML/Parts/Content_Oops.htm"
+// #endif
 
 const char *HomePagePart PROGMEM =
 #if defined(HomePage)
