@@ -199,6 +199,13 @@ boolean setup_HTTP()
                           DEBUG_LineOut(DEBUGtxt);
                       });
 
+    /* Toggle page */
+    server.on("/reboot", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                //   request->send_P(200, "text/html", reboot_html, processor);
+ToggleSomething();
+              });
+
     server.begin();
     ////////////////////////////////////////////////////////////
     return (true);
