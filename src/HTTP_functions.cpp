@@ -206,7 +206,7 @@ boolean setup_HTTP()
     /* Toggle page */
     server.on("/toggle", HTTP_GET, [](AsyncWebServerRequest *request)
               {
-                  //   request->send_P(200, "text/html", reboot_html, processor);
+                    request->send_P(200, "text/html", home_html, processor);
                   SiniLink_Toggle();
               });
 
