@@ -18,6 +18,7 @@ R"rawliteral(
        var xhr = new XMLHttpRequest();
        xhr.open("GET", "/darkmode?state=1", true);
        xhr.send();
+       setTimeout(function () {window.location.href = "#";}, 100);
       }
    </script>
 )rawliteral";
