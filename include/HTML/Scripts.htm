@@ -5,11 +5,19 @@ R"rawliteral(
     </style>
     
     <script>
-      function darkFunction() {
+      function darkFunction0() {
        var xhr = new XMLHttpRequest();
        xhr.open("GET", "/darkmode?state=1", true);
        xhr.send();
        setTimeout(function () {window.location.href = "/test";}, 100);
+      }
+   </script>
+
+    <script>
+      function darkFunction() {
+       var xhr = new XMLHttpRequest();
+       xhr.open("GET", "/darkmode?state=1", true);
+       xhr.send();
       }
    </script>
 )rawliteral";
