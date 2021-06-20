@@ -17,6 +17,10 @@
 // #include "LittleFS.h" // LittleFS is declared
 ////////////////////////////////////////////////////
 
+#if defined(SiniLink)
+#include <Tinker_SiniLink.h>
+#endif
+
 // #if defined(ESP8266)
 // #include "NOTARDUINO.h"
 // #elif defined(ESP32)
