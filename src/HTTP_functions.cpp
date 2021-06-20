@@ -200,7 +200,7 @@ boolean setup_HTTP()
                       });
 
     /* Toggle page */
-    server.on("/reboot", HTTP_GET, [](AsyncWebServerRequest *request)
+    server.on("/toggle", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                 //   request->send_P(200, "text/html", reboot_html, processor);
 ToggleSomething();
