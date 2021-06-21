@@ -14,8 +14,8 @@
 #include <rom/rtc.h>
 #endif
 
-TemplateMap TemplateMaps[64];
-int TemplateCount;
+// TemplateMap TemplateMaps[64];
+// int TemplateCount;
 
 /* Convert a #defined value to a string */
 #define ST(A) #A
