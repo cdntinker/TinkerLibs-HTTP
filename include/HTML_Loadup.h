@@ -47,6 +47,7 @@ Content_WTF;
 #endif
 #else
 // Content_Oops;
+const char *TestPagePart = "";
 #endif
 
 #if defined(HomePage)
@@ -68,6 +69,7 @@ Content_WTF;
 #endif
 #else
 // Content_Oops;
+const char *HomePagePart = "";
 #endif
 
 /**********************************************************************/
