@@ -1,7 +1,8 @@
 // #include "NOTARDUINO.h"
 #include <Arduino.h>
 
-#include "HTML/Scripts.htm"
+// #include "HTML/Scripts.htm"
+extern const char* Scripts_html;
 
 #include "HTML/Parts/Page_Header.htm"
 #include "HTML/Parts/Page_Body.htm"
