@@ -203,6 +203,7 @@ boolean setup_HTTP()
                           DEBUG_LineOut(DEBUGtxt);
                       });
 
+#if defined(SiniLink)
     /* SiniLink pages */
     server.on("/SiniLink_ON", HTTP_GET, [](AsyncWebServerRequest *request)
               {
@@ -219,6 +220,7 @@ boolean setup_HTTP()
                   SiniLink_Relay(LOW);
                   request->redirect("/home");
               });
+#endif
 
     server.begin();
     ////////////////////////////////////////////////////////////
