@@ -46,8 +46,10 @@ String processor(const String &var) // Change placeholders on webpage
 
 #else
 
+#if defined(SiniLink)
 extern String SiniLink_TurnOn;
 extern String SiniLink_TurnOff;
+#endif
 
 String processor(const String &var) // Change placeholders on webpage
 {
@@ -100,10 +102,13 @@ String processor(const String &var) // Change placeholders on webpage
         return TheHTML;
     }
     /**********************************************************************/
-if (var == "SiniLink_TurnOn")
-return SiniLink_TurnOn;
-if (var == "SiniLink_TurnOff")
-return SiniLink_TurnOff;
+
+#if defined(SiniLink)
+    if (var == "SiniLink_TurnOn")
+        return SiniLink_TurnOn;
+    if (var == "SiniLink_TurnOff")
+        return SiniLink_TurnOff;
+#endif
 
     if (var == "PageBody") // The placeholder
     {
