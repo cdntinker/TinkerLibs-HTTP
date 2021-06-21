@@ -47,7 +47,7 @@ String processor(const String &var) // Change placeholders on webpage
 #else
 
 extern String SiniLink_TurnOn;
-extern String SiniLink_TurnOf;
+extern String SiniLink_TurnOff;
 
 String processor(const String &var) // Change placeholders on webpage
 {
