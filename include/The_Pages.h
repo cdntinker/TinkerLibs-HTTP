@@ -42,6 +42,6 @@ PageMapping PageContent[] =
         // {"/reboot", &reboot_html[0]},
 #if defined(TestPage)
         {"/test", &test_html[0]},
-        {"/scripts.htm", &scripts_html[0]},
+        {"/scripts.htm", &Scripts_html[0]},
 #endif
 };
