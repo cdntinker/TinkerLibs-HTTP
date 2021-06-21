@@ -20,54 +20,6 @@ R"rawliteral(
 %PageFooter%
     </div>
 
-   <script>
-     var domReady = function(callback) {
-       document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
-      };
-
-     domReady(function() {
-       var myform = document.getElementById('upload_form');
-       var filez  = document.getElementById('file');
-
-       myform.onsubmit = function(event) {
-         event.preventDefault();
-
-         var formData = new FormData();
-         var file     = filez.files[0];
-
-         if (!file) { return false; }
-
-         formData.append("files", file, file.name);
-
-         var xhr = new XMLHttpRequest();
-         xhr.upload.addEventListener("progress", function(evt) {
-           if (evt.lengthComputable) {
-             var per  = Math.round((evt.loaded / evt.total) * 100);
-             var per1 = Math.round(per/4);
-             var prg  = document.getElementById('prg');
-             var prg1 = document.getElementById('prg1');
-
-             prg1.style.width  = per1 + "rem"
-             prg.innerHTML     = per + "%"
-            }
-          }, false);
-          xhr.open('POST', location.href, true);
-
-         // Set up a handler for when the request finishes.
-         xhr.onload = function () {
-           if (xhr.status === 200) {
-             //alert('Success');
-             window.location.href = "/complete";
-            } else {
-             //alert('An error occurred!');
-             window.location.href = "/failedOTA";
-            }
-          };
-
-         xhr.send(formData);
-        }
-      });
-   </script>
   </body>
 </html>
 )rawliteral";
