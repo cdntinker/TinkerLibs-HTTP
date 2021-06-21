@@ -46,7 +46,7 @@ Content_Sonoff;
 Content_WTF;
 #endif
 #else
-Content_Oops;
+// Content_Oops;
 #endif
 
 #if defined(HomePage)
@@ -67,7 +67,7 @@ Content_Sonoff;
 Content_WTF;
 #endif
 #else
-Content_Oops;
+// Content_Oops;
 #endif
 
 /**********************************************************************/
