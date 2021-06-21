@@ -88,7 +88,9 @@ struct ButtonMap
 
 ButtonMap Button[] =
     {
+#if defined(TestPage)
         {"/test", "TestPage"},
+#endif
         {"/home", "Home"},
         {"/management", "Management"},
 };
