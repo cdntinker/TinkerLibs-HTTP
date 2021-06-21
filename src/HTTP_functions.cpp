@@ -208,20 +208,17 @@ boolean setup_HTTP()
     server.on("/SiniLink_ON", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   SiniLink_Relay(HIGH);
-                //   request->redirect("/home");
-                  request->send(200);
+                  request->redirect("/home");
               });
     server.on("/SiniLink_toggle", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   SiniLink_Toggle();
-                //   request->redirect("/home");
-                  request->send(200);
+                  request->redirect("/home");
               });
     server.on("/SiniLink_OFF", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   SiniLink_Relay(LOW);
-                //   request->redirect("/home");
-                  request->send(200);
+                  request->redirect("/home");
               });
 #endif
 
