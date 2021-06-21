@@ -203,10 +203,20 @@ boolean setup_HTTP()
                           DEBUG_LineOut(DEBUGtxt);
                       });
 
-    /* Toggle page */
-    server.on("/toggle", HTTP_GET, [](AsyncWebServerRequest *request)
+    /* SiniLink pages */
+    server.on("/SiniLink_ON", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  SiniLink_Relay(HIGH);
+                  request->redirect("/home");
+              });
+    server.on("/SiniLink_toggle", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   SiniLink_Toggle();
+                  request->redirect("/home");
+              });
+    server.on("/SiniLink_OFF", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  SiniLink_Relay(LOW);
                   request->redirect("/home");
               });
 
