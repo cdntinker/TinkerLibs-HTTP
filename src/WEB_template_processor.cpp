@@ -44,7 +44,7 @@ String processor(const String &var) // Change placeholders on webpage
     return String("Woopsie!!!");
 }
 
-#else
+#else   // original processor
 
 #if defined(SiniLink)
 extern String SiniLink_TurnOn;
@@ -298,4 +298,4 @@ String processor(const String &var) // Change placeholders on webpage
     return String();
 }
 
-#endif
+#endif   // original processor

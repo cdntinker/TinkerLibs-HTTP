@@ -12,7 +12,7 @@
 #include "HTML/Management.htm" // UPDATEpage HTML
 #include "HTML/failedOTA.htm"  // HTML
 #include "HTML/reboot.htm"     // HTML
-#include "HTML/Finished.htm"   //  HTML
+#include "HTML/Finished.htm"   // HTML
 
 
 // extern const char TheCSS[];

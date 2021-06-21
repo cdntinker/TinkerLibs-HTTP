@@ -21,13 +21,6 @@
 #include <Tinker_SiniLink.h>
 #endif
 
-// #if defined(ESP8266)
-// #include "NOTARDUINO.h"
-// #elif defined(ESP32)
-// #include <rom/rtc.h>
-// String return_reset_reason(uint8_t reason);
-// #endif
-
 AsyncWebServer server(80);
 
 const char *PARAM_dark_1 = "state";
@@ -83,6 +76,7 @@ boolean setup_HTTP()
         InitializePage(5);
 #endif
     }
+
     /* root page */
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
               {
