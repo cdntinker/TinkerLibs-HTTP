@@ -12,6 +12,7 @@ R"rawliteral(
        setTimeout(function () {window.location.href = "/";}, 100);
       }
    </script>
+
    <script>
      var domReady = function(callback) {
        document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
