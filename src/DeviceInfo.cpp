@@ -321,93 +321,93 @@ String info_memsmeter()
     return memsmeter;
 }
 
-void DeviceInfo()
-{
-    TemplateMap TemplateMaps[] =
-        {
+// void DeviceInfo()
+// {
+//     TemplateMap TemplateMaps[] =
+//         {
 
-            {"SDASCLplaceholder", "", getSDASCL()},
-            {"I2Cplaceholder", "", getI2Cscan()},
-            {"tPageContent", "", TestPagePart},
-            {"hPageContent", "", HomePagePart},
-            {"PageHeader", "Page Header", Page_Header},
-            {"PageBody", "Page Body", Page_Body},
-            {"PageFooter", "Page Footer", Page_Footer},
-            {"SCRIPTS", "", Scripts_html},
-            {"IPMAC", "", IP_MAC},
-            {"title", "", getDeviceName()},
-            {"dark", "", getDarkMode()},
-            {"type", "", getDeviceType()},
-            {"color", "", htmlcolor},
-            {"hover", "", htmlhover},
-            {"ipplaceholder", "WiFi WTF?", ip3string(WiFi.localIP())},
-            {"macplaceholder", "", WiFi.macAddress()},
-            {"IDplaceholder", "", getDeviceID()},
-            {"processorplaceholder", "", getProcTag()},
-            // {"errorplaceholder", "", getRebootMessage()},
-            {"WT_ReBootMessage", "", getRebootMessage0()},
-            {"WT_ReBootReason", "", getRebootMessage1()},
-            {"uptime", "", info_uptime()},
-            {"chipid", "", info_chipid()},
-            {"idesize", "", info_idesize()},
-            {"flashsize", "", info_flashsize()},
-            {"sdkver", "", info_sdkver()},
-            {"cpufreq", "", info_cpufreq()},
-            {"freeheap", "", info_freeheap()},
-            {"memsketch", "", info_memsketch()},
-            {"lastreset", "", info_lastreset()},
-            {"conx", "", info_conx()},
-            {"stassid", "", info_stassid()},
-            {"staip", "", info_staip()},
-            {"stamac", "", info_stamac()},
-            {"stagw", "", info_stagw()},
-            {"stasub", "", info_stasub()},
-            {"dnss", "", info_dnss()},
-            {"hostnom", "", info_hostnom()},
-            {"apssid", "", info_apssid()},
-            {"apip", "", info_apip()},
-            {"apmac", "", info_apmac()},
-            {"memsmeter", "", info_memsmeter()},
-            {"TemplateCount", "", "Device_TemplateCount()"},
-        };
+//             {"SDASCLplaceholder", "", getSDASCL()},
+//             {"I2Cplaceholder", "", getI2Cscan()},
+//             {"tPageContent", "", TestPagePart},
+//             {"hPageContent", "", HomePagePart},
+//             {"PageHeader", "Page Header", Page_Header},
+//             {"PageBody", "Page Body", Page_Body},
+//             {"PageFooter", "Page Footer", Page_Footer},
+//             {"SCRIPTS", "", Scripts_html},
+//             {"IPMAC", "", IP_MAC},
+//             {"title", "", getDeviceName()},
+//             {"dark", "", getDarkMode()},
+//             {"type", "", getDeviceType()},
+//             {"color", "", htmlcolor},
+//             {"hover", "", htmlhover},
+//             {"ipplaceholder", "WiFi WTF?", ip3string(WiFi.localIP())},
+//             {"macplaceholder", "", WiFi.macAddress()},
+//             {"IDplaceholder", "", getDeviceID()},
+//             {"processorplaceholder", "", getProcTag()},
+//             // {"errorplaceholder", "", getRebootMessage()},
+//             {"WT_ReBootMessage", "", getRebootMessage0()},
+//             {"WT_ReBootReason", "", getRebootMessage1()},
+//             {"uptime", "", info_uptime()},
+//             {"chipid", "", info_chipid()},
+//             {"idesize", "", info_idesize()},
+//             {"flashsize", "", info_flashsize()},
+//             {"sdkver", "", info_sdkver()},
+//             {"cpufreq", "", info_cpufreq()},
+//             {"freeheap", "", info_freeheap()},
+//             {"memsketch", "", info_memsketch()},
+//             {"lastreset", "", info_lastreset()},
+//             {"conx", "", info_conx()},
+//             {"stassid", "", info_stassid()},
+//             {"staip", "", info_staip()},
+//             {"stamac", "", info_stamac()},
+//             {"stagw", "", info_stagw()},
+//             {"stasub", "", info_stasub()},
+//             {"dnss", "", info_dnss()},
+//             {"hostnom", "", info_hostnom()},
+//             {"apssid", "", info_apssid()},
+//             {"apip", "", info_apip()},
+//             {"apmac", "", info_apmac()},
+//             {"memsmeter", "", info_memsmeter()},
+//             {"TemplateCount", "", "Device_TemplateCount()"},
+//         };
 
-    // TemplateMap TemplateMaps[9] = {"Mudda", "Fugga", "SHIT!"};
+//     // TemplateMap TemplateMaps[9] = {"Mudda", "Fugga", "SHIT!"};
 
-    // strcpy (TemplateMaps[9].PlaceHolder, "Mudda");
-    // strcpy (TemplateMaps[9].DebugMSG , "Fugga");
-    //  TemplateMaps[9].p_Content = "SHIT!";
+//     // strcpy (TemplateMaps[9].PlaceHolder, "Mudda");
+//     // strcpy (TemplateMaps[9].DebugMSG , "Fugga");
+//     //  TemplateMaps[9].p_Content = "SHIT!";
 
-    TemplateCount = sizeof(TemplateMaps) / sizeof(TemplateMaps[0]);
+//     TemplateCount = sizeof(TemplateMaps) / sizeof(TemplateMaps[0]);
 
-    // Serial.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
-    // for (int ctr = 0; ctr < TemplateCount; ctr++)
-    //     Serial.printf("%s\t-\t%s\t-\t%s\n",
-    //                   TemplateMaps[ctr].PlaceHolder,
-    //                   TemplateMaps[ctr].DebugMSG,
-    //                   TemplateMaps[ctr].p_Content.c_str());
-    // Serial.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+//     // Serial.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+//     // for (int ctr = 0; ctr < TemplateCount; ctr++)
+//     //     Serial.printf("%s\t-\t%s\t-\t%s\n",
+//     //                   TemplateMaps[ctr].PlaceHolder,
+//     //                   TemplateMaps[ctr].DebugMSG,
+//     //                   TemplateMaps[ctr].p_Content.c_str());
+//     // Serial.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
-    Serial.printf("info - TemplateMap #9/%i: ", sizeof(TemplateMaps) / sizeof(TemplateMaps[0]));
-    Serial.print(TemplateMaps[9].PlaceHolder);
-    Serial.print(" --- ");
-    Serial.print(TemplateMaps[9].DebugMSG);
-    Serial.print(" --- ");
-    Serial.println(TemplateMaps[9].p_Content);
-}
+//     Serial.printf("info - TemplateMap #9/%i: ", sizeof(TemplateMaps) / sizeof(TemplateMaps[0]));
+//     Serial.print(TemplateMaps[9].PlaceHolder);
+//     Serial.print(" --- ");
+//     Serial.print(TemplateMaps[9].DebugMSG);
+//     Serial.print(" --- ");
+//     Serial.println(TemplateMaps[9].p_Content);
+// }
 
-void poop()
-{
-    // strcpy (TemplateMaps[9].PlaceHolder, "This");
-    // strcpy (TemplateMaps[9].DebugMSG , "Blows");
-    //  TemplateMaps[9].p_Content = "Chunks!";
+// void poop()
+// {
+//     // strcpy (TemplateMaps[9].PlaceHolder, "This");
+//     // strcpy (TemplateMaps[9].DebugMSG , "Blows");
+//     //  TemplateMaps[9].p_Content = "Chunks!";
 
-    Serial.printf("poop - TemplateMap #9/%i: ", sizeof(TemplateMaps) / sizeof(TemplateMaps[0]));
-    Serial.print(TemplateMaps[9].PlaceHolder);
-    Serial.print(" --- ");
-    Serial.print(TemplateMaps[9].DebugMSG);
-    Serial.print(" --- ");
-    Serial.println(TemplateMaps[9].p_Content);
-}
+//     Serial.printf("poop - TemplateMap #9/%i: ", sizeof(TemplateMaps) / sizeof(TemplateMaps[0]));
+//     Serial.print(TemplateMaps[9].PlaceHolder);
+//     Serial.print(" --- ");
+//     Serial.print(TemplateMaps[9].DebugMSG);
+//     Serial.print(" --- ");
+//     Serial.println(TemplateMaps[9].p_Content);
+// }
 
 String DeviceID()
 {
