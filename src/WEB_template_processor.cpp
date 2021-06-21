@@ -167,13 +167,13 @@ String processor(const String &var) // Change placeholders on webpage
     }
     /////////////////////////////////////////////////////////////
 
-    if (var == "TemplateCount") // The placeholder
-    {
-        String Fugga = "TemplateCount = " + String(TemplateCount);
+    // if (var == "TemplateCount") // The placeholder
+    // {
+    //     String Fugga = "TemplateCount = " + String(TemplateCount);
 
-        // DEBUG_LineOut(Fugga);
-        return Fugga;
-    }
+    //     // DEBUG_LineOut(Fugga);
+    //     return Fugga;
+    // }
 
     /* I2C pin numbers */
     if (var == "SDASCLplaceholder")
