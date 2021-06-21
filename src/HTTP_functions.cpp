@@ -82,7 +82,6 @@ boolean setup_HTTP()
 #if defined(TestPage)
         InitializePage(5);
 #endif
-        InitializePage(6);
     }
     /* root page */
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
