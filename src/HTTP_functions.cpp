@@ -79,7 +79,9 @@ boolean setup_HTTP()
         InitializePage(2);
         InitializePage(3);
         InitializePage(4);
+#if defined(TestPage)
         InitializePage(5);
+#endif
         // InitializePage(6);
     }
     /* root page */

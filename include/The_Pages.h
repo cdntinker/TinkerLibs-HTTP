@@ -38,5 +38,7 @@ PageMapping PageContent[] =
         {"/complete", &done_html[0]},
         {"/failedOTA", &failOTA_html[0]},
         // {"/reboot", &reboot_html[0]},
+#if defined(TestPage)
         {"/test", &test_html[0]},
+#endif
 };
