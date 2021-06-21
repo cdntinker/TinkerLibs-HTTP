@@ -7,6 +7,8 @@
 /* include the CSS (done in HTML with a RAW Literal wrapper) */
 #include "HTML/css.css"
 
+#include "HTML/Scripts.htm"
+
 /* include the webpages (done in HTML with a RAW Literal wrapper) */
 #include "HTML/homepage.htm"   // Homepage HTML
 #include "HTML/Management.htm" // UPDATEpage HTML
