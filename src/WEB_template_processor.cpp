@@ -6,7 +6,7 @@
 
 #include "HTML_Loadup.h"
 #include "OTA_Externs.h"
-#include "DeviceInfo.h"
+// #include "DeviceInfo.h"
 
 /* Convert a #defined value to a string */
 #define ST(A) #A
