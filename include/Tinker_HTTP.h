@@ -12,3 +12,4 @@ String DeviceID();
 String getProcTag();
 String getDeviceType();
 
+String info_memsketch();
