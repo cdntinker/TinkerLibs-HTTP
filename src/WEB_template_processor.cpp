@@ -8,6 +8,8 @@
 #include "OTA_Externs.h"
 // #include "DeviceInfo.h"
 
+#include "Tinker_HTTP.h"
+
 /* Convert a #defined value to a string */
 #define ST(A) #A
 #define STR(A) ST(A)
