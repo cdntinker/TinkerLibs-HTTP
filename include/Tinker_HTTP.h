@@ -12,4 +12,3 @@ String DeviceID();
 String getProcTag();
 String getDeviceType();
 
-String ip3string(IPAddress ip);

@@ -7,6 +7,7 @@
 #include "HTML_Loadup.h"
 #include "OTA_Externs.h"
 // #include "DeviceInfo.h"
+String ip3string(IPAddress ip);
 
 #include "Tinker_HTTP.h"
 
