@@ -193,6 +193,7 @@ String processor(const String &var) // Change placeholders on webpage
 
 #endif   // original processor
 
+/////////////////////////////////////////////////////////////////////////////////////////
 extern int darkState;
 
 String getDarkMode()
@@ -206,3 +207,80 @@ String getDarkMode()
         return "body { background-color: black; color: white; }";
     }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+extern int deviceREBOOTED;
+
+String getRebootMessage0()
+{
+    if (deviceREBOOTED == false)
+    {
+        return "";
+    }
+    else
+    {
+        return "Device Rebooted";
+    }
+}
+
+String getRebootMessage1()
+{
+    String erroring = "";
+    // if (deviceREBOOTED == false)
+    // {
+    //     erroring += "";
+    // }
+    // else
+    if (deviceREBOOTED)
+    {
+        deviceREBOOTED = false;
+#if defined(ESP8266)
+        String RebootReason =
+            ESP.getResetReason().c_str();
+#elif defined(ESP32)
+        String RebootReason =
+            return_reset_reason(rtc_get_reset_reason(0));
+        erroring += RebootReason;
+        erroring += "/";
+        RebootReason =
+            return_reset_reason(rtc_get_reset_reason(1));
+#endif
+        erroring += RebootReason;
+    }
+    return erroring;
+}
+
+String DeviceID()
+{
+#if defined(DeviceName)
+    String id = STR(DeviceName);
+#else
+    String id = host;
+#endif
+    return id;
+}
+
+String getProcTag()
+{
+    String PROing = "";
+#if defined(ESP8266)
+    PROing += "ESP8266";
+#elif defined(ESP32)
+    PROing += "ESP32";
+#endif
+    PROing += " (";
+    PROing += String(ESP.getFlashChipSize() / 1024 / 1024, DEC);
+    PROing += "MB )";
+    return PROing;
+}
+
+String getDeviceType()
+{
+#if defined(DeviceType)
+    String id = STR(DeviceType);
+#else
+    String id = host;
+#endif
+    return id;
+}
+/////////////////////////////////////////////////////////////////////////////////////////

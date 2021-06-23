@@ -13,7 +13,6 @@ extern int deviceREBOOTED;
 String getRebootMessage0();
 String getRebootMessage1();
 
-String getDeviceID();
 String info_uptime();
 String info_chipid();
 String info_idesize();
