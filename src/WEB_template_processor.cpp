@@ -144,19 +144,19 @@ String processor(const String &var) // Change placeholders on webpage
     }
     // The Footer Section
     {
-        if (var == "WT_ReBootMessage")
+        if (var == "WT_ReBootMSG")
         {
             return getRebootMessage0();
         }
-        if (var == "IDplaceholder")
+        if (var == "WT_DeviceID")
         {
             return DeviceID();
         }
-        if (var == "processorplaceholder")
+        if (var == "WT_Processor")
         {
             return getProcTag();
         }
-        if (var == "type")
+        if (var == "WT_type")
         {
             return getDeviceType();
         }
