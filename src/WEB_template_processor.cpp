@@ -300,3 +300,8 @@ String getDeviceType()
     return id;
 }
 /////////////////////////////////////////////////////////////////////////////////////////
+String ip3string(IPAddress ip)
+{
+    String ret = String(ip[0]) + "." + String(ip[1]) + "." + String(ip[2]) + "." + String(ip[3]);
+    return ret;
+}
