@@ -144,6 +144,12 @@ String processor(const String &var) // Change placeholders on webpage
         DEBUG_LineOut("Page Footer");
         return Page_Footer;
     }
+
+    if (var == "WT_IPMAC")
+    {
+        return IP_MAC;
+    }
+    
     // The Footer Section
     {
         if (var == "WT_ReBootMSG")

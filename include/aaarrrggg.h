@@ -8,10 +8,7 @@
         return getI2Cscan();
     }
 
-    if (var == "WT_IPMAC")
-    {
-        return IP_MAC;
-    }
+
     if (var == "WT_IP")
     {
         return ip3string(WiFi.localIP());
