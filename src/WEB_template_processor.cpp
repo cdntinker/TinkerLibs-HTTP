@@ -201,11 +201,11 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return htmlhover;
     }
-    if (var == "ipplaceholder")
+    if (var == "WT_IP")
     {
         return ip3string(WiFi.localIP());
     }
-    if (var == "macplaceholder")
+    if (var == "WT_MAC")
     {
         return WiFi.macAddress();
     }
