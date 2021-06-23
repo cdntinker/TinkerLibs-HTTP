@@ -1,3 +1,4 @@
+#include <Arduino.h>
 
 boolean setup_HTTP();
 
