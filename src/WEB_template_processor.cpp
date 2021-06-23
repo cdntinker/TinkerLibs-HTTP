@@ -309,3 +309,9 @@ String ip3string(IPAddress ip)
     String ret = String(ip[0]) + "." + String(ip[1]) + "." + String(ip[2]) + "." + String(ip[3]);
     return ret;
 }
+
+String info_memsketch()
+{
+    String memsketch = ((String)(ESP.getSketchSize())) + " / " + ((String)(ESP.getSketchSize() + ESP.getFreeSketchSpace())) + "  Used / Total";
+    return memsketch;
+}
