@@ -326,17 +326,17 @@ String info_memsmeter()
 //     TemplateMap TemplateMaps[] =
 //         {
 
-//             {"SDASCLplaceholder", "", getSDASCL()},
-//             {"I2Cplaceholder", "", getI2Cscan()},
+//             {"WT_SDASCL", "", getSDASCL()},
+//             {"WT_I2C", "", getI2Cscan()},
 //             {"tPageContent", "", TestPagePart},
 //             {"hPageContent", "", HomePagePart},
 //             {"PageHeader", "Page Header", Page_Header},
 //             {"PageBody", "Page Body", Page_Body},
 //             {"PageFooter", "Page Footer", Page_Footer},
 //             {"SCRIPTS", "", Scripts_html},
-//             {"IPMAC", "", IP_MAC},
+//             {"WT_IPMAC", "", IP_MAC},
 //             {"title", "", getDeviceName()},
-//             {"dark", "", getDarkMode()},
+//             {"WT_dark", "", getDarkMode()},
 //             {"WT_type", "", getDeviceType()},
 //             {"color", "", htmlcolor},
 //             {"hover", "", htmlhover},

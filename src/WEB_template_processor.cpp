@@ -176,28 +176,28 @@ String processor(const String &var) // Change placeholders on webpage
     // }
 
     /* I2C pin numbers */
-    if (var == "SDASCLplaceholder")
+    if (var == "WT_SDASCL")
     {
         return getSDASCL();
     }
-    if (var == "I2Cplaceholder")
+    if (var == "WT_I2C")
     {
         return getI2Cscan();
     }
 
-    if (var == "IPMAC")
+    if (var == "WT_IPMAC")
     {
         return IP_MAC;
     }
-    if (var == "dark")
+    if (var == "WT_dark")
     {
         return getDarkMode();
     }
-    if (var == "color")
+    if (var == "WT_color")
     {
         return htmlcolor;
     }
-    if (var == "hover")
+    if (var == "WT_hover")
     {
         return htmlhover;
     }
