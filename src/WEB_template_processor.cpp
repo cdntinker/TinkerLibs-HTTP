@@ -46,7 +46,7 @@ String processor(const String &var) // Change placeholders on webpage
     return String("Woopsie!!!");
 }
 
-#else   // original processor
+#else // original processor
 
 #if defined(SiniLink)
 extern String SiniLink_TurnOn;
@@ -149,7 +149,15 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return IP_MAC;
     }
-    
+    if (var == "WT_IP")
+    {
+        return ip3string(WiFi.localIP());
+    }
+    if (var == "WT_MAC")
+    {
+        return WiFi.macAddress();
+    }
+
     // The Footer Section
     {
         if (var == "WT_ReBootMSG")
@@ -199,7 +207,7 @@ String processor(const String &var) // Change placeholders on webpage
     return String();
 }
 
-#endif   // original processor
+#endif // original processor
 
 /////////////////////////////////////////////////////////////////////////////////////////
 extern int darkState;
