@@ -158,7 +158,10 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return WiFi.macAddress();
     }
-
+    if (var == "memsketch")
+    {
+        return info_memsketch();
+    }
     // The Footer Section
     {
         if (var == "WT_ReBootMSG")
