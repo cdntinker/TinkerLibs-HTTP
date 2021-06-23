@@ -8,6 +8,7 @@
 #include "OTA_Externs.h"
 // #include "DeviceInfo.h"
 String ip3string(IPAddress ip);
+String info_memsketch();
 
 #include "Tinker_HTTP.h"
 
