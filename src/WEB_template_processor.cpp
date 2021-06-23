@@ -192,3 +192,17 @@ String processor(const String &var) // Change placeholders on webpage
 }
 
 #endif   // original processor
+
+extern int darkState;
+
+String getDarkMode()
+{
+    if (darkState == false)
+    {
+        return "body { background-color: white; color: black; }";
+    }
+    else
+    {
+        return "body { background-color: black; color: white; }";
+    }
+}
