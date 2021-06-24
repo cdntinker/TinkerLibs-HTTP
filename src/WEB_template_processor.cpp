@@ -315,19 +315,20 @@ String info_memsketch()
 {
     int Size = ESP.getSketchSize();
     int Free = ESP.getFreeSketchSpace();
+    int Total = Size + Free;
     
 Serial.printf("Sketch Size: %d\n", Size);
 Serial.printf(" Free Space: %d\n", Free);
 
-Serial.printf("Total Space: %d\n", Size + Free);
+Serial.printf("Total Space: %d\n", Total);
 
-Serial.println( ( Size / (Size + Free) ));
+Serial.println( (Size / (Size + Free)) );
 
     String memsketch =
         ((String)(ESP.getSketchSize())) +
         " / " +
         ((String)(ESP.getSketchSize() + ESP.getFreeSketchSpace())) +
-        "Used / Total" +
+        " Used / Total " +
         (String)(ESP.getSketchSize() / ((ESP.getSketchSize() + ESP.getFreeSketchSpace()))) +
         "%%";
     return memsketch;
