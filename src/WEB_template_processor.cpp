@@ -313,6 +313,12 @@ String ip3string(IPAddress ip)
 
 String info_memsketch()
 {
-    String memsketch = ((String)(ESP.getSketchSize())) + " / " + ((String)(ESP.getSketchSize() + ESP.getFreeSketchSpace())) + "  Used / Total";
+    String memsketch =
+        ((String)(ESP.getSketchSize())) +
+        " / " +
+        ((String)(ESP.getSketchSize() + ESP.getFreeSketchSpace())) +
+        "Used / Total" +
+        (String)(ESP.getSketchSize() / ((String)(ESP.getSketchSize() + ESP.getFreeSketchSpace()))) +
+        "%";
     return memsketch;
 }
