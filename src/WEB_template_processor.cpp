@@ -321,7 +321,7 @@ Serial.printf(" Free Space: %d\n", Free);
 
 Serial.printf("Total Space: %d\n", Size + Free);
 
-Serial.println( (Size / (Size + Free) ));
+Serial.println( ( (Size + Free) ));
 
     String memsketch =
         ((String)(ESP.getSketchSize())) +
