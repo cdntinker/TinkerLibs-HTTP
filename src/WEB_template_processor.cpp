@@ -313,12 +313,19 @@ String ip3string(IPAddress ip)
 
 String info_memsketch()
 {
+    int Size = ESP.getSketchSize();
+    int Free = ESP.getFreeSketchSpace();
+    int Total = Size + Free;
+    float Percent = Size / Total;
+
+    Serial.println(Percent);
+    
     String memsketch =
-        ((String)(ESP.getSketchSize())) +
-        " / " +
-        ((String)(ESP.getSketchSize() + ESP.getFreeSketchSpace())) +
-        "Used / Total" +
-        (String)(ESP.getSketchSize() / ((String)(ESP.getSketchSize() + ESP.getFreeSketchSpace()))) +
-        "%";
+        ((String)(Size)) +
+        " + " +
+        ((String)(Free)) +
+        " = " +
+        ((String)(Total)) +
+        " Used+Free=Total ";
     return memsketch;
 }
