@@ -1,7 +1,6 @@
 const char TheCSS[] PROGMEM = 
 R"rawliteral(
-<style>
-   
+
 body {
    margin:0;
    padding:0;
@@ -191,5 +190,4 @@ body {
     padding-right: 10rem;
    }
 
-  </style>
   )rawliteral";
