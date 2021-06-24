@@ -316,7 +316,8 @@ String info_memsketch()
     int Size = ESP.getSketchSize();
     int Free = ESP.getFreeSketchSpace();
     int Total = Size + Free;
-    float Percent = Size / Total;
+//    float Percent = Size / Total;
+    float Percent = Total / Size;
     
 Serial.printf("Sketch Size: %d\n", Size);
 Serial.printf(" Free Space: %d\n", Free);
