@@ -329,6 +329,6 @@ Serial.printf(" Percentage: %d\n", Percent * 100);
         ((String)(Free)) +
         " = " +
         ((String)(Total)) +
-        " Used + Free = Total ";
+        " Used+Free=Total ";
     return memsketch;
 }
