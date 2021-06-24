@@ -16,14 +16,14 @@ extern const char* Content_SiniLink;
 extern const char* Content_Sonoff;
 
 // #if defined(TestPage)
-#if (TestPage == 0) || (HomePage == 0)
+#if (defined(TestPage) && (TestPage == 0)) || (defined(HomePage) && (HomePage == 0))
 #include "HTML/Parts/Content_Verkz.htm"
 #endif
-#if (TestPage == 3) || (HomePage == 3)
+#if (defined(TestPage) && (TestPage == 3)) || (defined(HomePage) && (HomePage == 3))
 #include "HTML/Parts/Content_DeviceInfo.htm"
 #endif
 // #endif
-#include "HTML/Parts/Content_WTF.htm"
+// #include "HTML/Parts/Content_WTF.htm"
 // #include "HTML/Parts/Content_Oops.htm"
 
 /* This kinda sucks...  It's sooooo limiting... */
