@@ -319,6 +319,6 @@ String info_memsketch()
         ((String)(ESP.getSketchSize() + ESP.getFreeSketchSpace())) +
         "Used / Total" +
         (String)(ESP.getSketchSize() / ((ESP.getSketchSize() + ESP.getFreeSketchSpace()))) +
-        "%";
+        "%%";
     return memsketch;
 }
