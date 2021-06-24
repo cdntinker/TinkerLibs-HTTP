@@ -320,9 +320,6 @@ String info_memsketch()
 
     Serial.println(Percent);
     
-Serial.printf(" Percentage: %f\n", Percent);
-Serial.printf(" Percentage: %d\n", Percent * 100);
-
     String memsketch =
         ((String)(Size)) +
         " + " +
