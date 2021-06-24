@@ -322,6 +322,8 @@ Serial.printf("Sketch Size: %d\n", Size);
 Serial.printf(" Free Space: %d\n", Free);
 
 Serial.printf("Total Space: %d\n", Total);
+
+    Serial.println(Percent);
     
 Serial.printf(" Percentage: %f\n", Percent);
 Serial.printf(" Percentage: %d\n", Percent * 100);
