@@ -313,8 +313,8 @@ String ip3string(IPAddress ip)
 
 String info_memsketch()
 {
-Serial.printf("Sketch Size: %d\n", ESP.getSketchSize())
-Serial.printf(" Free Space: %d\n", ESP.getFreeSketchSpace())
+Serial.printf("Sketch Size: %d\n", ESP.getSketchSize());
+Serial.printf(" Free Space: %d\n", ESP.getFreeSketchSpace());
     String memsketch =
         ((String)(ESP.getSketchSize())) +
         " / " +
