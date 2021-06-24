@@ -315,6 +315,11 @@ String info_memsketch()
 {
 Serial.printf("Sketch Size: %d\n", ESP.getSketchSize());
 Serial.printf(" Free Space: %d\n", ESP.getFreeSketchSpace());
+
+Serial.printf("Total Space: %d\n", ESP.getFreeSketchSpace() + ESP.getSketchSize());
+
+Serial.printf(" Free Space: %d\n", (ESP.getSketchSize()) / (ESP.getFreeSketchSpace() + ESP.getSketchSize()));
+
     String memsketch =
         ((String)(ESP.getSketchSize())) +
         " / " +
