@@ -323,7 +323,8 @@ Serial.printf(" Free Space: %d\n", Free);
 
 Serial.printf("Total Space: %d\n", Total);
     
-Serial.printf("Percentage: %f\n", Percent);
+Serial.printf(" Percentage: %f\n", Percent);
+Serial.printf(" Percentage: %d\n", Percent * 100);
 
     String memsketch =
         ((String)(ESP.getSketchSize())) +
