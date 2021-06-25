@@ -137,6 +137,7 @@ boolean setup_HTTP()
         {
             //Upload handler chunks in data
             // sprintf(DEBUGtxt, "Page: %s", "/management 2 happened");
+        int dotcount = 0;
             // DEBUG_LineOut(DEBUGtxt);
             if (!index)
             {
@@ -168,7 +169,7 @@ boolean setup_HTTP()
                 DEBUG_LineOut("uploading");
             }
 
-        int dotcount = 0;
+        // int dotcount = 0;
 
             // Write chunked data to the free sketch space
             if (len)
