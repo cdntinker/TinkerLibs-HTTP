@@ -120,12 +120,12 @@ boolean setup_HTTP()
                   sprintf(DEBUGtxt, "Page: %s", "/darkmode");
                   DEBUG_LineOut(DEBUGtxt);
               });
-int ditditdit = 0;
 
     /* management (POST) page */
     server.on(
         "/management", HTTP_POST, [&](AsyncWebServerRequest *request)
         {
+int ditditdit = 0;
 Serial.printf(">%d\n", ditditdit);
             // the request handler is triggered after the upload has finished...
             // create the response, add header, and send response
