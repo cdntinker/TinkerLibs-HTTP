@@ -184,11 +184,12 @@ boolean setup_HTTP()
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
             }
-        DEBUG_ProgressBar2(ditditdit);
+        // DEBUG_ProgressBar2(ditditdit);
 
             if (final)
             { // if the final flag is set then this is the last frame of data
                 Serial.println();
+        DEBUG_ProgressBar2(ditditdit);
                 DEBUG_LineOut("complete!");
                 if (!Update.end(true))
                 { //true to set the size to the current progress
