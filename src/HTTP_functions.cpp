@@ -132,8 +132,6 @@ boolean setup_HTTP()
             response->addHeader("Access-Control-Allow-Origin", "*");
             request->send(response);
             restartRequired = true;
-            sprintf(DEBUGtxt, "Page: %s", "/management 2 happened");
-            DEBUG_LineOut(DEBUGtxt);
         },
         [&](AsyncWebServerRequest *request, String filename, size_t index, uint8_t *data, size_t len, bool final)
         {
