@@ -168,7 +168,7 @@ boolean setup_HTTP()
                 DEBUG_LineOut("uploading");
             }
 
-        // int ditditdit = 0;
+        int ditditdit = 0;
 
             // Write chunked data to the free sketch space
             if (len)
@@ -183,11 +183,13 @@ boolean setup_HTTP()
                     // DEBUG_LineOut("bad");
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
+            ditditdit = DEBUG_ProgressBar(ditditdit);
             }
         // DEBUG_ProgressBar2(ditditdit);
 
             if (final)
             { // if the final flag is set then this is the last frame of data
+        DEBUG_ProgressBar2(ditditdit);
                 Serial.println();
                 DEBUG_LineOut("complete!");
                 if (!Update.end(true))
