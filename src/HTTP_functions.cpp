@@ -81,6 +81,7 @@ boolean setup_HTTP()
     /* root page */
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
               {
+                  DEBUG_SectionTitle("HTTP Action");
                   request->redirect("/home");
                   sprintf(DEBUGtxt, "Page: %s", "/");
                   DEBUG_LineOut(DEBUGtxt);
@@ -96,6 +97,7 @@ boolean setup_HTTP()
     /* reboot page */
     server.on("/reboot", HTTP_GET, [](AsyncWebServerRequest *request)
               {
+                  DEBUG_SectionTitle("HTTP Action");
                   request->send_P(200, "text/html", reboot_html, processor);
                   restartRequired = true;
               });
@@ -103,6 +105,7 @@ boolean setup_HTTP()
     /* darkmode page */
     server.on("/darkmode", HTTP_GET, [](AsyncWebServerRequest *request)
               {
+                  DEBUG_SectionTitle("HTTP Action");
                   String inputMessage1;
                   if (request->hasParam(PARAM_dark_1))
                   {
@@ -201,7 +204,7 @@ boolean setup_HTTP()
     /* error 404 */
     server.onNotFound([](AsyncWebServerRequest *request)
                       {
-                                  DEBUG_SectionTitle("HTTP Action");
+                          DEBUG_SectionTitle("HTTP Action");
                           request->send(404);
                           sprintf(DEBUGtxt, "Page: %s", "404");
                           DEBUG_LineOut(DEBUGtxt);
