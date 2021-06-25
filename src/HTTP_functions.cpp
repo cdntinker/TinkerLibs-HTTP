@@ -41,6 +41,7 @@ char CurrentPage[32];
 /**********************************************************************/
 
 int PageNumber;
+int ditditdit;
 
 boolean setup_HTTP()
 {
@@ -125,7 +126,7 @@ boolean setup_HTTP()
     server.on(
         "/management", HTTP_POST, [&](AsyncWebServerRequest *request)
         {
-int ditditdit = 0;
+ditditdit = 0;
 Serial.printf(">%d\n", ditditdit);
             // the request handler is triggered after the upload has finished...
             // create the response, add header, and send response
