@@ -32,7 +32,7 @@ struct PageMapping
 
 PageMapping PageContent[] =
     {
-        {"/TheCSS.css", &TheCSS[0]},
+        // {"/TheCSS.css", &TheCSS[0]},
         {"/home", &home_html[0]},
         {"/management", &management_html[0]},
         {"/complete", &done_html[0]},

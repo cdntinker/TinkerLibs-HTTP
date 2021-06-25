@@ -117,6 +117,7 @@ String processor(const String &var) // Change placeholders on webpage
     if (var == "PageBody") // The placeholder
     {
         DEBUG_LineOut("Page Body");
+
         if (!strcmp(CurrentPage, "/test"))
         {
             return TestPagePart;
@@ -318,7 +319,7 @@ String info_memsketch()
     int Total = Size + Free;
     float Percent = Size / Total;
 
-    Serial.println(Percent);
+    // Serial.println(Percent);
     
     String memsketch =
         ((String)(Size)) +
