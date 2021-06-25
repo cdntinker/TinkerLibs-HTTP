@@ -120,6 +120,7 @@ boolean setup_HTTP()
                   sprintf(DEBUGtxt, "Page: %s", "/darkmode");
                   DEBUG_LineOut(DEBUGtxt);
               });
+int ditditdit = 0;
 
     /* management (POST) page */
     server.on(
@@ -168,7 +169,6 @@ boolean setup_HTTP()
                 DEBUG_LineOut("uploading");
             }
 
-int ditditdit = 0;
 
             // Write chunked data to the free sketch space
             if (len)
