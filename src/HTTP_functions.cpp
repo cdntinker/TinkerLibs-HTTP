@@ -127,7 +127,6 @@ boolean setup_HTTP()
         "/management", HTTP_POST, [&](AsyncWebServerRequest *request)
         {
 ditditdit = 0;
-Serial.printf(">%d\n", ditditdit);
             // the request handler is triggered after the upload has finished...
             // create the response, add header, and send response
             AsyncWebServerResponse *response = request->beginResponse((Update.hasError()) ? 500 : 200, "text/plain", (Update.hasError()) ? "FAIL" : "OK");
@@ -176,25 +175,19 @@ Serial.printf(">%d\n", ditditdit);
             if (len)
             {
                 // DEBUG_LineOut("BOTH good");
-// ditditdit = DEBUG_ProgressBar(ditditdit);
                 // Serial.print("~"); // progress
                 if (Update.write(data, len) != len)
                 {
-// ditditdit = DEBUG_ProgressBar(ditditdit);
                     // Serial.print("!"); // progress
                     // DEBUG_LineOut("bad");
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
-// Serial.printf(">%d\n", ditditdit);
 ditditdit = DEBUG_ProgressBar(ditditdit);
-// Serial.printf("<%d\n", ditditdit);
             }
-// DEBUG_ProgressBar2(ditditdit);
-// Serial.print("-");
+
             if (final)
             { // if the final flag is set then this is the last frame of data
 DEBUG_ProgressBar2(ditditdit);
-Serial.printf(">%d\n", ditditdit);
                 Serial.println();
                 DEBUG_LineOut("complete!");
                 if (!Update.end(true))
