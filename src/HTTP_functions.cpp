@@ -183,7 +183,9 @@ int ditditdit = 0;
                     // DEBUG_LineOut("bad");
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
+Serial.printf(">%d\n", ditditdit);
             ditditdit = DEBUG_ProgressBar(ditditdit);
+Serial.printf("<%d\n", ditditdit);
             }
 // DEBUG_ProgressBar2(ditditdit);
 Serial.print("-");
