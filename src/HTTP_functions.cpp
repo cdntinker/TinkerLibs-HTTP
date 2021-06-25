@@ -201,6 +201,7 @@ boolean setup_HTTP()
     /* error 404 */
     server.onNotFound([](AsyncWebServerRequest *request)
                       {
+                                  DEBUG_SectionTitle("HTTP Action");
                           request->send(404);
                           sprintf(DEBUGtxt, "Page: %s", "404");
                           DEBUG_LineOut(DEBUGtxt);
