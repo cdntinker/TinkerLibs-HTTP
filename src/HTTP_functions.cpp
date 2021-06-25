@@ -137,7 +137,6 @@ boolean setup_HTTP()
         {
             //Upload handler chunks in data
             // sprintf(DEBUGtxt, "Page: %s", "/management 2 happened");
-        int dotcount = 0;
             // DEBUG_LineOut(DEBUGtxt);
             if (!index)
             {
@@ -169,23 +168,23 @@ boolean setup_HTTP()
                 DEBUG_LineOut("uploading");
             }
 
-        // int dotcount = 0;
+        int ditditdit = 0;
 
             // Write chunked data to the free sketch space
             if (len)
             {
                 // DEBUG_LineOut("BOTH good");
-            dotcount = DEBUG_ProgressBar(dotcount);
+            ditditdit = DEBUG_ProgressBar(ditditdit);
                 // Serial.print("~"); // progress
                 if (Update.write(data, len) != len)
                 {
-            dotcount = DEBUG_ProgressBar(dotcount);
+            ditditdit = DEBUG_ProgressBar(ditditdit);
                     // Serial.print("!"); // progress
                     // DEBUG_LineOut("bad");
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
             }
-        DEBUG_ProgressBar2(dotcount);
+        DEBUG_ProgressBar2(ditditdit);
 
             if (final)
             { // if the final flag is set then this is the last frame of data
