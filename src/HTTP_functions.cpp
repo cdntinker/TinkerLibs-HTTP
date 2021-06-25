@@ -71,9 +71,9 @@ boolean setup_HTTP()
         InitializePage(1);
         InitializePage(2);
         InitializePage(3);
-        InitializePage(4);
+        // InitializePage(4);
 #if defined(TestPage)
-        InitializePage(5);
+        InitializePage(4);
 #endif
     }
 
@@ -83,6 +83,13 @@ boolean setup_HTTP()
                   request->redirect("/home");
                   sprintf(DEBUGtxt, "Page: %s", "/");
                   DEBUG_LineOut(DEBUGtxt);
+              });
+
+    /* Load the CSS */
+    server.on("/TheCSS.css", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  request->send_P(200, "text/html", TheCSS, processor);
+                  DEBUG_LineOut("TheCSS Loaded");
               });
 
     /* reboot page */
