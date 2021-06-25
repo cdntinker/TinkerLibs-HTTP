@@ -126,6 +126,7 @@ int ditditdit = 0;
     server.on(
         "/management", HTTP_POST, [&](AsyncWebServerRequest *request)
         {
+Serial.printf(">%d\n", ditditdit);
             // the request handler is triggered after the upload has finished...
             // create the response, add header, and send response
             AsyncWebServerResponse *response = request->beginResponse((Update.hasError()) ? 500 : 200, "text/plain", (Update.hasError()) ? "FAIL" : "OK");
