@@ -184,14 +184,15 @@ int ditditdit = 0;
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
 // Serial.printf(">%d\n", ditditdit);
-            ditditdit = DEBUG_ProgressBar(ditditdit);
+ditditdit = DEBUG_ProgressBar(ditditdit);
 // Serial.printf("<%d\n", ditditdit);
             }
 // DEBUG_ProgressBar2(ditditdit);
-Serial.print("-");
+// Serial.print("-");
             if (final)
             { // if the final flag is set then this is the last frame of data
 DEBUG_ProgressBar2(ditditdit);
+Serial.printf(">%d\n", ditditdit);
                 Serial.println();
                 DEBUG_LineOut("complete!");
                 if (!Update.end(true))
