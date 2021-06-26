@@ -176,7 +176,7 @@ boolean setup_HTTP()
                 // DEBUG_LineOut("BOTH good");
                 if (Update.write(data, len) != len)
                 {
-                    // Serial.print("!"); // progress
+                    Serial.print("!"); // progress
                     // DEBUG_LineOut("bad");
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
