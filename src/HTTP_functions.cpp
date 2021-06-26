@@ -180,7 +180,7 @@ boolean setup_HTTP()
                     // DEBUG_LineOut("bad");
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
-                ditditdit = DEBUG_ProgressBar(ditditdit);
+                ditditdit = DEBUG_ProgressBar(ditditdit, '.');
             }
 
             if (final)
