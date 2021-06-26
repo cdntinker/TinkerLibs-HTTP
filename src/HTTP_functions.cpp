@@ -171,15 +171,16 @@ boolean setup_HTTP()
             // Write chunked data to the free sketch space
             if (len)
             {
+                Serial.printf("Update.write(%d, %d)\n", data, len); // progress
                 // DEBUG_LineOut("BOTH good");
                 if (Update.write(data, len) != len)
                 {
-                    Serial.printf("Update.write(%d, %d)\n",data, len); // progress
                     // ditditdit = DEBUG_ProgressBar(ditditdit, '!');
                     // DEBUG_LineOut("bad");
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
-                ditditdit = DEBUG_ProgressBar(ditditdit, '.');
+                else
+                    ditditdit = DEBUG_ProgressBar(ditditdit, '.');
             }
 
             if (final)
