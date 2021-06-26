@@ -51,7 +51,7 @@ boolean setup_HTTP()
     server.on("/poop", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   DEBUG_LineOut("poop Loaded");
-                  request->send_P(200, "text/html", "<H1>W T F ?</H1>");
+                  request->send_P(200, "text/html", "<H1>W T F ?</H1>", processor);
               });
 
     {   // Multi-page macro setup
