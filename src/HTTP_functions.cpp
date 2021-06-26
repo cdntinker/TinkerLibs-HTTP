@@ -171,7 +171,6 @@ boolean setup_HTTP()
             // Write chunked data to the free sketch space
             if (len)
             {
-                Serial.printf("Update.write(%d, %d)\n", data, len); // progress
                 // DEBUG_LineOut("BOTH good");
                 if (Update.write(data, len) != len)
                 {
