@@ -138,8 +138,6 @@ boolean setup_HTTP()
         [&](AsyncWebServerRequest *request, String filename, size_t index, uint8_t *data, size_t len, bool final)
         {
             //Upload handler chunks in data
-            // sprintf(DEBUGtxt, "Page: %s", "/management 2 happened");
-            // DEBUG_LineOut(DEBUGtxt);
             if (!index)
             {
 
@@ -152,7 +150,7 @@ boolean setup_HTTP()
                 uint32_t maxSketchSpace = (ESP.getFreeSketchSpace() - 0x1000) & 0xFFFFF000;
                 if (!Update.begin((cmd == U_FS) ? fsSize : maxSketchSpace, cmd))
                 { // Start with max available size
-                    DEBUG_LineOut("errored?");
+                    DEBUG_Trouble("error:  OTA could not begin");
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
@@ -161,7 +159,7 @@ boolean setup_HTTP()
                 int cmd = (filename == "filesystem") ? U_SPIFFS : U_FLASH;
                 if (!Update.begin(UPDATE_SIZE_UNKNOWN, cmd))
                 { // Start with max available size
-                    DEBUG_LineOut("errored?");
+                    DEBUG_Trouble("error:  OTA could not begin");
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
@@ -187,10 +185,10 @@ boolean setup_HTTP()
             if (final)
             { // if the final flag is set then this is the last frame of data
                 DEBUG_ProgressBar2(ditditdit);
-                DEBUG_LineOut("complete!");
+                DEBUG_Success("complete!");
                 if (!Update.end(true))
                 { //true to set the size to the current progress
-                    DEBUG_LineOut("Poop!");
+                    DEBUG_Trouble("error:  Could not end OTA");
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "Could not end OTA");
                 }
