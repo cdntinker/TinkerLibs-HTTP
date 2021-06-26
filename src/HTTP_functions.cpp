@@ -47,12 +47,11 @@ boolean setup_HTTP()
 {
     DEBUG_Init("WebServer");
 
-    /* reboot page */
+    /* poop page */
     server.on("/poop", HTTP_GET, [](AsyncWebServerRequest *request)
               {
-                  DEBUG_SectionTitle("HTTP Action");
+                  DEBUG_LineOut("poop Loaded");
                   request->send_P(200, "text/html", "<H1>W T F ?</H1>");
-                  restartRequired = true;
               });
 
     {   // Multi-page macro setup
