@@ -126,7 +126,7 @@ boolean setup_HTTP()
     server.on(
         "/management", HTTP_POST, [&](AsyncWebServerRequest *request)
         {
-ditditdit = 0;
+            ditditdit = 0;
             // the request handler is triggered after the upload has finished...
             // create the response, add header, and send response
             AsyncWebServerResponse *response = request->beginResponse((Update.hasError()) ? 500 : 200, "text/plain", (Update.hasError()) ? "FAIL" : "OK");
@@ -170,25 +170,22 @@ ditditdit = 0;
                 DEBUG_LineOut("uploading");
             }
 
-
             // Write chunked data to the free sketch space
             if (len)
             {
                 // DEBUG_LineOut("BOTH good");
-                // Serial.print("~"); // progress
                 if (Update.write(data, len) != len)
                 {
                     // Serial.print("!"); // progress
                     // DEBUG_LineOut("bad");
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
-ditditdit = DEBUG_ProgressBar(ditditdit);
+                ditditdit = DEBUG_ProgressBar(ditditdit);
             }
 
             if (final)
             { // if the final flag is set then this is the last frame of data
-DEBUG_ProgressBar2(ditditdit);
-                Serial.println();
+                DEBUG_ProgressBar2(ditditdit);
                 DEBUG_LineOut("complete!");
                 if (!Update.end(true))
                 { //true to set the size to the current progress
