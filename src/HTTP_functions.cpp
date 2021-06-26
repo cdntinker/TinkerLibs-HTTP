@@ -47,6 +47,14 @@ boolean setup_HTTP()
 {
     DEBUG_Init("WebServer");
 
+    /* reboot page */
+    server.on("/poop", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  DEBUG_SectionTitle("HTTP Action");
+                  request->send_P(200, "text/html", "<H1>W T F ?</H1>");
+                  restartRequired = true;
+              });
+
     {   // Multi-page macro setup
 /* ********************************************************
  * This #define builds the page request handlers for
