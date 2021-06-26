@@ -47,7 +47,7 @@ boolean setup_HTTP()
 {
     DEBUG_Init("WebServer");
 
-    {
+    {   // Multi-page macro setup
 /* ********************************************************
  * This #define builds the page request handlers for
  * pages defined in the PageContent[] array of structures.

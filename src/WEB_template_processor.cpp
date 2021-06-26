@@ -1,4 +1,8 @@
 // #include "NOTARDUINO.h"
+#if defined(ESP32)
+#include <rom/rtc.h>
+#endif
+
 #include <Arduino.h>
 
 #include <Tinker_DEBUG.h>
