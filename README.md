@@ -24,8 +24,8 @@
     - Scripts.htm
     - testpage.htm
     - Parts/
-      - Content_HomePage.htm
-      - Content_Management.htm
+      - Body_HomePage.htm
+      - Body_Management.htm
       - Content_DeviceInfo.htm
       - Content_IP_MAC.htm
       - Content_Oops.htm

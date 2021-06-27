@@ -76,8 +76,8 @@ const char *HomePagePart = "";
 
 /**********************************************************************/
 
-#include "HTML/Parts/Content_Management.htm"
-#include "HTML/Parts/Content_HomePage.htm"
+#include "HTML/Parts/Body_Management.htm"
+#include "HTML/Parts/Body_HomePage.htm"
 
 /**********************************************************************/
 struct ButtonMap

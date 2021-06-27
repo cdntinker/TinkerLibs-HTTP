@@ -140,11 +140,11 @@ String processor(const String &var) // Change placeholders on webpage
         }
         if (!strcmp(CurrentPage, "/home"))
         {
-            return Content_HomePage;
+            return Body_HomePage;
         }
         if (!strcmp(CurrentPage, "/management"))
         {
-            return Content_Management;
+            return Body_Management;
         }
 
         return "<H1>WTF?</H1>";
