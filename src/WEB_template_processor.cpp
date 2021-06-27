@@ -327,10 +327,8 @@ String info_memsketch()
     
     String memsketch =
         ((String)(Size)) +
-        " + " +
+        " / " +
         ((String)(Free)) +
-        " = " +
-        ((String)(Total)) +
-        " Used+Free=Total ";
+        " Used/Free ";
     return memsketch;
 }
