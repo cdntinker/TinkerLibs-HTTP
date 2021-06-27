@@ -111,6 +111,12 @@ String processor(const String &var) // Change placeholders on webpage
     }
     /**********************************************************************/
 
+    if (var == "WT_Update")
+    {
+        DEBUG_LineOut("Page Header");
+        return Content_Firmware_Update;
+    }
+
 #if defined(SiniLink)
     if (var == "SiniLink_TurnOn")
         return SiniLink_TurnOn;
