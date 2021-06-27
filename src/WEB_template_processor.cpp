@@ -117,6 +117,12 @@ String processor(const String &var) // Change placeholders on webpage
         return Content_Firmware_Update;
     }
 
+    if (var == "WT_Reboot")
+    {
+        DEBUG_LineOut("Page Header");
+        return Content_Reboot;
+    }
+
 #if defined(SiniLink)
     if (var == "SiniLink_TurnOn")
         return SiniLink_TurnOn;

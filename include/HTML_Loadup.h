@@ -9,6 +9,7 @@
 
 #include "HTML/Parts/Content_IP_MAC.htm"
 #include "HTML/Parts/Content_Firmware_Update.htm"
+#include "HTML/Parts/Content_Reboot.htm"
 
 /* These are defined in the parent project */
 extern const char* Content_I2C;
