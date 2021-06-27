@@ -113,13 +113,13 @@ String processor(const String &var) // Change placeholders on webpage
 
     if (var == "WT_Update")
     {
-        DEBUG_LineOut("Page Header");
+        DEBUG_LineOut("Content: Update Block");
         return Content_Firmware_Update;
     }
 
     if (var == "WT_Reboot")
     {
-        DEBUG_LineOut("Page Header");
+        DEBUG_LineOut("Content: Reboot Block");
         return Content_Reboot;
     }
 
@@ -153,10 +153,12 @@ String processor(const String &var) // Change placeholders on webpage
 
         return "<H1>WTF?</H1>";
     }
+
     if (var == "tPageContent") // The placeholder
     {
         return TestPagePart;
     }
+
     if (var == "hPageContent") // The placeholder
     {
         return HomePagePart;
@@ -170,6 +172,7 @@ String processor(const String &var) // Change placeholders on webpage
 
     if (var == "WT_IPMAC")
     {
+        DEBUG_LineOut("Content: IP/MAC/Flash Block");
         return IP_MAC;
     }
     if (var == "WT_IP")
