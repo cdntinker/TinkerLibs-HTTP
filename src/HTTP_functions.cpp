@@ -40,6 +40,11 @@ extern char DEBUGtxt[48];
 
 /**********************************************************************/
 char CurrentPage[32];
+bool Refresh_Needed = false;
+            // Need to add a placeholder in the <head> section
+            // And a handler in WEB_template_processor.cpp to add in
+            //      <meta http-equiv="refresh" content="5; URL='/'" />
+            // (and possibly clear this variable back to false)
 /**********************************************************************/
 
 int PageNumber;
@@ -49,51 +54,6 @@ boolean setup_HTTP()
 {
     DEBUG_Init("WebServer");
 
-    /* poop page */
-    server.on("/poop", HTTP_GET, [](AsyncWebServerRequest *request)
-              {
-                  DEBUG_LineOut("poop Loaded");
-                  request->send_P(200, "text/html", "%PageHeader%\n<H1>W T F ?</H1>", processor);
-              });
-    DEBUG_LineOut("Page: /poop set up");
-    /* test home page */
-    server.on("/home", HTTP_GET, [](AsyncWebServerRequest *request)
-              {
-                  DEBUG_SectionTitle("HTTP Action");
-                  strcpy(CurrentPage, "/home");
-                  request->send_P(200, "text/html", Skeleton, processor);
-                  DEBUG_LineOut("home Loaded");
-              });
-    DEBUG_LineOut("Page: /home set up");
-    /* test management page */
-    server.on("/management", HTTP_GET, [](AsyncWebServerRequest *request)
-              {
-                  DEBUG_SectionTitle("HTTP Action");
-                  strcpy(CurrentPage, "/management");
-                  request->send_P(200, "text/html", Skeleton, processor);
-                  DEBUG_LineOut("management Loaded");
-              });
-    DEBUG_LineOut("Page: /management set up");
-    /* test complete page */
-    server.on("/complete", HTTP_GET, [](AsyncWebServerRequest *request)
-              {
-                //   Refresh_Needed = true;
-                  DEBUG_SectionTitle("HTTP Action");
-                  strcpy(CurrentPage, "/complete");
-                  request->send_P(200, "text/html", done_html, processor); ////////////
-                  DEBUG_LineOut("complete Loaded");
-              });
-    DEBUG_LineOut("Page: /complete set up");
-    /* test failedOTA page */
-    server.on("/failedOTA", HTTP_GET, [](AsyncWebServerRequest *request)
-              {
-                  DEBUG_SectionTitle("HTTP Action");
-                  strcpy(CurrentPage, "/failedOTA");
-                  request->send_P(200, "text/html", Skeleton, processor);
-                  DEBUG_LineOut("failedOTA Loaded");
-              });
-    DEBUG_LineOut("Page: /failedOTA set up");
-
     /* root page */
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
               {
@@ -102,6 +62,54 @@ boolean setup_HTTP()
                   sprintf(DEBUGtxt, "Page: %s", "/");
                   DEBUG_LineOut(DEBUGtxt);
               });
+    DEBUG_LineOut("Page: / set up");
+
+    /* home page */
+    server.on("/home", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  DEBUG_SectionTitle("HTTP Action");
+                  strcpy(CurrentPage, "/home");
+                  request->send_P(200, "text/html", Skeleton, processor);
+                  DEBUG_LineOut("home Loaded");
+              });
+    DEBUG_LineOut("Page: /home set up");
+    /* management page */
+    server.on("/management", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  DEBUG_SectionTitle("HTTP Action");
+                  strcpy(CurrentPage, "/management");
+                  request->send_P(200, "text/html", Skeleton, processor);
+                  DEBUG_LineOut("management Loaded");
+              });
+    DEBUG_LineOut("Page: /management set up");
+    /* complete page */
+    server.on("/complete", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  Refresh_Needed = true;
+                  DEBUG_SectionTitle("HTTP Action");
+                  strcpy(CurrentPage, "/complete");
+                  request->send_P(200, "text/html", done_html, processor); ////////////
+                  DEBUG_LineOut("complete Loaded");
+              });
+    DEBUG_LineOut("Page: /complete set up");
+    /* failedOTA page */
+    server.on("/failedOTA", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  DEBUG_SectionTitle("HTTP Action");
+                  strcpy(CurrentPage, "/failedOTA");
+                  request->send_P(200, "text/html", Skeleton, processor);
+                  DEBUG_LineOut("failedOTA Loaded");
+              });
+    DEBUG_LineOut("Page: /failedOTA set up");
+    /* reboot page */
+    server.on("/reboot", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  Refresh_Needed = true;
+                  DEBUG_SectionTitle("HTTP Action");
+                  request->send_P(200, "text/html", reboot_html, processor);
+                  restartRequired = true;
+              });
+    DEBUG_LineOut("Page: /reboot set up");
 
     /* Load the CSS */
     server.on("/TheCSS.css", HTTP_GET, [](AsyncWebServerRequest *request)
@@ -109,15 +117,8 @@ boolean setup_HTTP()
                   request->send_P(200, "text/html", TheCSS, processor);
                   DEBUG_LineOut("TheCSS Loaded");
               });
+    DEBUG_LineOut("Page: /TheCSS.css set up");
 
-    /* reboot page */
-    server.on("/reboot", HTTP_GET, [](AsyncWebServerRequest *request)
-              {
-                //   Refresh_Needed = true;
-                  DEBUG_SectionTitle("HTTP Action");
-                  request->send_P(200, "text/html", reboot_html, processor);
-                  restartRequired = true;
-              });
 
     /* darkmode page */
     server.on("/darkmode", HTTP_GET, [](AsyncWebServerRequest *request)
@@ -137,6 +138,7 @@ boolean setup_HTTP()
                   sprintf(DEBUGtxt, "Page: %s", "/darkmode");
                   DEBUG_LineOut(DEBUGtxt);
               });
+    DEBUG_LineOut("Page: /darkmode set up");
 
     /* management (POST) page */
     server.on(
