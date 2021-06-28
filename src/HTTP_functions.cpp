@@ -195,12 +195,12 @@ boolean setup_HTTP()
             if (len)
             {
                 // DEBUG_LineOut("BOTH good");
-                if (Update.write(data, len) != len)     // This happens if bin file is too big
-                {                                       // Why does this carry on trying???
+                if (Update.write(data, len) != len)                                 // This happens if bin file is too big
+                {                                                                   // Why does this carry on trying???
                     ditditdit = DEBUG_ProgressBar(ditditdit, '!');
-                    return request->send(400, "text/plain", "OTA could not begin");
+                    return request->send(400, "text/plain", "OTA could not begin"); // Yet this doesn't seem to happen...
                 }
-                else
+                else                                                                // Happens for each good chunk.
                 {
                     ditditdit = DEBUG_ProgressBar(ditditdit, '.');
                 }
@@ -219,7 +219,8 @@ boolean setup_HTTP()
             }
             else
             {
-                // DEBUG_LineOut("BOTH complete!");
+                DEBUG_ProgressBar2(ditditdit);
+                DEBUG_LineOut("BOTH complete!");
                 return;
             }
         });
