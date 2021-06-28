@@ -205,6 +205,8 @@ Serial.printf("B - len = %d\n", len);
                 else
                     ditditdit = DEBUG_ProgressBar(ditditdit, '.');
             }
+else
+Serial.printf("C - len = %d\n", len);
 
             if (final)
             { // if the final flag is set then this is the last frame of data
