@@ -73,6 +73,7 @@ boolean setup_HTTP()
                   DEBUG_LineOut("home Loaded");
               });
     DEBUG_LineOut("Page: /home set up");
+
     /* management page */
     server.on("/management", HTTP_GET, [](AsyncWebServerRequest *request)
               {
@@ -82,6 +83,7 @@ boolean setup_HTTP()
                   DEBUG_LineOut("management Loaded");
               });
     DEBUG_LineOut("Page: /management set up");
+
     /* complete page */
     server.on("/complete", HTTP_GET, [](AsyncWebServerRequest *request)
               {
@@ -92,6 +94,7 @@ boolean setup_HTTP()
                   DEBUG_LineOut("complete Loaded");
               });
     DEBUG_LineOut("Page: /complete set up");
+
     /* failedOTA page */
     server.on("/failedOTA", HTTP_GET, [](AsyncWebServerRequest *request)
               {
@@ -101,6 +104,7 @@ boolean setup_HTTP()
                   DEBUG_LineOut("failedOTA Loaded");
               });
     DEBUG_LineOut("Page: /failedOTA set up");
+
     /* reboot page */
     server.on("/reboot", HTTP_GET, [](AsyncWebServerRequest *request)
               {
@@ -118,7 +122,6 @@ boolean setup_HTTP()
                   DEBUG_LineOut("TheCSS Loaded");
               });
     DEBUG_LineOut("Page: /TheCSS.css set up");
-
 
     /* darkmode page */
     server.on("/darkmode", HTTP_GET, [](AsyncWebServerRequest *request)

@@ -10,6 +10,7 @@
 
 #include "HTML_Loadup.h"
 #include "HTML/Parts/Body_failedOTA.htm"
+#include "HTML/Parts/Body_Finished.htm"
 
 #include "OTA_Externs.h"
 // #include "DeviceInfo.h"
@@ -28,6 +29,8 @@ String info_memsketch();
 #define STR2a(A) ST2a(A)
 #define STR2b(B) ST2b(B)
 ////////////////////
+
+extern bool Refresh_Needed;
 
 #if defined(NEWprocessor)
 // extern TemplateMap TemplateMaps[];
@@ -154,7 +157,7 @@ String processor(const String &var) // Change placeholders on webpage
         }
         if (!strcmp(CurrentPage, "/complete"))
         {
-            return failOTA_html;
+            return Body_done;
         }
         // if (!strcmp(CurrentPage, "/reboot"))
         // {
@@ -198,7 +201,16 @@ String processor(const String &var) // Change placeholders on webpage
         return info_memsketch();
     }
 
-    {    // The Footer Section
+    if (var == "WT_Refresh")
+    {
+        if (Refresh_Needed)
+            return "<meta http-equiv=\"refresh\" content=\"5; URL='/'\" />";
+            Refresh_Needed = false;
+        else
+            return "";
+    }
+
+    { // The Footer Section
         if (var == "WT_ReBootMSG")
         {
             return getRebootMessage0();
@@ -354,7 +366,7 @@ String info_memsketch()
     float Percent = Size / Total;
 
     // Serial.println(Percent);
-    
+
     String memsketch =
         ((String)(Size)) +
         " / " +
