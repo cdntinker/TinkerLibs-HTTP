@@ -55,7 +55,7 @@ boolean setup_HTTP()
                   DEBUG_LineOut("poop Loaded");
                   request->send_P(200, "text/html", "%PageHeader%\n<H1>W T F ?</H1>", processor);
               });
-
+    DEBUG_LineOut("Page: /poop set up");
     /* test home page */
     server.on("/home", HTTP_GET, [](AsyncWebServerRequest *request)
               {
@@ -64,7 +64,7 @@ boolean setup_HTTP()
                   request->send_P(200, "text/html", Skeleton, processor);
                   DEBUG_LineOut("home Loaded");
               });
-
+    DEBUG_LineOut("Page: /home set up");
     /* test management page */
     server.on("/management", HTTP_GET, [](AsyncWebServerRequest *request)
               {
@@ -73,16 +73,16 @@ boolean setup_HTTP()
                   request->send_P(200, "text/html", Skeleton, processor);
                   DEBUG_LineOut("management Loaded");
               });
-              
+    DEBUG_LineOut("Page: /management set up");
     /* test complete page */
     server.on("/complete", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   DEBUG_SectionTitle("HTTP Action");
                   strcpy(CurrentPage, "/complete");
-                  request->send_P(200, "text/html", done_html, processor);  ////////////
+                  request->send_P(200, "text/html", done_html, processor); ////////////
                   DEBUG_LineOut("complete Loaded");
               });
-              
+    DEBUG_LineOut("Page: /complete set up");
     /* test failedOTA page */
     server.on("/failedOTA", HTTP_GET, [](AsyncWebServerRequest *request)
               {
@@ -91,7 +91,7 @@ boolean setup_HTTP()
                   request->send_P(200, "text/html", Skeleton, processor);
                   DEBUG_LineOut("failedOTA Loaded");
               });
-
+    DEBUG_LineOut("Page: /failedOTA set up");
     /*
     {   // Multi-page macro setup
 // ********************************************************
