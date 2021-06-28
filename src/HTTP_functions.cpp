@@ -194,7 +194,7 @@ boolean setup_HTTP()
             // Write chunked data to the free sketch space
             if (len)
             {
-Serial.printf("A - len = %d\tdata = %d\n", len, data);
+// Serial.printf("A - len = %d\tdata = %d\n", len, data);
                 // DEBUG_LineOut("BOTH good");
                 if (Update.write(data, len) != len)
                 {
@@ -204,7 +204,7 @@ Serial.printf("B - len = %d\tdata = %d\n", len, data);
                 }
                 else
                 {
-Serial.printf("C - len = %d\tdata = %d\n", len, data);
+// Serial.printf("C - len = %d\tdata = %d\n", len, data);
                     ditditdit = DEBUG_ProgressBar(ditditdit, '.');
                 }
             }
