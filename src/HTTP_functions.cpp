@@ -59,15 +59,19 @@ boolean setup_HTTP()
     /* test home page */
     server.on("/home", HTTP_GET, [](AsyncWebServerRequest *request)
               {
-                  DEBUG_LineOut("home Loaded");
+                  DEBUG_SectionTitle("HTTP Action");
+                  strcpy(CurrentPage, "/home");
                   request->send_P(200, "text/html", Skeleton, processor);
+                  DEBUG_LineOut("home Loaded");
               });
 
     /* test management page */
     server.on("/management", HTTP_GET, [](AsyncWebServerRequest *request)
               {
-                  DEBUG_LineOut("management Loaded");
+                  DEBUG_SectionTitle("HTTP Action");
+                  strcpy(CurrentPage, "/home");
                   request->send_P(200, "text/html", Skeleton, processor);
+                  DEBUG_LineOut("management Loaded");
               });
 
     /*
