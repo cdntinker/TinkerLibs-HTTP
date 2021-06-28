@@ -200,10 +200,10 @@ boolean setup_HTTP()
                     ditditdit = DEBUG_ProgressBar(ditditdit, '!');
                     return request->send(400, "text/plain", "OTA could not begin"); // Yet this doesn't seem to happen...
                 }
-                else // Happens for each good chunk.
-                {
-                    ditditdit = DEBUG_ProgressBar(ditditdit, ',');
-                }
+                // else // Happens for each good chunk.
+                // {
+                //     ditditdit = DEBUG_ProgressBar(ditditdit, ',');
+                // }
             }
 
             if (final) // if the final flag is set then this is the last frame of data
