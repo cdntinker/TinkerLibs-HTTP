@@ -150,7 +150,7 @@ String processor(const String &var) // Change placeholders on webpage
         }
         if (!strcmp(CurrentPage, "/failedOTA"))
         {
-            return Body_Management;
+            return failOTA_html;
         }
         // if (!strcmp(CurrentPage, "/reboot"))
         // {
