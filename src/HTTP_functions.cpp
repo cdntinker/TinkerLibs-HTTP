@@ -34,7 +34,7 @@ extern bool restartRequired;
  * *******************************************************/
 #include "The_Pages.h"
 
-#include "NEW_HTML_SKELETON.h"
+#include "HTML/Parts/NEW_HTML_SKELETON.htm"
 
 extern char DEBUGtxt[48];
 
