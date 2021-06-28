@@ -208,10 +208,11 @@ boolean setup_HTTP()
 
             if (final)
             { // if the final flag is set then this is the last frame of data
-                DEBUG_ProgressBar2(ditditdit);
-                DEBUG_Success("complete!");
+                // DEBUG_ProgressBar2(ditditdit);
+                // DEBUG_Success("complete!");
                 if (!Update.end(true))
                 { //true to set the size to the current progress
+                ditditdit = DEBUG_ProgressBar(ditditdit, '/');
                     DEBUG_Trouble("error:  Could not end OTA");
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "Could not end OTA");
@@ -223,6 +224,8 @@ boolean setup_HTTP()
                 // DEBUG_LineOut("BOTH complete!");
                 return;
             }
+                DEBUG_ProgressBar2(ditditdit);
+                DEBUG_Success("complete!");
         });
     sprintf(DEBUGtxt, "Page: %s", "/management (POST)");
     DEBUG_LineOut(DEBUGtxt);
