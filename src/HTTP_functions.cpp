@@ -191,10 +191,11 @@ boolean setup_HTTP()
 
                 DEBUG_LineOut("uploading");
             }
-
+Serial.printf("A - len = %d\n", len);
             // Write chunked data to the free sketch space
             if (len)
             {
+Serial.printf("B - len = %d\n", len);
                 // DEBUG_LineOut("BOTH good");
                 if (Update.write(data, len) != len)
                 {
