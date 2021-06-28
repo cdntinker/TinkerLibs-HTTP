@@ -90,7 +90,8 @@ boolean setup_HTTP()
                   Refresh_Needed = true;
                   DEBUG_SectionTitle("HTTP Action");
                   strcpy(CurrentPage, "/complete");
-                  request->send_P(200, "text/html", done_html, processor); ////////////
+                //   request->send_P(200, "text/html", done_html, processor); ////////////
+                  request->send_P(200, "text/html", Skeleton, processor); ////////////
                   DEBUG_LineOut("complete Loaded");
               });
     DEBUG_LineOut("Page: /complete set up");
