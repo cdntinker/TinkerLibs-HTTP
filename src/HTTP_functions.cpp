@@ -206,10 +206,9 @@ boolean setup_HTTP()
                 }
             }
 
-            if (final)
-            { // if the final flag is set then this is the last frame of data
+            if (final) // if the final flag is set then this is the last frame of data
+            {          // Happens once upon successful upload
                 // DEBUG_ProgressBar2(ditditdit);
-                // DEBUG_Success("complete!");
                 ditditdit = DEBUG_ProgressBar(ditditdit, '/');
                 if (!Update.end(true))
                 { //true to set the size to the current progress
@@ -217,9 +216,9 @@ boolean setup_HTTP()
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "Could not end OTA");
                 }
-                else // Happens for each good chunk.
+                else
                 {
-                    ditditdit = DEBUG_ProgressBar(ditditdit, '-');
+                    DEBUG_Success("complete!");
                 }
             }
             else
@@ -228,8 +227,8 @@ boolean setup_HTTP()
                 // DEBUG_LineOut("BOTH complete!");
                 return;
             }
-                DEBUG_ProgressBar2(ditditdit);
-                DEBUG_Success("complete!");
+            DEBUG_ProgressBar2(ditditdit);
+            DEBUG_Success("complete!");
         });
     sprintf(DEBUGtxt, "Page: %s", "/management (POST)");
     DEBUG_LineOut(DEBUGtxt);
