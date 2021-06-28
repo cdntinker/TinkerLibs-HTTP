@@ -187,8 +187,8 @@ String processor(const String &var) // Change placeholders on webpage
     {
         return info_memsketch();
     }
-    // The Footer Section
-    {
+
+    {    // The Footer Section
         if (var == "WT_ReBootMSG")
         {
             return getRebootMessage0();
@@ -210,6 +210,7 @@ String processor(const String &var) // Change placeholders on webpage
             return getRebootMessage1();
         }
     }
+
     /////////////////////////////////////////////////////////////
 
     // if (var == "TemplateCount") // The placeholder
