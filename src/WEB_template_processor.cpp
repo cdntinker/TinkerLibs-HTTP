@@ -9,6 +9,8 @@
 #include <Tinker_WiFi.h>
 
 #include "HTML_Loadup.h"
+#include "HTML/Parts/Body_failedOTA.htm"
+
 #include "OTA_Externs.h"
 // #include "DeviceInfo.h"
 String ip3string(IPAddress ip);
@@ -143,6 +145,10 @@ String processor(const String &var) // Change placeholders on webpage
             return Body_HomePage;
         }
         if (!strcmp(CurrentPage, "/management"))
+        {
+            return Body_Management;
+        }
+        if (!strcmp(CurrentPage, "/failedOTA"))
         {
             return Body_Management;
         }
