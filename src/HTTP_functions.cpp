@@ -63,14 +63,15 @@ boolean setup_HTTP()
                   request->send_P(200, "text/html", Skeleton, processor);
               });
 
-    /*{   // Multi-page macro setup
-/* ********************************************************
- * This #define builds the page request handlers for
- * pages defined in the PageContent[] array of structures.
- * 
- * This exists because the process is inlined.
- * This kinda borks the whole call by reference thing.
- * *******************************************************/
+    /*
+    {   // Multi-page macro setup
+// ********************************************************
+// This #define builds the page request handlers for
+// pages defined in the PageContent[] array of structures.
+// 
+// This exists because the process is inlined.
+// This kinda borks the whole call by reference thing.
+// *******************************************************
 #define InitializePage(PageNumber)                                                            \
     server.on(PageContent[PageNumber].Address, HTTP_GET, [](AsyncWebServerRequest *request) { \
         DEBUG_SectionTitle("HTTP Action");                                                    \
@@ -93,7 +94,8 @@ boolean setup_HTTP()
 #if defined(TestPage)
         InitializePage(4);
 #endif
-    }*/
+    }
+    */
 
     /* root page */
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
