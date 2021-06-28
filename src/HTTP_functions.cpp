@@ -69,7 +69,7 @@ boolean setup_HTTP()
     server.on("/management", HTTP_GET, [](AsyncWebServerRequest *request)
               {
                   DEBUG_SectionTitle("HTTP Action");
-                  strcpy(CurrentPage, "/home");
+                  strcpy(CurrentPage, "/management");
                   request->send_P(200, "text/html", Skeleton, processor);
                   DEBUG_LineOut("management Loaded");
               });
