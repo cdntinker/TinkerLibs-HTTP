@@ -34,6 +34,8 @@ extern bool restartRequired;
  * *******************************************************/
 #include "The_Pages.h"
 
+#include "NEW_HTML_SKELETON.h"
+
 extern char DEBUGtxt[48];
 
 /**********************************************************************/
@@ -54,7 +56,14 @@ boolean setup_HTTP()
                   request->send_P(200, "text/html", "%PageHeader%\n<H1>W T F ?</H1>", processor);
               });
 
-    {   // Multi-page macro setup
+    /* test home page */
+    server.on("/home", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  DEBUG_LineOut("home Loaded");
+                  request->send_P(200, "text/html", Skeleton, processor);
+              });
+
+    /*{   // Multi-page macro setup
 /* ********************************************************
  * This #define builds the page request handlers for
  * pages defined in the PageContent[] array of structures.
@@ -84,7 +93,7 @@ boolean setup_HTTP()
 #if defined(TestPage)
         InitializePage(4);
 #endif
-    }
+    }*/
 
     /* root page */
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
