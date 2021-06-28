@@ -194,17 +194,14 @@ boolean setup_HTTP()
             // Write chunked data to the free sketch space
             if (len)
             {
-// Serial.printf("A - len = %d\tdata = %d\n", len, data);
                 // DEBUG_LineOut("BOTH good");
-                if (Update.write(data, len) != len)
-                {
-Serial.printf("B - len = %d\tdata = %d\n", len, data);
-                    // ditditdit = DEBUG_ProgressBar(ditditdit, '!');      // Why does this carry on???
+                if (Update.write(data, len) != len)     // This happens if bin file is too big
+                {                                       // Why does this carry on trying???
+                    ditditdit = DEBUG_ProgressBar(ditditdit, '!');
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
                 else
                 {
-// Serial.printf("C - len = %d\tdata = %d\n", len, data);
                     ditditdit = DEBUG_ProgressBar(ditditdit, '.');
                 }
             }
