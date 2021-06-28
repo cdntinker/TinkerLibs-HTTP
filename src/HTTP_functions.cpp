@@ -77,6 +77,7 @@ boolean setup_HTTP()
     /* test complete page */
     server.on("/complete", HTTP_GET, [](AsyncWebServerRequest *request)
               {
+                //   Refresh_Needed = true;
                   DEBUG_SectionTitle("HTTP Action");
                   strcpy(CurrentPage, "/complete");
                   request->send_P(200, "text/html", done_html, processor); ////////////
@@ -92,39 +93,6 @@ boolean setup_HTTP()
                   DEBUG_LineOut("failedOTA Loaded");
               });
     DEBUG_LineOut("Page: /failedOTA set up");
-    /*
-    {   // Multi-page macro setup
-// ********************************************************
-// This #define builds the page request handlers for
-// pages defined in the PageContent[] array of structures.
-// 
-// This exists because the process is inlined.
-// This kinda borks the whole call by reference thing.
-// *******************************************************
-#define InitializePage(PageNumber)                                                            \
-    server.on(PageContent[PageNumber].Address, HTTP_GET, [](AsyncWebServerRequest *request) { \
-        DEBUG_SectionTitle("HTTP Action");                                                    \
-        strcpy(CurrentPage, PageContent[PageNumber].Address);                                 \
-        request->send_P(200, "text/html", PageContent[PageNumber].p_Content, processor);      \
-        sprintf(DEBUGtxt, "Page: %s accessed", PageContent[PageNumber].Address);              \
-        DEBUG_LineOut(DEBUGtxt);                                                              \
-    });                                                                                       \
-    sprintf(DEBUGtxt, "Page: [%d] %s set up", PageNumber, PageContent[PageNumber].Address);   \
-    DEBUG_LineOut(DEBUGtxt);
-
-        // for(int PageCount = 0; PageCount <= 5; PageCount++)
-        //     InitializePage(PageCount);
-
-        InitializePage(0);
-        InitializePage(1);
-        InitializePage(2);
-        InitializePage(3);
-        // InitializePage(4);
-#if defined(TestPage)
-        InitializePage(4);
-#endif
-    }
-    */
 
     /* root page */
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
@@ -145,6 +113,7 @@ boolean setup_HTTP()
     /* reboot page */
     server.on("/reboot", HTTP_GET, [](AsyncWebServerRequest *request)
               {
+                //   Refresh_Needed = true;
                   DEBUG_SectionTitle("HTTP Action");
                   request->send_P(200, "text/html", reboot_html, processor);
                   restartRequired = true;
