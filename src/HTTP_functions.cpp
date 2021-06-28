@@ -111,7 +111,9 @@ boolean setup_HTTP()
               {
                   Refresh_Needed = true;
                   DEBUG_SectionTitle("HTTP Action");
-                  request->send_P(200, "text/html", reboot_html, processor);
+                  strcpy(CurrentPage, "/reboot");
+                //   request->send_P(200, "text/html", reboot_html, processor);
+                  request->send_P(200, "text/html", Skeleton, processor); ////////////
                   restartRequired = true;
               });
     DEBUG_LineOut("Page: /reboot set up");

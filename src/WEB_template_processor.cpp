@@ -11,6 +11,7 @@
 #include "HTML_Loadup.h"
 #include "HTML/Parts/Body_failedOTA.htm"
 #include "HTML/Parts/Body_Finished.htm"
+#include "HTML/Parts/Body_reboot.htm"
 
 #include "OTA_Externs.h"
 // #include "DeviceInfo.h"
@@ -159,10 +160,10 @@ String processor(const String &var) // Change placeholders on webpage
         {
             return Body_done;
         }
-        // if (!strcmp(CurrentPage, "/reboot"))
-        // {
-        //     return Body_Reboot;
-        // }
+        if (!strcmp(CurrentPage, "/reboot"))
+        {
+            return Body_Reboot;
+        }
 
         return "<H1>WTF?</H1>";
     }
