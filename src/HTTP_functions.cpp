@@ -73,6 +73,24 @@ boolean setup_HTTP()
                   request->send_P(200, "text/html", Skeleton, processor);
                   DEBUG_LineOut("management Loaded");
               });
+              
+    /* test complete page */
+    server.on("/complete", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  DEBUG_SectionTitle("HTTP Action");
+                  strcpy(CurrentPage, "/complete");
+                  request->send_P(200, "text/html", Skeleton, processor);
+                  DEBUG_LineOut("complete Loaded");
+              });
+              
+    /* test failedOTA page */
+    server.on("/failedOTA", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  DEBUG_SectionTitle("HTTP Action");
+                  strcpy(CurrentPage, "/failedOTA");
+                  request->send_P(200, "text/html", Skeleton, processor);
+                  DEBUG_LineOut("failedOTA Loaded");
+              });
 
     /*
     {   // Multi-page macro setup
