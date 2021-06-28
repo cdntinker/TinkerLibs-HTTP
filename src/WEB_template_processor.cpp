@@ -152,6 +152,10 @@ String processor(const String &var) // Change placeholders on webpage
         {
             return failOTA_html;
         }
+        if (!strcmp(CurrentPage, "/complete"))
+        {
+            return failOTA_html;
+        }
         // if (!strcmp(CurrentPage, "/reboot"))
         // {
         //     return Body_Reboot;

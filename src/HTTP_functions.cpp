@@ -79,7 +79,7 @@ boolean setup_HTTP()
               {
                   DEBUG_SectionTitle("HTTP Action");
                   strcpy(CurrentPage, "/complete");
-                  request->send_P(200, "text/html", Skeleton, processor);
+                  request->send_P(200, "text/html", done_html, processor);  ////////////
                   DEBUG_LineOut("complete Loaded");
               });
               
