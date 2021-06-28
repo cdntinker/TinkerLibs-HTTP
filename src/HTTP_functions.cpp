@@ -63,6 +63,13 @@ boolean setup_HTTP()
                   request->send_P(200, "text/html", Skeleton, processor);
               });
 
+    /* test management page */
+    server.on("/management", HTTP_GET, [](AsyncWebServerRequest *request)
+              {
+                  DEBUG_LineOut("management Loaded");
+                  request->send_P(200, "text/html", Skeleton, processor);
+              });
+
     /*
     {   // Multi-page macro setup
 // ********************************************************
