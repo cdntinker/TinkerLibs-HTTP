@@ -216,10 +216,10 @@ boolean setup_HTTP()
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "Could not end OTA");
                 }
-                else
-                {
-                    DEBUG_Success("complete!");
-                }
+                // else
+                // {
+                //     DEBUG_Success("complete!");
+                // }
             }
             else
             {
