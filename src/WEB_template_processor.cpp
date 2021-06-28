@@ -204,8 +204,10 @@ String processor(const String &var) // Change placeholders on webpage
     if (var == "WT_Refresh")
     {
         if (Refresh_Needed)
+        {
             return "<meta http-equiv=\"refresh\" content=\"5; URL='/'\" />";
             Refresh_Needed = false;
+        }
         else
             return "";
     }
