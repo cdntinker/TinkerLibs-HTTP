@@ -199,14 +199,13 @@ Serial.printf("B - len = %d\n", len);
                 // DEBUG_LineOut("BOTH good");
                 if (Update.write(data, len) != len)
                 {
+Serial.printf("C - len = %d\n", len);
                     // ditditdit = DEBUG_ProgressBar(ditditdit, '!');      // Why does this carry on???
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
                 else
                     ditditdit = DEBUG_ProgressBar(ditditdit, '.');
             }
-else
-Serial.printf("C - len = %d\n", len);
 
             if (final)
             { // if the final flag is set then this is the last frame of data
