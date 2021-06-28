@@ -41,10 +41,10 @@ extern char DEBUGtxt[48];
 /**********************************************************************/
 char CurrentPage[32];
 bool Refresh_Needed = false;
-            // Need to add a placeholder in the <head> section
-            // And a handler in WEB_template_processor.cpp to add in
-            //      <meta http-equiv="refresh" content="5; URL='/'" />
-            // (and possibly clear this variable back to false)
+// Need to add a placeholder in the <head> section
+// And a handler in WEB_template_processor.cpp to add in
+//      <meta http-equiv="refresh" content="5; URL='/'" />
+// (and possibly clear this variable back to false)
 /**********************************************************************/
 
 int PageNumber;
@@ -90,7 +90,7 @@ boolean setup_HTTP()
                   Refresh_Needed = true;
                   DEBUG_SectionTitle("HTTP Action");
                   strcpy(CurrentPage, "/complete");
-                //   request->send_P(200, "text/html", done_html, processor); ////////////
+                  //   request->send_P(200, "text/html", done_html, processor); ////////////
                   request->send_P(200, "text/html", Skeleton, processor); ////////////
                   DEBUG_LineOut("complete Loaded");
               });
@@ -112,7 +112,7 @@ boolean setup_HTTP()
                   Refresh_Needed = true;
                   DEBUG_SectionTitle("HTTP Action");
                   strcpy(CurrentPage, "/reboot");
-                //   request->send_P(200, "text/html", reboot_html, processor);
+                  //   request->send_P(200, "text/html", reboot_html, processor);
                   request->send_P(200, "text/html", Skeleton, processor); ////////////
                   restartRequired = true;
               });
@@ -195,14 +195,14 @@ boolean setup_HTTP()
             if (len)
             {
                 // DEBUG_LineOut("BOTH good");
-                if (Update.write(data, len) != len)                                 // This happens if bin file is too big
-                {                                                                   // Why does this carry on trying???
+                if (Update.write(data, len) != len) // This happens if bin file is too big
+                {                                   // Why does this carry on trying???
                     ditditdit = DEBUG_ProgressBar(ditditdit, '!');
                     return request->send(400, "text/plain", "OTA could not begin"); // Yet this doesn't seem to happen...
                 }
-                else                                                                // Happens for each good chunk.
+                else // Happens for each good chunk.
                 {
-                    ditditdit = DEBUG_ProgressBar(ditditdit, '.');
+                    ditditdit = DEBUG_ProgressBar(ditditdit, ',');
                 }
             }
 
@@ -219,7 +219,7 @@ boolean setup_HTTP()
             }
             else
             {
-Serial.print(",");
+                ditditdit = DEBUG_ProgressBar(ditditdit, '.');
                 // DEBUG_LineOut("BOTH complete!");
                 return;
             }
