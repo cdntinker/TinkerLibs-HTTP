@@ -219,8 +219,8 @@ boolean setup_HTTP()
             }
             else
             {
-                DEBUG_ProgressBar2(ditditdit);
-                DEBUG_LineOut("BOTH complete!");
+Serial.print(",");
+                // DEBUG_LineOut("BOTH complete!");
                 return;
             }
         });
