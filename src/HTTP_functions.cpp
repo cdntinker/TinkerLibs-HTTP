@@ -217,6 +217,10 @@ boolean setup_HTTP()
                     Update.printError(Serial);
                     return request->send(400, "text/plain", "Could not end OTA");
                 }
+                else // Happens for each good chunk.
+                {
+                    ditditdit = DEBUG_ProgressBar(ditditdit, '\\');
+                }
             }
             else
             {
