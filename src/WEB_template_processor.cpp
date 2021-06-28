@@ -162,7 +162,7 @@ String processor(const String &var) // Change placeholders on webpage
         }
         if (!strcmp(CurrentPage, "/reboot"))
         {
-            return Body_Reboot;
+            return Body_reboot;
         }
 
         return "<H1>WTF?</H1>";
