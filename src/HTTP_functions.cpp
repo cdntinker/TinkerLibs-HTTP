@@ -203,7 +203,10 @@ Serial.printf("B - len = %d\tdata = %d\n", len, data);
                     return request->send(400, "text/plain", "OTA could not begin");
                 }
                 else
+                {
+Serial.printf("C - len = %d\tdata = %d\n", len, data);
                     ditditdit = DEBUG_ProgressBar(ditditdit, '.');
+                }
             }
 
             if (final)
