@@ -209,7 +209,7 @@ boolean setup_HTTP()
             if (final) // if the final flag is set then this is the last frame of data
             {          // Happens once upon successful upload
                 // DEBUG_ProgressBar2(ditditdit);
-                DEBUG_ProgressBar2(ditditdit);
+                // DEBUG_ProgressBar2(ditditdit);
                 if (!Update.end(true))
                 { //true to set the size to the current progress
                     DEBUG_Trouble("error:  Could not end OTA");
