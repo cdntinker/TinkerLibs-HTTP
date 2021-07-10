@@ -5,7 +5,7 @@
 #include <OTA_Externs.h>
 
 #if defined(ESP8266)
-#include <flash_hal.h>
+// #include <flash_hal.h>
 #elif defined(ESP32)
 #include "Update.h"
 #endif
