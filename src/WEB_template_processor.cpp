@@ -65,7 +65,7 @@ extern String SiniLink_TurnOn;
 extern String SiniLink_TurnOff;
 #endif
 
-#include "HTML/Parts/WORKING css.css"
+#include "HTML/WORKING css.css"
 // extern const char* TheCSS;
 
 String processor(const String &var) // Change placeholders on webpage
