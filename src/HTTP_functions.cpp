@@ -238,7 +238,7 @@ boolean setup_HTTP()
                       {
                           DEBUG_SectionTitle("HTTP Action");
                           request->send(404);
-                          sprintf(DEBUGtxt, "Page: %s", "404");
+                          sprintf(DEBUGtxt, "Page: %s", "404", request);
                           DEBUG_LineOut(DEBUGtxt);
                       });
 
