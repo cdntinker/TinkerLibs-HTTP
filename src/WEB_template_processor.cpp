@@ -70,10 +70,10 @@ extern String SiniLink_TurnOff;
 
 String processor(const String &var) // Change placeholders on webpage
 {
-    if (var == "CSS")
-    {
-        return TheCSS;
-    }
+    // if (var == "CSS")
+    // {
+    //     return TheCSS;
+    // }
 
     if (var == "SCRIPTS")
     {
