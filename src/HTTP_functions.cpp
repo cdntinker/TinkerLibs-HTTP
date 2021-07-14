@@ -69,7 +69,7 @@ boolean setup_HTTP()
               {
                   DEBUG_SectionTitle("HTTP Action");
                   strcpy(CurrentPage, "/home");
-                  request->send_P(200, "text/html", &Skeleton, processor);
+                  request->send_P(200, "text/html", Skeleton, processor);
                   DEBUG_LineOut("home Loaded");
               });
     DEBUG_LineOut("Page: /home set up");
