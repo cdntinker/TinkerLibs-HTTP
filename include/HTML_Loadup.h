@@ -16,7 +16,6 @@ extern const char* Content_I2C;
 extern const char* Content_Poem;
 extern const char* Content_SiniLink;
 extern const char* Content_Sonoff;
-extern const char* TheCSS;
 
 // #if defined(TestPage)
 #if (defined(TestPage) && (TestPage == 0)) || (defined(HomePage) && (HomePage == 0))
