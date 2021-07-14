@@ -1,6 +1,6 @@
 const char TheCSS[] PROGMEM = 
 R"rawliteral(
-
+<style>
 body {
    margin: 0;
    padding: 0;
@@ -217,5 +217,5 @@ input[type="submit"]:hover {
    padding-left: 10rem;
    padding-right: 10rem;
 }
-
+</style>
   )rawliteral";
