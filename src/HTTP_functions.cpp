@@ -238,6 +238,7 @@ boolean setup_HTTP()
                       {
                           DEBUG_SectionTitle("HTTP Action");
                           request->send(404);
+                          //  It'd be kinda cool to be able to print out the requested address here...
                           sprintf(DEBUGtxt, "Page: %s", "404");
                           DEBUG_LineOut(DEBUGtxt);
                       });
