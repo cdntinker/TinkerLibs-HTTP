@@ -7,11 +7,11 @@
 #if defined(ESP8266)
 #include <flash_hal.h>
 // #define MYFS LITTLEFS
-#include "LittleFS.h"
+#include <LittleFS.h>
 #elif defined(ESP32)
 #include "Update.h"
 // #define MYFS LITTLEFS
-#include "LITTLEFS.h"
+#include <LITTLEFS.h>
 #endif
 
 ////////////////////////////////////////////////////
