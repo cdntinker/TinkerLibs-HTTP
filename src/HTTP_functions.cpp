@@ -11,7 +11,7 @@
 #elif defined(ESP32)
 #include "Update.h"
 // #define MYFS LITTLEFS
-#include <LITTLEFS.h>
+#include <LittleFS.h>
 #endif
 
 ////////////////////////////////////////////////////
