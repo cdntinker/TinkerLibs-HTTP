@@ -6,8 +6,12 @@
 
 #if defined(ESP8266)
 #include <flash_hal.h>
+#define MYFS LITTLEFS
+#include "LittleFS.h"
 #elif defined(ESP32)
 #include "Update.h"
+#define MYFS LITTLEFS
+#include "LITTLEFS.h"
 #endif
 
 ////////////////////////////////////////////////////
@@ -16,9 +20,7 @@
 #include <FS.h> // SPIFFS is declared
 // #include "LittleFS.h" // LittleFS is declared
 ////////////////////////////////////////////////////
-  #define MYFS LITTLEFS
-  #include "LITTLEFS.h"
-  
+
 #if defined(SiniLink)
 #include <Tinker_SiniLink.h>
 #endif
