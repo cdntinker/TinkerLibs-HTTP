@@ -16,7 +16,9 @@
 #include <FS.h> // SPIFFS is declared
 // #include "LittleFS.h" // LittleFS is declared
 ////////////////////////////////////////////////////
-
+  #define MYFS LITTLEFS
+  #include "LITTLEFS.h"
+  
 #if defined(SiniLink)
 #include <Tinker_SiniLink.h>
 #endif
