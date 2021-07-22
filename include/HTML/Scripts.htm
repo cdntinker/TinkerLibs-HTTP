@@ -60,5 +60,26 @@ R"rawliteral(
          xhr.send(formData);
         }
       });
+       var num=0;
+
+         function addNumber1()
+            {
+	         var clock=document.getElementById("mydemo1").children[0];
+	         clock.className="clock c"+(++num % 10);
+	         return false;
+            }
+         function addNumber2()
+            {
+	         var clock=document.getElementById("mydemo2").children[0];
+	         clock.className="clock c"+(++num % 10);
+	         return false;
+            }
+
+         function resize()
+            {
+	         var clock=document.getElementById("mydemo").children[0];
+	         clock.style.fontSize=(++size % 20)+"px";
+	         return false;
+            }
    </script>
 )rawliteral";
