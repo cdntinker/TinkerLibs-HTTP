@@ -217,5 +217,70 @@ input[type="submit"]:hover {
    padding-left: 10rem;
    padding-right: 10rem;
 }
+          .display{
+             border: 1.25rem solid #005500;
+             border-radius: 4rem;
+             padding-top: 1rem;
+             margin: 2rem;
+             display: inline-block;
+             font-weight: bold;
+             font-size: 3rem;
+            }
+   
+         .dot{
+             display: inline-block;
+            }
+    
+         .LCD-text1 {
+             padding: .4rem;
+             display: inline-block;
+             margin-right: 5rem;
+            }
+   
+         .LCD-text2 {
+             padding: .4rem;
+             display: inline-block;
+             margin-left: 5rem;
+            }
+  
+         .LCD {
+             margin: 2rem;
+             padding: .6rem;
+            }
+        
+         .LCDdigit {
+             display: inline-block;
+            }
+
+            .clock{font-size:0.625rem;width:9em;height:14em;position:relative;}
+            .clock div{position: absolute;border-style:solid;}
+            .clock .l,.clock .r,.clock .u,.clock .d{width:0;height:0;overflow:hidden;}
+            .clock .v{width:0;height:5em;border-width:0 0.5em;border-color:#565656;}
+            .clock .v .u{border-style:dotted dotted solid dotted;border-width:0 0.5em 0.5em;border-color:transparent transparent #565656 transparent;top:-0.5em;left:-0.5em;}
+            .clock .v .d{border-style:solid dotted dotted dotted;border-width:0.5em 0.5em 0 0.5em;border-color:#565656 transparent transparent transparent;left:-0.5em;bottom:-0.5em}
+
+            .clock .h{width:5.5em;height:0;border-width:0.5em 0;border-color:#565656;}
+            .clock .h .l{border-style:dotted solid dotted dotted;border-width:0.5em 0.5em 0.5em 0;border-color:transparent #565656 transparent transparent;top:-0.5em;left:-0.5em;}
+            .clock .h .r{border-style:dotted dotted dotted solid;border-width:0.5em 0 0.5em 0.5em;border-color:transparent transparent transparent #565656;top:-0.5em;right:-0.5em;}
+
+            .clock .n1{left:0.5em;top:1.5em;}
+            .clock .n2{left:0.5em;top:7.5em;}
+            .clock .n4{left:7.5em;top:7.5em;}
+            .clock .n5{left:7.5em;top:1.5em;}
+            .clock .n6{top:0.4em;left:1.8em;}
+            .clock .n3{top:12.5em;left:1.8em;}
+            .clock .n7{top:6.5em;left:1.8em;}
+
+            .c1 .n1,.c1 .n2,.c1 .n3,.c1 .n6,.c1 .n7{display:none}
+            .c2 .n1,.c2 .n4{display:none}
+            .c3 .n1,.c3 .n2{display:none}
+            .c4 .n2,.c4 .n3,.c4 .n6{display:none}
+            .c5 .n2,.c5 .n5{display:none}
+            .c6 .n5{display:none}
+            .c7 .n1,.c7 .n2,.c7 .n3,.c7 .n7{display:none}
+            .c9 .n2{display:none}
+            .c0 .n7{display:none}
+            .c- .n1,.c- .n2,.c- .n3,.c- .n4,.c- .n5,.c- .n6{display:none}
+            .cc .n1,.cc .n2,.cc .n3,.cc .n4,.cc .n5,.cc .n6,.cc .n7{display:none}
 </style>
   )rawliteral";
