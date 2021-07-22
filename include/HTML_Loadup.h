@@ -66,6 +66,8 @@ Content_DeviceInfo;
 Content_I2C;
 #elif HomePage == 5
 Content_Sonoff;
+#elif HomePage == 6
+Content_Squirrel;
 #else
 Content_WTF;
 #endif
